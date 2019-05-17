@@ -1084,7 +1084,6 @@ position:relative;
 border:#eee solid 1px;
 }
 .upload_more_img:after {
-background-image: url("../images/addmore_img.png");
 background-position: center center;
 background-repeat: no-repeat;
 content:"";
