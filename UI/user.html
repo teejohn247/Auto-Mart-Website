@@ -11,52 +11,52 @@
 </head>
 <body>
   <header>
-    <div class="container">
-        <div class="row">
-          <div class="grid-md-6">
-               <ul class="list-inline">
-                 <li> <i class="fa fa-envelope"> </i> support@website.com</li> 
-                 <li> <i class="fa fa-clock"></i> Mon - Sat 8.00 - 18.00. Sunday CLOSED</li>
-               </ul>
-            </div>
-          <div class="grid-md-6">
-               <ul class="list-inline" style="float: right;">
-              <li><i class="fab fa-facebook-square"></i></li>
-              <li><i class="fab fa-twitter-square"></i></li>
-              <li><i class="fab fa-instagram"></i></a></li>
-            </ul>
-            </div>
-          </div>
-          </div>  
-      </header>
-        <nav class="navbar">
-    
-            <span class="navbar-toggle" id="js-navbar-toggle">
-               <i class="fa fa-bars"></i>
-            </span>
-            <a href="#" class="logo">logo</a>
-            <ul class="main-nav" id="js-menu">
-                <li>
-                    <a href="home.html" class="nav-links">HOME</a>
-                </li>
-                <li>
-                    <a href="view.html" class="nav-links">VIEW-PAGE</a>
-                </li>
-                <li>
-                    <a href="mark.html" class="nav-links">MARK AS SOLD</a>
-                </li>
-                <li>
-                    <a href="user.html" class="nav-links">USER PROFILE</a>
-                </li>
-                <li>
-                    <a href="Admin.html" class="nav-links">ADMIN PROFILE</a>
-                </li>
-                <li>
-                    <a href="purchase-order.html" class="nav-links">ORDER</a>
-                </li>
-                
-            </ul>
-        </nav>
+  <div class="container">
+    <div class="row">
+      <div class="grid-md-6">
+           <ul class="list-inline">
+             <li> <i class="fa fa-envelope"> </i> support@website.com</li> 
+             <li> <i class="fa fa-clock"></i> Mon - Sat 8.00 - 18.00. Sunday CLOSED</li>
+           </ul>
+        </div>
+      <div class="grid-md-6">
+           <ul class="list-inline" style="float: right;">
+          <li><i class="fab fa-facebook-square"></i></li>
+          <li><i class="fab fa-twitter-square"></i></li>
+          <li><i class="fab fa-instagram"></i></a></li>
+        </ul>
+        </div>
+      </div>
+      </div>  
+  </header>
+    <nav class="navbar">
+
+        <span class="navbar-toggle" id="js-navbar-toggle">
+           <i class="fa fa-bars"></i>
+        </span>
+        <a href="#" class="logo">logo</a>
+        <ul class="main-nav" id="js-menu">
+            <li>
+                <a href="home.html" class="nav-links">HOME</a>
+            </li>
+            <li>
+                <a href="view.html" class="nav-links">VIEW-PAGE</a>
+            </li>
+            <li>
+                <a href="mark.html" class="nav-links">MARK AS SOLD</a>
+            </li>
+            <li>
+                <a href="user.html" class="nav-links">USER PROFILE</a>
+            </li>
+            <li>
+                <a href="Admin.html" class="nav-links">ADMIN PROFILE</a>
+            </li>
+            <li>
+                <a href="purchase-order.html" class="nav-links">ORDER</a>
+            </li>
+            
+        </ul>
+    </nav>
 
 <!--Breadcrumb -->
 
@@ -88,6 +88,32 @@
     </div>
     </div>
   </div>
+
+
+  <!--My Ads Tab-->
+  
+ <input type="radio" name="tabs" id="tabtwo" checked="checked" >
+ <label for="tabtwo">My Ads</label>
+ <div class="tab">
+   <div class="container ">
+    <div class="row">
+   <div class="grid-md-3 pics">
+     <img src="img/show.jpg" >
+   </div>
+    <div class="grid-md-3 my-text">
+     <p align="center" class="pur">Bugatti<br>X43FGV</p>
+     <a href="mark.html"><button class="mybtn">Mark as sold</button></a>
+     <a href="update.html"><button class="mybtn">Update Ad</button></a>
+
+     
+   
+
+   </div>
+   </div>
+
+
+</div>
+</div>
 
 
 
@@ -138,14 +164,14 @@
               <textarea class="form-control white_bg" rows="4"></textarea>
             </div>
             <div class="form-group">
-              <p class="control-p">Price ($)</p>
+              <p class="control-p">Price (N)</p>
               <input class="form-control" id="Price" type="text">
             </div>
             <div class="form-group">
               <p class="control-p">Upload Images  ( size = 900 x 560 )</p>
               <div class="vehicle_images">
-                <div><img src="assets/images/show.jpg" alt="image"></div>
-                <div><img src="assets/images/show.jpg" alt="image"></div>
+                  <div><img src="img/show.jpg" alt="image"></div>
+                  <div><img src="img/show.jpg" alt="image"></div>
                 <div class="upload_more_img">
                   <input name="upload" type="file">
                 </div>
@@ -275,41 +301,12 @@
    </div>
     <div class="grid-md-3 my-text">
      <p align="center" class="pur">Purchase Number: 123124365X</p>
-   <button align="center"id="myB" class="mybtn">Edit Order</button>  
+   <button align="center"id="myB" class="mybtn">Edit Order</button>
 
+   
    </div>
    </div>
 
-<!-- Update Ad Price Modal -->
-<div id="myModal2" class="modal">
-
- <!-- Modal content -->
- <div class="modal-content">
-   <span class="close">&times;</span>
-   <form id="contact" action="" method="post">
-   <h4>Update Ad</h4>
-   <fieldset>
-     <input placeholder="First Name" type="text" tabindex="1" required autofocus>
-   </fieldset>
-   <fieldset>
-     <input placeholder="Email" type="email" tabindex="2" required>
-   </fieldset>
-   <fieldset>
-     <input placeholder="New Price" type="email" tabindex="2" required>
-   </fieldset>
-   <fieldset>
-     <input placeholder="Country" type="email" tabindex="2" required>
-   </fieldset>
-     <fieldset>
-     <input placeholder="Zip-Code" type="email" tabindex="2" required>
-   </fieldset>
-   <fieldset>
-     <button name="submit" type="submit" class ="contact-submit" data-submit="...Sending">Update Order</button>
-   </fieldset>
- </form>
- </div>
-
-</div>
 
 <!-- Update Ad Price Modal -->
 <div id="myModal2" class="modal">
@@ -432,6 +429,4 @@
 </body>
   <script type="text/javascript" src="js/index.js"></script>
   <script type="text/javascript" src="js/modal.js"></script>
-
-  
 </html>
