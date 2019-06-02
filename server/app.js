@@ -4,6 +4,9 @@ import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 import logger from 'morgan';
 import userRouter from './routes/user';
+import carRoute from './routes/cars';
+import purchaseOrder from './routes/purchaseOrder';
+
 
 dotenv.config();
 const debug = Debug('http');
@@ -24,6 +27,8 @@ app.get('/api/v1', (req, res) => {
   });
 
 app.use('/api/v1/auth', userRouter);
+app.use('/api/v1/car', carRoute);
+app.use('/api/v1/order', purchaseOrder);
 
 app.listen(port, () => {
     debug(`server is listening at port ${port}`);
