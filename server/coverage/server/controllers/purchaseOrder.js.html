@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for server/controllers/signin.js</title>
+    <title>Code coverage report for server/controllers/purchaseOrder.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="..\..\prettify.css" />
     <link rel="stylesheet" href="..\..\base.css" />
@@ -16,18 +16,18 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="..\..\index.html">All files</a> / <a href="index.html">server/controllers</a> signin.js
+      <a href="..\..\index.html">All files</a> / <a href="index.html">server/controllers</a> purchaseOrder.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>21/21</span>
+        <span class='fraction'>22/22</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>6/6</span>
+        <span class='fraction'>8/8</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -37,7 +37,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>18/18</span>
+        <span class='fraction'>19/19</span>
       </div>
     </div>
     <p class="quiet">
@@ -95,23 +95,25 @@
 <a name='L47'></a><a href='#L47'>47</a>
 <a name='L48'></a><a href='#L48'>48</a>
 <a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L50'></a><a href='#L50'>50</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -126,10 +128,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -138,61 +136,63 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* eslint-disable prefer-destructuring */
-import jwt from 'jsonwebtoken';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import order from '../models/purchaseOrder';
 import users from '../models/users';
-import validateUserSignin from '../helpers/signin';
+import cars from '../models/postCars';
+import validateOrder from '../helpers/purchaseOrder';
 &nbsp;
-const signin = (req, res) =&gt; {
-  const userSchema = {
-    email: req.body.email,
-    password: req.body.password,
-  };
-&nbsp;
-  const { error } = validateUserSignin.validation(req.body);
+const Order = (req, res) =&gt; {
+  const { error } = validateOrder.validation(req.body);
   if (error) {
     return res.status(400).json({ status: 400, error: error.details[0].message });
   }
 &nbsp;
-  const user = users.find(e =&gt; e.email === userSchema.email);
-  if (!user) {
+  const newOrder = {
+    id: parseInt(order.length + 1, 10),
+    buyer: req.body.buyer,
+    car_id: req.body.car_id,
+    amount: req.body.amount,
+    status: req.body.status || 'pending',
+  };
+  const userId = users.find(b =&gt; b.id === parseInt(newOrder.buyer, 10));
+  if (!userId) {
     return res.status(404).json({
       status: 404,
-      error: 'User not found',
+      error: 'buyer id not found',
     });
   }
 &nbsp;
-  const password = users.find(p =&gt; p.password === req.body.password);
-  if (!password) {
-    return res.status(400).json({
-      status: 400,
-      error: 'Incorrect password',
+  const carId = cars.find(c =&gt; c.id === parseInt(newOrder.car_id, 10));
+  if (!carId) {
+    return res.status(404).json({
+      status: 404,
+      error: 'car ordered not found',
     });
   }
+   const latestOrder = {
+      car_id: newOrder.car_id,
+      created_on: Date(),
+      status: newOrder.status,
+      price: carId.price,
+      price_offered: newOrder.amount
+  };
 &nbsp;
-  const token = jwt.sign(user, 'SECRET_KEY', { expiresIn: '24hrs' });
-  const firstName = user.firstName;
-&nbsp;
-  return res.status(200).json({
-    status: 200,
-    message: `Welcome back, ${firstName}!`,
-    data: {
-      token,
-      id: user.id,
-      firstName: user.firstName,
-      lastName: user.lastName,
-      email: user.email,
-    },
+  order.push(newOrder);
+  return res.status(201).json({
+    status: 201,
+    data: latestOrder
   });
 };
 &nbsp;
-export default signin;
+export default Order;
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
