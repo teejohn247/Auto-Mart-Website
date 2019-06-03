@@ -8,12 +8,12 @@ chai.use(chaiHttp);
 chai.should();
 
 describe('Purchasing order', () => {
-  it('buyer should be able to make a purchasing order', (done) => {
+  it('should return a status code of 200 if buyer can make a purchasing order', (done) => {
     const buyer = {
-      email: 'chris@gmail.com',
+      email: 'brown@gmail.com',
     };
     const token = jwt.sign(buyer, 'SECRET_KEY', { expiresIn: '24hrs' });
-    const newOrder = {
+    const latestOrder = {
       buyer: 1,
       car_id: 1,
       amount: 20000,
@@ -21,7 +21,7 @@ describe('Purchasing order', () => {
     chai.request(app)
       .post('/api/v1/order')
       .set('Authorization', token)
-      .send(newOrder)
+      .send(latestOrder)
       .end((err, res) => {
         res.should.have.status(201);
         res.should.be.an('object');
@@ -44,10 +44,10 @@ describe('Purchasing order', () => {
   });
   it('buyer should not be able to make a purchasing order when he/she is not in the system', (done) => {
     const buyer = {
-      email: 'chris@gmail.com',
+      email: 'charis@gmail.com',
     };
     const token = jwt.sign(buyer, 'SECRET_KEY', { expiresIn: '24hrs' });
-    const newOrder = {
+    const latestOrder = {
       buyer: 30,
       car_id: 1,
       amount: 20000,
@@ -55,7 +55,7 @@ describe('Purchasing order', () => {
     chai.request(app)
       .post('/api/v1/order')
       .set('Authorization', token)
-      .send(newOrder)
+      .send(latestOrder)
       .end((err, res) => {
         res.should.have.status(404);
         res.should.be.an('object');
@@ -66,7 +66,7 @@ describe('Purchasing order', () => {
   });
   it('buyer should not be able to make a purchasing order when the car id is not found', (done) => {
     const buyer = {
-      email: 'raymond@gmail.com',
+      email: 'brown@gmail.com',
     };
     const token = jwt.sign(buyer, 'SECRET_KEY', { expiresIn: '24hrs' });
     const newOrder = {
@@ -88,7 +88,7 @@ describe('Purchasing order', () => {
   });
   it('buyer should not be able to make a purchasing order when there is a missing info', (done) => {
     const buyer = {
-      email: 'chris@gmail.com',
+      email: 'brown@gmail.com',
     };
     const token = jwt.sign(buyer, 'SECRET_KEY', { expiresIn: '24hrs' });
     chai.request(app)
@@ -105,7 +105,7 @@ describe('Purchasing order', () => {
 
   it('buyer should not be able to make a purchasing order when there is a wrong input data type', (done) => {
     const buyer = {
-      email: 'chris@gmail.com',
+      email: 'brown@gmail.com',
     };
     const token = jwt.sign(buyer, 'SECRET_KEY', { expiresIn: '24hrs' });
     const newOrder = {

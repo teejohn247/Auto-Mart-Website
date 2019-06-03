@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for server/controllers/purchaseOrder.js</title>
+    <title>Code coverage report for server/controllers/unsoldPriceRange.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="..\..\prettify.css" />
     <link rel="stylesheet" href="..\..\base.css" />
@@ -16,18 +16,18 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="..\..\index.html">All files</a> / <a href="index.html">server/controllers</a> purchaseOrder.js
+      <a href="..\..\index.html">All files</a> / <a href="index.html">server/controllers</a> unsoldPriceRange.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">86.36% </span>
+        <span class="strong">88.89% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>19/22</span>
+        <span class='fraction'>16/18</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">87.5% </span>
+        <span class="strong">83.33% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>7/8</span>
+        <span class='fraction'>5/6</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>3/3</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">84.21% </span>
+        <span class="strong">86.67% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>16/19</span>
+        <span class='fraction'>13/15</span>
       </div>
     </div>
     <p class="quiet">
@@ -78,121 +78,70 @@
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a>
-<a name='L37'></a><a href='#L37'>37</a>
-<a name='L38'></a><a href='#L38'>38</a>
-<a name='L39'></a><a href='#L39'>39</a>
-<a name='L40'></a><a href='#L40'>40</a>
-<a name='L41'></a><a href='#L41'>41</a>
-<a name='L42'></a><a href='#L42'>42</a>
-<a name='L43'></a><a href='#L43'>43</a>
-<a name='L44'></a><a href='#L44'>44</a>
-<a name='L45'></a><a href='#L45'>45</a>
-<a name='L46'></a><a href='#L46'>46</a>
-<a name='L47'></a><a href='#L47'>47</a>
-<a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import order from '../models/purchaseOrder';
-import users from '../models/users';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* eslint-disable max-len */
 import cars from '../models/postCars';
-import validateOrder from '../helpers/purchaseOrder';
+import validateRange from '../helpers/range';
 &nbsp;
-const Order = (req, res) =&gt; {
-  const { error } = validateOrder.validation(req.body);
-  if (error) {
-    return res.status(400).json({ status: 400, error: error.details[0].message });
-  }
-&nbsp;
-  const newOrder = {
-    id: parseInt(order.length + 1, 10),
-    buyer: req.body.buyer,
-    car_id: req.body.car_id,
-    amount: req.body.amount,
-    status: req.body.status || 'pending',
-  };
-  const userId = users.find(b =&gt; b.id === parseInt(newOrder.buyer, 10));
-  if (!userId) {
-    return res.status(404).json({
-      status: 404,
-      error: 'buyer id not found',
+const UnsoldCarsWithinPriceRange = (req, res) =&gt; {
+  const { error } = validateRange.validation(req.body);
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (error) {
+<span class="cstat-no" title="statement not covered" >    res.</span>status(400).json({
+      status: 400,
+      error: error.details[0].message,
     });
+<span class="cstat-no" title="statement not covered" >    return;</span>
   }
-&nbsp;
-  const carId = cars.find(c =&gt; c.id === parseInt(newOrder.car_id, 10));
-  <span class="missing-if-branch" title="else path not taken" >E</span>if (!carId) {
-    return res.status(404).json({
-      status: 404,
-      error: 'car ordered not found',
-    });
-  }
-   const latestOrder = <span class="cstat-no" title="statement not covered" >{</span>
-      car_id: newOrder.car_id,
-      created_on: Date(),
-      status: newOrder.status,
-      price: carId.price,
-      price_offered: newOrder.amount
+  const Price = {
+    min_price: req.body.min_price,
+    max_price: req.body.max_price,
   };
-&nbsp;
-<span class="cstat-no" title="statement not covered" >  order.p</span>ush(newOrder);
-<span class="cstat-no" title="statement not covered" >  return r</span>es.status(201).json({
-    status: 201,
-    data: latestOrder
+  const unsoldCars = cars.filter(car =&gt; car.status === 'available');
+  const PriceRange = unsoldCars.filter(p =&gt; p.price &gt;= Price.min_price &amp;&amp; p.price &lt;= Price.max_price);
+  if (!PriceRange.length) {
+    res.status(404).json({
+      status: 404,
+      error: 'there are no cars within that price range not found',
+    });
+    return;
+  }
+  res.status(200).json({
+    status: 200,
+    data: PriceRange,
   });
 };
-&nbsp;
-export default Order;
+export default UnsoldCarsWithinPriceRange;
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
