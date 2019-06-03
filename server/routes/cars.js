@@ -1,10 +1,10 @@
 import express from 'express';
+import markSold from '../controllers/markAd';
 import ads from '../controllers/ads';
 import auth from '../middleware/auth';
 
 const router = express.Router();
 
-// car sale ads
 router.post('/', auth, ads);
 
 export default router;
