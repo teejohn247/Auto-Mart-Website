@@ -8,7 +8,6 @@ import carRoute from './routes/cars';
 import purchaseOrder from './routes/purchaseOrder';
 import priceRoute from './routes/updatePrice';
 
-
 dotenv.config();
 const debug = Debug('http');
 const app = express();
@@ -32,9 +31,7 @@ app.use('/api/v1/car', carRoute);
 app.use('/api/v1/order', purchaseOrder);
 app.use('/api/v1/order', priceRoute);
 
-
 app.listen(port, () => {
     debug(`server is listening at port ${port}`);
 });
 
-export default app;
