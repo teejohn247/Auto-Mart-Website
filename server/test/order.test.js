@@ -8,9 +8,9 @@ chai.use(chaiHttp);
 chai.should();
 
 describe('Purchasing order', () => {
-  it('buyer should be able to make a purchasing order', (done) => {
+  it('should return a 200 if buyer is able to make a purchase order', (done) => {
     const buyer = {
-      email: 'chris@gmail.com',
+      email: 'brown@gmail.com',
     };
     const token = jwt.sign(buyer, 'SECRET_KEY', { expiresIn: '24hrs' });
     const newOrder = {
@@ -31,7 +31,7 @@ describe('Purchasing order', () => {
       });
   });
 
-  it('buyer should not be able to make a purchasing order when he/she is not authorized', (done) => {
+  it('should return a 401 code if buyer is not authorized', (done) => {
     chai.request(app)
       .post('/api/v1/order')
       .end((err, res) => {
@@ -42,9 +42,9 @@ describe('Purchasing order', () => {
         done();
       });
   });
-  it('buyer should not be able to make a purchasing order when he/she is not in the system', (done) => {
+  it('should return a 404 if buyer is not in the database', (done) => {
     const buyer = {
-      email: 'chris@gmail.com',
+      email: 'brown@gmail.com',
     };
     const token = jwt.sign(buyer, 'SECRET_KEY', { expiresIn: '24hrs' });
     const newOrder = {
@@ -64,9 +64,9 @@ describe('Purchasing order', () => {
         done();
       });
   });
-  it('buyer should not be able to make a purchasing order when the car id is not found', (done) => {
+  it('should return a 404 if car id is not found', (done) => {
     const buyer = {
-      email: 'raymond@gmail.com',
+      email: 'brown@gmail.com',
     };
     const token = jwt.sign(buyer, 'SECRET_KEY', { expiresIn: '24hrs' });
     const newOrder = {
@@ -88,7 +88,7 @@ describe('Purchasing order', () => {
   });
   it('buyer should not be able to make a purchasing order when there is a missing info', (done) => {
     const buyer = {
-      email: 'chris@gmail.com',
+      email: 'brown@gmail.com',
     };
     const token = jwt.sign(buyer, 'SECRET_KEY', { expiresIn: '24hrs' });
     chai.request(app)
@@ -103,9 +103,9 @@ describe('Purchasing order', () => {
       });
   });
 
-  it('buyer should not be able to make a purchasing order when there is a wrong input data type', (done) => {
+  it('should return a 400 if buyer input a wrong datatype', (done) => {
     const buyer = {
-      email: 'chris@gmail.com',
+      email: 'brown@gmail.com',
     };
     const token = jwt.sign(buyer, 'SECRET_KEY', { expiresIn: '24hrs' });
     const newOrder = {

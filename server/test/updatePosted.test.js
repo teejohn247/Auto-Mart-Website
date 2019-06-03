@@ -17,7 +17,7 @@ describe('updating the price posted car ad', () => {
       price: 20000,
     };
     chai.request(app)
-      .patch('/api/v1/cars/1')
+      .patch('/api/v1/cars/4')
       .set('Authorization', token)
       .send(latestOrder)
       .end((err, res) => {
@@ -31,7 +31,7 @@ describe('updating the price posted car ad', () => {
 
   it('should return a 401 if seller is not authorized', (done) => {
     chai.request(app)
-      .patch('/api/v1/cars/1')
+      .patch('/api/v1/cars/2')
       .end((err, res) => {
         res.should.have.status(401);
         res.should.be.an('object');
