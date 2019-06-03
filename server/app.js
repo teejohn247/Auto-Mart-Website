@@ -7,6 +7,7 @@ import userRouter from './routes/user';
 import carRoute from './routes/cars';
 import purchaseOrder from './routes/purchaseOrder';
 import priceRoute from './routes/updatePrice';
+import postedRoute from './routes/updatePosted';
 
 
 dotenv.config();
@@ -31,6 +32,7 @@ app.use('/api/v1/auth', userRouter);
 app.use('/api/v1/car', carRoute);
 app.use('/api/v1/order', purchaseOrder);
 app.use('/api/v1/order', priceRoute);
+app.use('/api/v1/cars', postedRoute);
 
 
 app.listen(port, () => {
