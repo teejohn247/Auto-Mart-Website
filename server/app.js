@@ -9,6 +9,7 @@ import purchaseOrder from './routes/purchaseOrder';
 import priceRoute from './routes/updatePrice';
 import postedRoute from './routes/updatePosted';
 import viewCar from './routes/viewSpecific';
+import viewUnsold from './routes/viewUnsold';
 
 
 dotenv.config();
@@ -35,6 +36,7 @@ app.use('/api/v1/order', purchaseOrder);
 app.use('/api/v1/order', priceRoute);
 app.use('/api/v1/cars', postedRoute);
 app.use('/api/v1/car', viewCar);
+app.use('/api/v1/cars', viewUnsold);
 
 
 app.listen(port, () => {
