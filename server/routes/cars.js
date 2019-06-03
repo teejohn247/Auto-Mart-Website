@@ -5,5 +5,6 @@ import auth from '../middleware/auth';
 const router = express.Router();
 
 router.post('/', auth, ads);
+router.patch('/:id', auth, markSold);
 
 export default router;
