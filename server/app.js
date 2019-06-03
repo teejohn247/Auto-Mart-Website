@@ -8,6 +8,7 @@ import carRoute from './routes/cars';
 import purchaseOrder from './routes/purchaseOrder';
 import priceRoute from './routes/updatePrice';
 import postedRoute from './routes/updatePosted';
+import viewCar from './routes/viewSpecific';
 
 dotenv.config();
 const debug = Debug('http');
@@ -32,6 +33,7 @@ app.use('/api/v1/car', carRoute);
 app.use('/api/v1/order', purchaseOrder);
 app.use('/api/v1/order', priceRoute);
 app.use('/api/v1/cars', postedRoute);
+app.use('/api/v1/car', viewCar);
 
 app.listen(port, () => {
     debug(`server is listening at port ${port}`);
