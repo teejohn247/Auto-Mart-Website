@@ -1,5 +1,6 @@
 import express from 'express';
 import ads from '../controllers/ads';
+import markSold from '../controllers/markAd';
 import auth from '../middleware/auth';
 
 const router = express.Router();
