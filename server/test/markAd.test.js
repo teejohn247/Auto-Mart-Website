@@ -106,7 +106,7 @@ describe('Marking the posted car ad as sold', () => {
       status: 'sold',
     };
     chai.request(app)
-      .patch('/api/v1/car/3')
+      .patch('/api/v1/car/2')
       .set('Authorization', token)
       .send(status)
       .end((err, res) => {

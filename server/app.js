@@ -11,7 +11,6 @@ import postedRoute from './routes/updatePosted';
 import viewCar from './routes/viewSpecific';
 import viewUnsold from './routes/viewUnsold';
 import PriceRange from './routes/priceRange';
-import deletePosted from './routes/deletePosted';
 
 
 dotenv.config();
@@ -40,7 +39,6 @@ app.use('/api/v1/cars', postedRoute);
 app.use('/api/v1/car', viewCar);
 app.use('/api/v1/cars', viewUnsold);
 app.use('/api/v1/cars', PriceRange);
-app.use('/api/v1/car', deletePosted);
 
 
 app.listen(port, () => {

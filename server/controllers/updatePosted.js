@@ -1,3 +1,4 @@
+import moment from 'moment';
 import validatePostedPrice from '../helpers/updatePosted';
 import cars from '../models/postCars';
 
@@ -11,34 +12,34 @@ const price = (req, res) => {
     return;
   }
   const carId = req.params.id;
-  const updatePriceIndex = cars.findIndex(p => p.id === parseInt(carId, 10));
-  if (updatePriceIndex > -1) {
-    const dbData = cars[updatePriceIndex];
-    const updatedPrice = {
-      id: dbData.id,
-      owner: dbData.owner,
-      createdOn: Date(),
-      state: dbData.state,
-      status: dbData.status,
+  const carIndex = cars.findIndex(o => o.id === parseInt(carId, 10));
+  if (carIndex > -1) {
+    const originalCar = cars[carIndex];
+    const newCar = {
+      id: originalCar.id,
+      owner: originalCar.owner,
+      createdOn: moment().format('LL'),
+      state: originalCar.state,
+      status: originalCar.status,
       price: req.body.price,
-      manufacturer: dbData.manufacturer,
-      model: dbData.model,
-      body_type: dbData.body_type,
+      manufacturer: originalCar.manufacturer,
+      model: originalCar.model,
+      body_type: originalCar.body_type,
     };
-    cars[updatePriceIndex] = {
-      id: dbData.id,
-      owner: dbData.owner,
-      createdOn: updatedPrice.createdOn,
-      state: dbData.state,
-      status: dbData.status,
-      price: updatedPrice.price,
-      manufacturer: dbData.manufacturer,
-      model: dbData.model,
-      body_type: dbData.body_type,
+    cars[carIndex] = {
+      id: originalCar.id,
+      owner: originalCar.owner,
+      createdOn: newCar.createdOn,
+      state: originalCar.state,
+      status: originalCar.status,
+      price: newCar.price,
+      manufacturer: originalCar.manufacturer,
+      model: originalCar.model,
+      body_type: originalCar.body_type,
     };
     res.status(200).json({
       status: 200,
-      data: updatedPrice,
+      data: newCar,
     });
     return;
   }
