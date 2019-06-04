@@ -13,6 +13,7 @@ import viewUnsold from './routes/viewUnsold';
 import PriceRange from './routes/priceRange';
 import viewAllRoute from './routes/viewAll';
 import usedUnsold from './routes/usedUnsold';
+import viewAllNew from './routes/viewAllNew';
 
 
 dotenv.config();
@@ -43,6 +44,7 @@ app.use('/api/v1/cars', viewUnsold);
 app.use('/api/v1/cars', PriceRange);
 app.use('/api/v1/cars', viewAllRoute);
 app.use('/api/v1/cars', usedUnsold);
+app.use('/api/v1/cars', viewAllNew);
 
 
 app.listen(port, () => {
