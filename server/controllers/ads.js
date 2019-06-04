@@ -17,6 +17,7 @@ const postAds = (req, res) => {
     model: req.body.model,
     price: req.body.price,
     state: req.body.state,
+    productImage: req.body.productImage,
     status: req.body.status
   };
 

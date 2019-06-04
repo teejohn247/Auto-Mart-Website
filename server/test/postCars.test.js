@@ -1,4 +1,5 @@
 import { describe, it } from 'mocha';
+import fs from 'fs';
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import jwt from 'jsonwebtoken';
@@ -20,6 +21,7 @@ describe('Post a car a sale ad', () => {
       model: '2019 Toyota camry',
       price: 40000,
       state: 'new',
+      productImage: 'url',
       status: 'available',
     };
     chai.request(app)
@@ -58,6 +60,7 @@ describe('Post a car a sale ad', () => {
       model: '2019 Toyota camry',
       price: 40000,
       state: 'new',
+      productImage: 'url',
       status: 'available',
     };
     chai.request(app)
@@ -84,6 +87,7 @@ describe('Post a car a sale ad', () => {
       model: '2019 Toyota camry',
       price: 40000,
       state: 'new',
+      productImage: 'url',
       status: 'available',
     };
     chai.request(app)

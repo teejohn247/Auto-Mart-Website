@@ -3,6 +3,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 import logger from 'morgan';
+import { cloudinaryConfig } from './config/cloudinaryConfig';
 import userRouter from './routes/user';
 import carRoute from './routes/cars';
 import purchaseOrder from './routes/purchaseOrder';
@@ -20,12 +21,16 @@ dotenv.config();
 const debug = Debug('http');
 const app = express();
 
+
 const port = process.env.port || 5000;
 
 app.use(logger('dev'));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use('/uploads', express.static('uploads'));
+
+app.use('*', cloudinaryConfig);
 
 
 app.get('/api/v1', (req, res) => {
