@@ -14,7 +14,7 @@ describe('Delete a posted car ad', () => {
     };
     const token = jwt.sign(buyer, 'SECRET_KEY', { expiresIn: '24hrs' });
     chai.request(app)
-      .delete('/api/v1/car/1')
+      .delete('/api/v1/car/3')
       .set('Authorization', token)
       .end((err, res) => {
         res.should.have.status(200);

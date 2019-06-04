@@ -11,7 +11,7 @@ import postedRoute from './routes/updatePosted';
 import viewCar from './routes/viewSpecific';
 import viewUnsold from './routes/viewUnsold';
 import PriceRange from './routes/priceRange';
-import deletePosted from './routes/deletePosted';
+import viewAllRoute from './routes/viewAll';
 
 dotenv.config();
 const debug = Debug('http');
@@ -39,7 +39,7 @@ app.use('/api/v1/cars', postedRoute);
 app.use('/api/v1/car', viewCar);
 app.use('/api/v1/cars', viewUnsold);
 app.use('/api/v1/cars', PriceRange);
-app.use('/api/v1/car', deletePosted);
+app.use('/api/v1/cars', viewAllRoute);
 
 app.listen(port, () => {
     debug(`server is listening at port ${port}`);
