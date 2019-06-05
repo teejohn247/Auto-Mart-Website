@@ -10,6 +10,7 @@ const validateCars = {
       model: Joi.string().required(),
       price: Joi.number().required(),
       state: Joi.string().valid('new', 'used').required(),
+      productImage: Joi.string().required(),
       status: Joi.string().required(),
     };
     return Joi.validate(newAd, newAdSchema);

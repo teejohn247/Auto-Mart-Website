@@ -9,6 +9,7 @@ const postCars = [
   model: '2019 Toyota camry',
   price: 140000,
   state: 'new',
+  productImage: 'https://res.cloudinary.com/teejohn247/image/upload/v1559668292/yqo8fa1lswg7o25i0f6j.jpg',
   status: 'sold',
 },
 
@@ -21,6 +22,7 @@ const postCars = [
   model: '2019 Chevrolet Silverado',
   price: 100000,
   state: 'used',
+  productImage: 'https://res.cloudinary.com/teejohn247/image/upload/v1559668292/yqo8fa1lswg7o25i0f6j.jpg',
   status: 'available',
 },
  {
@@ -32,6 +34,7 @@ const postCars = [
   model: 'Mercedenz Benz',
   price: 200000,
   state: 'new',
+  productImage: 'https://res.cloudinary.com/teejohn247/image/upload/v1559668292/yqo8fa1lswg7o25i0f6j.jpg',
   status: 'sold',
 },
 
@@ -44,6 +47,7 @@ const postCars = [
   model: '2019 Range Rover',
   price: 30000,
   state: 'used',
+  productImage: 'https://res.cloudinary.com/teejohn247/image/upload/v1559668292/yqo8fa1lswg7o25i0f6j.jpg',
   status: 'available',
 }
 ];
