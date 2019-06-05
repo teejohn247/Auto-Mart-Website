@@ -1,6 +1,7 @@
 import Debug from 'debug';
 import express from 'express';
 import dotenv from 'dotenv';
+import swaggerUi from 'swagger-ui-express';
 import bodyParser from 'body-parser';
 import logger from 'morgan';
 import { cloudinaryConfig } from './config/cloudinaryConfig';
@@ -15,6 +16,7 @@ import PriceRange from './routes/priceRange';
 import viewAllRoute from './routes/viewAll';
 import usedUnsold from './routes/usedUnsold';
 import viewAllNew from './routes/viewAllNew';
+import documentation from '../swagger.json';
 
 dotenv.config();
 const debug = Debug('http');
@@ -24,7 +26,7 @@ const app = express();
 const port = process.env.port || 5000;
 
 app.use(logger('dev'));
-
+app.use('/automart', swaggerUi.serve, swaggerUi.setup(documentation));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/uploads', express.static('uploads'));
