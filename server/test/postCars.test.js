@@ -1,5 +1,4 @@
 import { describe, it } from 'mocha';
-import fs from 'fs';
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import jwt from 'jsonwebtoken';
