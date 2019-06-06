@@ -10,7 +10,7 @@ before_script:
  - ./cc-test-reporter before-build
  - cd server
  - chmod +x ./node_modules/.bin/nyc
- - chmod +x ./node_modules/.bin
+ - chmod +x ./node_modules/.bin/mocha
 script:
  - npm test
 after_script:
