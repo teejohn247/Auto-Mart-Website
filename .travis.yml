@@ -11,6 +11,7 @@ before_script:
  - cd server
  - chmod +x ./node_modules/.bin/nyc
  - chmod +x ./node_modules/.bin/mocha
+ - chmod +x ./node_modules/.bin/coveralls
 script:
  - npm test
 after_script:
