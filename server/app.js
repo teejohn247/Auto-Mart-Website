@@ -34,7 +34,6 @@ app.use('/uploads', express.static('uploads'));
 
 app.use('*', cloudinaryConfig);
 
-
 app.get('/api/v1', (req, res) => {
     res.json({
       message: 'Welcome to Auto-Mart API'
