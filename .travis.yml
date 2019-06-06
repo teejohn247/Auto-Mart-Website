@@ -9,7 +9,8 @@ before_script:
  - chmod +x ./cc-test-reporter
  - ./cc-test-reporter before-build
  - cd server
- - chmod 755 ./node_modules
+ - chmod 755 ./node_modules/.bin/nyc
+ - chmod 755 ./node_modules/.bin
 script:
  - npm test
 after_script:
