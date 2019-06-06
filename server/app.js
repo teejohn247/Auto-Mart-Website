@@ -16,7 +16,7 @@ import PriceRange from './routes/priceRange';
 import viewAllRoute from './routes/viewAll';
 import usedUnsold from './routes/usedUnsold';
 import viewAllNew from './routes/viewAllNew';
-import documentation from '../swagger.json';
+import documentation from './swagger.json';
 
 dotenv.config();
 const debug = Debug('http');
