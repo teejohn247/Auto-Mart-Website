@@ -18,7 +18,6 @@ import usedUnsold from './routes/usedUnsold';
 import viewAllNew from './routes/viewAllNew';
 import documentation from './swagger.json';
 
-
 dotenv.config();
 const debug = Debug('http');
 const app = express();
@@ -52,9 +51,7 @@ app.use('/api/v1/cars', viewAllRoute);
 app.use('/api/v1/cars', usedUnsold);
 app.use('/api/v1/cars', viewAllNew);
 
-
 app.listen(port, () => {
     debug(`server is listening at port ${port}`);
 });
 
-export default app;
