@@ -9,9 +9,6 @@ before_script:
  - chmod +x ./cc-test-reporter
  - ./cc-test-reporter before-build
  - cd server
- - chmod +x ./node_modules/.bin/nyc
- - chmod +x ./node_modules/.bin/mocha
- - chmod +x ./node_modules/.bin/coveralls
 script:
  - npm test
 after_script:

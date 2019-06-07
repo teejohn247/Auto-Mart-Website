@@ -17,30 +17,23 @@ import viewAllRoute from './routes/viewAll';
 import usedUnsold from './routes/usedUnsold';
 import viewAllNew from './routes/viewAllNew';
 import documentation from './swagger.json';
-
-
 dotenv.config();
 const debug = Debug('http');
 const app = express();
-
-
-const port = process.env.PORT || 5000;
-
+const port = process.env.port || 5000;
 app.use(logger('dev'));
 app.use('/automart', swaggerUi.serve, swaggerUi.setup(documentation));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 app.use('/uploads', express.static('uploads'));
-
 app.use('*', cloudinaryConfig);
-
-
 app.get('/api/v1', (req, res) => {
-    res.json({
-      message: 'Welcome to Auto-Mart API'
-    });
+  res.json({
+    message: 'Welcome to Auto-Mart API'
   });
-
+});
 app.use('/api/v1/auth', userRouter);
 app.use('/api/v1/car', carRoute);
 app.use('/api/v1/order', purchaseOrder);
@@ -52,10 +45,7 @@ app.use('/api/v1/cars', PriceRange);
 app.use('/api/v1/cars', viewAllRoute);
 app.use('/api/v1/cars', usedUnsold);
 app.use('/api/v1/cars', viewAllNew);
-
-
 app.listen(port, () => {
-    debug(`server is listening at port ${port}`);
+  debug(`server is listening at port ${port}`);
 });
-
 export default app;

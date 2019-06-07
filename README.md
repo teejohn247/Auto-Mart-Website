@@ -1,10 +1,6 @@
 AUTO-MART
 
-![Build Status](https://travis-ci.org/teejohn247/Auto-Mart-Website.svg?branch=develop)
-
-![Coverage Status](https://coveralls.io/repos/github/teejohn247/Auto-Mart-Website/badge.svg?branch=develop)
-
-![Maintainability](https://api.codeclimate.com/v1/badges/73178d895a99a8a3de80/maintainability)
+![Build Status](https://travis-ci.org/teejohn247/Auto-Mart-Website.svg?branch=develop)![Coverage Status](https://coveralls.io/repos/github/teejohn247/Auto-Mart-Website/badge.svg?branch=develop)![Maintainability](https://api.codeclimate.com/v1/badges/73178d895a99a8a3de80/maintainability)
 (https://codeclimate.com/github/teejohn247/Auto-Mart-Website/maintainability)
 
 Auto Mart is an online marketplace for automobiles of diverse makes, version or body type. With
@@ -30,6 +26,7 @@ Auto Mart, sellers can promote their vehicles or buy from trusted dealers
 
 | Ressource URL | Methods  | Description  |
 | ------- | --- | --- |
+| /automart| GET | swagger documentation |
 | /api/v1/auth/signup| POST | Get the user to signup |
 | /api/v1/auth/login | POST | Get the user to login |
 | /api/v1/car | POST | Get the user to post a car sale advertisement |
