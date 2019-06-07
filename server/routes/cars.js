@@ -34,7 +34,7 @@ const upload = multer({
     fileFilter
 });
 
-router.post('/', auth, upload.array('productImage', 6), ads);
+router.post('/', auth, upload.array('productImage', 6), imageUploader, ads);
 router.patch('/:id', auth, markSold);
 router.delete('/:id', deletePosted);
 
