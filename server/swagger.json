@@ -9,7 +9,7 @@
         "url": "https://opensource.org/licenses/MIT"
       }
     },
-    "host": "github.com/teejohn247/Auto-Mart-Website.git",
+    "host": "localhost:5000",
     "basePath": "/api/v1",
     "tags": [
       {
