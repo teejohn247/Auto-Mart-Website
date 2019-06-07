@@ -80,13 +80,13 @@ coveralls
 Heroku
 ```
 ### Heroku link Example
-[AutoMart heroku link](https://automart-andela-challenge.herokuapp.com)
+[AutoMart heroku link]
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ## Prerequisites
-To install the software on your local machine, you need first to clone the repository ```https://github.com/raymond42/Auto-Mart.git``` or download the zip file and once this is set up you are going to need this packages. [NodeJS]
+To install the software on your local machine, you need first to clone the repository ```https://github.com/teejohn247/Auto-Mart-Website``` or download the zip file and once this is set up you are going to need this packages. [NodeJS]
 
 ```
  [Node Package Installer - NPM] this usually comes with Node or YARN in case NPM doesn't work.
