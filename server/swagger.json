@@ -9,7 +9,7 @@
         "url": "https://opensource.org/licenses/MIT"
       }
     },
-    "host": "localhost:5000",
+    "host": "automart-webapp.herokuapp.com",
     "basePath": "/api/v1",
     "tags": [
       {
@@ -30,7 +30,6 @@
       }
     ],
     "schemes": [
-      "http",
       "https"
     ],
     "consumes": [
