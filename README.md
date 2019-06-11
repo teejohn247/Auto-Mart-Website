@@ -1,7 +1,6 @@
 AUTO-MART
 
-![Build Status](https://travis-ci.org/teejohn247/Auto-Mart-Website.svg?branch=develop)![Coverage Status](https://coveralls.io/repos/github/teejohn247/Auto-Mart-Website/badge.svg?branch=develop)![Maintainability](https://api.codeclimate.com/v1/badges/73178d895a99a8a3de80/maintainability)
-(https://codeclimate.com/github/teejohn247/Auto-Mart-Website/maintainability)
+![Build Status](https://travis-ci.org/teejohn247/Auto-Mart-Website.svg?branch=develop) ![Coverage Status](https://coveralls.io/repos/github/teejohn247/Auto-Mart-Website/badge.svg?branch=develop) ![Maintainability](https://api.codeclimate.com/v1/badges/73178d895a99a8a3de80/maintainability)
 
 Auto Mart is an online marketplace for automobiles of diverse makes, version or body type. With
 Auto Mart, sellers can promote their vehicles or buy from trusted dealers
@@ -16,7 +15,7 @@ Auto Mart, sellers can promote their vehicles or buy from trusted dealers
 * Javascript
 
 ### GitHub Pages link for UI
-[AutoMart/UI link](https://teejohn247.github.io/Auto-Mart-Website/)
+[AutoMart/UI link](https://teejohn247.github.io/Auto-Mart-Website/UI)
 
 ---------------------------------------------------------------------
 
@@ -77,7 +76,7 @@ coveralls
 Heroku
 ```
 ### Heroku link Example
-[AutoMart heroku link]
+[AutoMart heroku link](https://automart-webapp.herokuapp.com/api/v1)
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
