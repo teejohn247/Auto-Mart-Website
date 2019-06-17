@@ -41,7 +41,7 @@ app.get('/api/v1', (req, res) => {
     });
   });
 
-app.use('/api/v1/auth', userRouter);
+app.use('/api/v1/', userRouter);
 app.use('/api/v1/car', carRoute);
 app.use('/api/v1/order', purchaseOrder);
 app.use('/api/v1/order', priceRoute);
