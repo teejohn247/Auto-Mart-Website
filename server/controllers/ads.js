@@ -35,7 +35,6 @@ const postAds = async (req, res) => {
         postAd.status,
         postAd.body_type
       ]);
-      console.log(postAd);
 
     res.status(201).json({
       status: 201,
@@ -47,6 +46,7 @@ const postAds = async (req, res) => {
         price: insertCar.rows[0].price,
         state: insertCar.rows[0].state,
         status: insertCar.rows[0].status,
+        product_image: insertCar.rows[0].product_image
       },
     });
   } catch (error) {

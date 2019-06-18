@@ -6,7 +6,6 @@ import validateUserSignin from '../helpers/signin';
 
 const signin = async (req, res) => {
   try {
-    // Validate user inputs
     const { error } = validateUserSignin.validation(req.body);
     if (error) {
       res.status(400).json({
@@ -16,12 +15,10 @@ const signin = async (req, res) => {
       return;
     }
 
- // Check if the entered email exists
  const findUser = 'SELECT * FROM users WHERE email = $1';
  const values = req.body.email.trim().toLowerCase();
  const user = await pool.query(findUser, [values]);
 
- //   if user doesn't exist
  if (!user.rows[0]) {
    res.status(404).json({
      status: 404,
@@ -29,10 +26,8 @@ const signin = async (req, res) => {
    });
    return;
  }
-// Check if the entered password is correct
 const password = await bcrypt.compare(req.body.password, user.rows[0].password);
 
-//   if password is Incorrect
 if (!password) {
   res.status(404).json({
     status: 404,
