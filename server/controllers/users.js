@@ -1,5 +1,4 @@
 import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';
 import pool from '../models/database';
 import validateUserSignup from '../helpers/users';
 import '@babel/polyfill';
@@ -48,16 +47,9 @@ const insertUser = await pool.query('INSERT INTO users VALUES ($1, $2, $3, $4, $
   newUser.address,
   newUser.is_admin]);
 
-  const payload = {
-    email: insertUser.rows[0].email
-  };
-
-  const token = jwt.sign(payload, 'SECRET_KEY', { expiresIn: '24hrs' });
-
   res.status(201).json({
     status: 201,
     data: {
-      token,
       id: insertUser.rows[0].users_id,
       first_name: insertUser.rows[0].first_name,
       last_name: insertUser.rows[0].last_name,

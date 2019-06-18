@@ -16,6 +16,10 @@ import PriceRange from './routes/priceRange';
 import viewAllRoute from './routes/viewAll';
 import usedUnsold from './routes/usedUnsold';
 import viewAllNew from './routes/viewAllNew';
+import markAd from './routes/markAd';
+import unsoldMake from './routes/viewUnsoldMake';
+import newUnsold from './routes/newUnsold';
+import bodyType from './routes/bodyTypes';
 import documentation from './swagger.json';
 
 
@@ -51,8 +55,11 @@ app.use('/api/v1/cars', viewUnsold);
 app.use('/api/v1/cars', PriceRange);
 app.use('/api/v1/cars', viewAllRoute);
 app.use('/api/v1/cars', usedUnsold);
+app.use('/api/v1/cars', newUnsold);
 app.use('/api/v1/cars', viewAllNew);
-
+app.use('/api/v1/car', markAd);
+app.use('/api/v1/cars', bodyType);
+app.use('/api/v1/manufacturer', unsoldMake);
 
 app.listen(port, () => {
     debug(`server is listening at port ${port}`);
