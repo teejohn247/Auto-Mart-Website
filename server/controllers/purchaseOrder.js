@@ -41,18 +41,22 @@ const Order = async (req, res) => {
       });
       return;
     }
-    const insertOrder = 'INSERT INTO orders(buyer, car_id, amount, status) VALUES($1, $2, $3, $4) RETURNING *';
+    const insertOrder = 'INSERT INTO orders(created_on, buyer, car_id,  amount, status, price) VALUES($1, $2, $3, $4) RETURNING *';
     const results = await pool.query(insertOrder,
       [
+        latestOrder.created_on,
         latestOrder.buyer,
         latestOrder.car_id,
         latestOrder.amount,
         carId.rows[0].status,
+        carId.rows[0].price
       ]);
 
     res.status(201).json({
       status: 201,
       data: {
+        id: results.rows[0].id,
+        created_on: results.rows[0].car_id,
         car_id: results.rows[0].car_id,
         status: carId.rows[0].status,
         price: carId.rows[0].price,

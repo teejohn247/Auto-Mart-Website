@@ -1,3 +1,4 @@
+import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 import pool from '../models/database';
 import validateUserSignup from '../helpers/users';
@@ -38,19 +39,26 @@ const signup = async (req, res) => {
       });
       return;
     }
-const insertUser = await pool.query('INSERT INTO users VALUES ($1, $2, $3, $4, $5, $6, $7)  RETURNING *',
-[newUser.users_id,
+const insertUser = await pool.query('INSERT INTO users(email, first_name, last_name, password, address, is_admin) VALUES ($1, $2, $3, $4, $5, $6)  RETURNING *',
+[
+  newUser.email,
   newUser.first_name,
   newUser.last_name,
-  newUser.email,
   newUser.password,
   newUser.address,
   newUser.is_admin]);
 
+  const payload = {
+    email: insertUser.rows[0].email
+  };
+
+  const token = jwt.sign(payload, 'SECRET_KEY', { expiresIn: '24hrs' });
+
   res.status(201).json({
     status: 201,
     data: {
-      id: insertUser.rows[0].users_id,
+      token,
+      id: insertUser.rows[0].id,
       first_name: insertUser.rows[0].first_name,
       last_name: insertUser.rows[0].last_name,
       email: insertUser.rows[0].email,

@@ -11,8 +11,8 @@ const postAds = async (req, res) => {
       return;
     }
     const postAd = {
-    created_on: req.body.created_on,
     owner: req.body.owner,
+    created_on: Date(),
     email: req.body.email,
     manufacturer: req.body.manufacturer,
     model: req.body.model,
@@ -24,8 +24,8 @@ const postAds = async (req, res) => {
   };
     const insertCar = await pool.query('INSERT INTO cars VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *',
       [
-        postAd.created_on,
         postAd.owner,
+        postAd.created_on,
         postAd.email,
         postAd.manufacturer,
         postAd.model,

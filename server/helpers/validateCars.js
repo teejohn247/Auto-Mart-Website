@@ -4,8 +4,8 @@ const validateCars = {
 
   validation(newAd) {
     const newAdSchema = {
-      created_on: Joi.string().required(),
       owner: Joi.number().required(),
+      created_on: Joi.string().required(),
       email: Joi.string().email().required(),
       manufacturer: Joi.string().required(),
       model: Joi.string().required(),
@@ -20,5 +20,4 @@ const validateCars = {
   },
 
 };
-
 export default validateCars;
