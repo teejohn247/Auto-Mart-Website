@@ -2,9 +2,9 @@ import pool from '../models/database';
 
 const getNewUnsoldCars = async (req, res) => {
   try {
-    const findUsedUnsoldCars = 'SELECT * FROM cars WHERE status = $1 AND state = $2';
+    const findNewUnsoldCars = 'SELECT * FROM cars WHERE status = $1 AND state = $2';
     const values = [req.query.status, req.query.state];
-    const newUnsoldCars = await pool.query(findUsedUnsoldCars, values);
+    const newUnsoldCars = await pool.query(findNewUnsoldCars, values);
 
     if (!newUnsoldCars.rows[0]) {
       res.status(404).json({
