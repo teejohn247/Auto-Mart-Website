@@ -1,21 +1,30 @@
-import ads from '../models/postCars';
+import pool from '../models/database';
 
-const adminDelete = (req, res) => {
-  const post = ads.find(p => p.id === parseInt(req.params.id, 10));
+const deletePosted = async (req, res) => {
+  try {
+    const findCar = 'SELECT * FROM cars WHERE owner = $1';
+    const value = parseInt(req.params.id, 10);
+    const car = await pool.query(findCar, [value]);
+    if (!car.rows[0]) {
+      res.status(404).json({
+        status: 404,
+        error: 'Car Ad not found',
+      });
+      return;
+    }
+    const deleteCar = 'DELETE FROM cars WHERE id = $1';
+    await pool.query(deleteCar, [value]);
 
-  if (!post) {
-    res.status(404).json({
-      status: 404,
-      error: 'Car Ad not found',
+    res.status(200).send({
+      status: 200,
+      data: 'Car Ad successfully deleted',
     });
-    return;
+  } catch (error) {
+    res.status(500).json({
+      status: 500,
+      error: 'Server error',
+    });
   }
-  const index = ads.indexOf(post);
-  ads.splice(index, 1);
-  res.status(200).send({
-    status: 200,
-    data: 'Car Ad successfully deleted',
-  });
 };
 
-export default adminDelete;
+export default deletePosted;
