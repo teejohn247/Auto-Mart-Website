@@ -10,12 +10,12 @@ chai.should();
 describe('View all unsold cars within a price range', () => {
   it('should return a status code of 200 if users can view unsold cars within a price range', (done) => {
     const buyer = {
-      email: 'brown@gmail.com',
+      email: 'ajani2@gmail.com',
     };
     const token = jwt.sign(buyer, 'SECRET_KEY', { expiresIn: '24hrs' });
     const price = {
-      min_price: 0,
-      max_price: 100000,
+      min_price: 1000,
+      max_price: 2000,
     };
     chai.request(app)
       .get('/api/v1/cars/available/range')

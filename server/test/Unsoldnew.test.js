@@ -10,11 +10,11 @@ chai.should();
 describe('View new unsold cars', () => {
   it('should return a status of 200 if users can view new unsold cars', (done) => {
     const buyer = {
-      email: 'brown@gmail.com',
+      email: 'ajani2@gmail.com',
     };
     const token = jwt.sign(buyer, 'SECRET_KEY', { expiresIn: '24hrs' });
     chai.request(app)
-      .get('/api/v1/cars/available/new')
+      .get('/api/v1/car/available/new')
       .set('Authorization', token)
       .end((err, res) => {
         res.should.have.status(200);

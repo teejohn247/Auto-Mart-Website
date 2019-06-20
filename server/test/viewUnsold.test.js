@@ -10,7 +10,7 @@ chai.should();
 describe('Viewing all unsold cars', () => {
   it('should return a 200 if users can view unsold cars', (done) => {
     const buyer = {
-      email: 'brown@gmail.com',
+      email: 'ajani2@gmail.com',
     };
     const token = jwt.sign(buyer, 'SECRET_KEY', { expiresIn: '24hrs' });
     chai.request(app)

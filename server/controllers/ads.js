@@ -13,7 +13,6 @@ const postAds = async (req, res) => {
     const postAd = {
     owner: req.body.owner,
     created_on: Date(),
-    email: req.body.email,
     manufacturer: req.body.manufacturer,
     model: req.body.model,
     price: req.body.price,
@@ -22,23 +21,23 @@ const postAds = async (req, res) => {
     status: req.body.status,
     body_type: req.body.body_type
   };
-    const insertCar = await pool.query('INSERT INTO cars VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *',
+    const insertCar = await pool.query('INSERT INTO cars(owner, created_on, product_image,state, status, price, manufacturer, model, body_type) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *',
       [
         postAd.owner,
         postAd.created_on,
-        postAd.email,
+        postAd.product_image,
+        postAd.state,
+        postAd.status,
+        postAd.price,
         postAd.manufacturer,
         postAd.model,
-        postAd.price,
-        postAd.state,
-        postAd.product_image,
-        postAd.status,
         postAd.body_type
       ]);
 
     res.status(201).json({
       status: 201,
       data: {
+        id: insertCar.rows[0].id,
         created_on: insertCar.rows[0].created_on,
         email: insertCar.rows[0].email,
         manufacturer: insertCar.rows[0].manufacturer,

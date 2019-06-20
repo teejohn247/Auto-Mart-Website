@@ -12,7 +12,7 @@ const markadsold = async (req, res) => {
       });
       return;
     }
-    const findCarId = 'SELECT * FROM cars WHERE owner = $1';
+    const findCarId = 'SELECT * FROM cars WHERE id = $1';
     const value = parseInt(req.params.id, 10);
     const car = await pool.query(findCarId, [value]);
 
@@ -36,7 +36,7 @@ const markadsold = async (req, res) => {
       return;
     }
 
-    const carStatus = 'UPDATE cars SET status = $1 WHERE owner = $2';
+    const carStatus = 'UPDATE cars SET status = $1 WHERE id = $2';
     const values = [req.body.status, value];
     await pool.query(carStatus, values);
 

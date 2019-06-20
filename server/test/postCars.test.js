@@ -7,21 +7,21 @@ import app from '../app';
 chai.use(chaiHttp);
 chai.should();
 
-describe('Post a car a sale ad', () => {
+describe('Post a car sale ad', () => {
   it('user should be able to post a car sale ad', (done) => {
     const user = {
-      email: 'brown@gmail.com',
+      email: 'tolq3m00@gmail.com',
     };
     const token = jwt.sign(user, 'SECRET_KEY', { expiresIn: '24hrs' });
     const carAd = {
-      owner: 1,
-      email: 'brown@gmail.com',
-      manufacturer: 'Toyota',
-      model: '2019 Toyota camry',
-      price: 40000,
+      owner: 3,
+      product_image: 'url',
       state: 'new',
-      productImage: 'url',
       status: 'available',
+      price: 40000,
+      manufacturer: 'Toyota',
+      model: 'Toyota camry',
+      body_type: 'fg',
     };
     chai.request(app)
       .post('/api/v1/car')
@@ -53,14 +53,14 @@ describe('Post a car a sale ad', () => {
     };
     const token = jwt.sign(user, 'SECRET_KEY', { expiresIn: '24hrs' });
     const carAd = {
-      owner: 1,
-      email: 'newuser@gmail.com',
+      owner: 5,
+      product_image: 'url',
+      state: 'new',
+      status: 'available',
+      price: 40000,
       manufacturer: 'Toyota',
       model: '2019 Toyota camry',
-      price: 40000,
-      state: 'new',
-      productImage: 'url',
-      status: 'available',
+      body_type: 'fg',
     };
     chai.request(app)
       .post('/api/v1/car')
@@ -76,18 +76,18 @@ describe('Post a car a sale ad', () => {
   });
   it('should return 404 if owner id is not specified', (done) => {
     const user = {
-      email: 'jordan@gmail.com',
+      email: 'tolq3m00@gmail.com',
     };
     const token = jwt.sign(user, 'SECRET_KEY', { expiresIn: '24hrs' });
     const carAd = {
-      owner: 120,
-      email: 'newuser@gmail.com',
+      owner: '',
+      product_image: 'url',
+      state: 'new',
+      status: 'available',
+      price: 40000,
       manufacturer: 'Toyota',
       model: '2019 Toyota camry',
-      price: 40000,
-      state: 'new',
-      productImage: 'url',
-      status: 'available',
+      body_type: 'fg',
     };
     chai.request(app)
       .post('/api/v1/car')
@@ -103,7 +103,7 @@ describe('Post a car a sale ad', () => {
   });
   it('should return a 400 if there is a missing info', (done) => {
     const user = {
-      email: 'brown@gmail.com',
+      email: 'tolq3m00@gmail.com',
     };
     const token = jwt.sign(user, 'SECRET_KEY', { expiresIn: '24hrs' });
     chai.request(app)
@@ -119,7 +119,7 @@ describe('Post a car a sale ad', () => {
   });
   it('should return a 400 if any field is empty', (done) => {
     const user = {
-      email: 'brown@gmail.com',
+      email: 'tolq3m00@gmail.com',
     };
     const token = jwt.sign(user, 'SECRET_KEY', { expiresIn: '24hrs' });
     chai.request(app)
@@ -136,7 +136,7 @@ describe('Post a car a sale ad', () => {
 
   it('should return a 401 if there is an invalid token', (done) => {
     const user = {
-      email: 'brown@gmail.com',
+      email: 'tolq3m00@gmail.com',
     };
     const token = jwt.sign(user, 'SECRET', { expiresIn: '3sec' });
     chai.request(app)

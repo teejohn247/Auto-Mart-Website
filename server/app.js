@@ -22,12 +22,9 @@ import newUnsold from './routes/newUnsold';
 import bodyType from './routes/bodyTypes';
 import documentation from './swagger.json';
 
-
 dotenv.config();
 const debug = Debug('http');
 const app = express();
-
-
 const port = process.env.PORT || 5000;
 
 app.use(logger('dev'));
@@ -35,9 +32,7 @@ app.use('/automart', swaggerUi.serve, swaggerUi.setup(documentation));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/uploads', express.static('uploads'));
-
 app.use('*', cloudinaryConfig);
-
 
 app.get('/api/v1', (req, res) => {
     res.json({
@@ -59,7 +54,7 @@ app.use('/api/v1/cars', newUnsold);
 app.use('/api/v1/cars', viewAllNew);
 app.use('/api/v1/car', markAd);
 app.use('/api/v1/cars', bodyType);
-app.use('/api/v1/manufacturer', unsoldMake);
+app.use('/api/v1/cars', unsoldMake);
 
 app.listen(port, () => {
     debug(`server is listening at port ${port}`);

@@ -14,7 +14,7 @@ const updatePrice = async (req, res) => {
     }
 
 
-    const findOrderId = 'SELECT * FROM orders WHERE car_id = $1';
+    const findOrderId = 'SELECT * FROM orders WHERE id = $1';
     const value = parseInt(req.params.id, 10);
     const OrderId = await pool.query(findOrderId, [value]);
     if (!OrderId.rows[0]) {
@@ -25,7 +25,7 @@ const updatePrice = async (req, res) => {
       return;
     }
 
-    const newPrice = 'UPDATE orders SET amount = $1 WHERE car_id = $2';
+    const newPrice = 'UPDATE orders SET amount = $1 WHERE id = $2';
     const values = [req.body.price_offered, value];
     await pool.query(newPrice, values);
 

@@ -23,7 +23,7 @@ const updatePriceCar = async (req, res) => {
       });
       return;
     }
-    const updateCar = 'UPDATE cars SET price = $1  WHERE id = $2';
+    const updateCar = 'UPDATE cars SET price = $1 WHERE id = $2';
     const values = [req.body.price, value];
     await pool.query(updateCar, values);
 

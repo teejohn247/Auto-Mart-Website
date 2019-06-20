@@ -5,14 +5,12 @@ const validateCars = {
   validation(newAd) {
     const newAdSchema = {
       owner: Joi.number().required(),
-      created_on: Joi.string().required(),
-      email: Joi.string().email().required(),
+      product_image: Joi.string().required(),
+      state: Joi.string().valid('new', 'used').required(),
+      status: Joi.string().required(),
+      price: Joi.number().required(),
       manufacturer: Joi.string().required(),
       model: Joi.string().required(),
-      price: Joi.number().required(),
-      state: Joi.string().valid('new', 'used').required(),
-      product_image: Joi.string().required(),
-      status: Joi.string().required(),
       body_type: Joi.string()
 
     };

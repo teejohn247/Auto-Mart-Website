@@ -17,7 +17,7 @@ describe('updating the price posted car ad', () => {
       price: 20000,
     };
     chai.request(app)
-      .patch('/api/v1/cars/4')
+      .patch('/api/v1/cars/1')
       .set('Authorization', token)
       .send(latestOrder)
       .end((err, res) => {
@@ -31,7 +31,7 @@ describe('updating the price posted car ad', () => {
 
   it('should return a 401 if seller is not authorized', (done) => {
     chai.request(app)
-      .patch('/api/v1/cars/2')
+      .patch('/api/v1/cars/1')
       .end((err, res) => {
         res.should.have.status(401);
         res.should.be.an('object');
@@ -43,7 +43,7 @@ describe('updating the price posted car ad', () => {
 
   it('should return a 404 if car id is not found', (done) => {
     const seller = {
-      email: 'brown@gmail.com',
+      email: 'ajani2@gmail.com',
     };
     const token = jwt.sign(seller, 'SECRET_KEY', { expiresIn: '24hrs' });
     const newOrder = {

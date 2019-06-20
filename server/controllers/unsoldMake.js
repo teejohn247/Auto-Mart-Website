@@ -2,11 +2,11 @@ import pool from '../models/database';
 
 const getUsedManufacturer = async (req, res) => {
   try {
-    const findUsedManufacturer = 'SELECT * FROM cars WHERE state = $1 AND manufacturer = $2';
-    const values = [req.query.state, req.query.manufacturer];
-    const bodyType = await pool.query(findUsedManufacturer, [values]);
+    const findUsedManufacturer = 'SELECT * FROM cars WHERE status = $1 AND manufacturer = $2';
+    const values = [req.query.status, req.query.manufacturer];
+    const unSoldMake = await pool.query(findUsedManufacturer, values);
 
-    if (!bodyType.rows[0]) {
+    if (!unSoldMake.rows[0]) {
       res.status(404).json({
         status: 404,
         message: 'No available car found',
@@ -16,7 +16,7 @@ const getUsedManufacturer = async (req, res) => {
     }
     res.status(200).json({
       status: 200,
-      data: bodyType.rows,
+      data: unSoldMake.rows,
     });
   } catch (error) {
     res.status(500).json({

@@ -2,7 +2,7 @@ import pool from '../models/database';
 
 const viewSpecific = async (req, res) => {
   try {
-    const findCar = 'SELECT * FROM cars WHERE owner = $1';
+    const findCar = 'SELECT * FROM cars WHERE id = $1';
     const value = parseInt(req.params.id, 10);
     const car = await pool.query(findCar, [value]);
 
@@ -10,7 +10,6 @@ const viewSpecific = async (req, res) => {
       res.status(404).json({
         status: 404,
         message: 'car not found',
-        data: [],
       });
     } else {
       res.status(200).json({

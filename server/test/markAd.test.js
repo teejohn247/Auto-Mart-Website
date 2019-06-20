@@ -10,7 +10,7 @@ chai.should();
 describe('Marking the posted car ad as sold', () => {
   it('should return a 200 if car is successfully marked as sold', (done) => {
     const user = {
-      email: 'brown@gmail.com',
+      email: 'ajani2@gmail.com',
     };
     const token = jwt.sign(user, 'SECRET_KEY', { expiresIn: '24hrs' });
     const status = {
@@ -99,7 +99,7 @@ describe('Marking the posted car ad as sold', () => {
   });
   it('should return a 400 if user is trying to mark an already sold car', (done) => {
     const user = {
-      email: 'brown@gmail.com',
+      email: 'ajani2@gmail.com',
     };
     const token = jwt.sign(user, 'SECRET_KEY', { expiresIn: '24hrs' });
     const status = {

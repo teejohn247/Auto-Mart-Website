@@ -11,14 +11,13 @@ const Order = async (req, res) => {
       });
       return;
     }
-
     const latestOrder = {
       buyer: req.body.buyer,
       car_id: req.body.car_id,
       amount: req.body.amount,
+      created_on: Date(),
     };
-
-    const findBuyerId = 'SELECT * FROM users WHERE users_id = $1';
+    const findBuyerId = 'SELECT * FROM users WHERE id = $1';
     const value = latestOrder.buyer;
     const buyerId = await pool.query(findBuyerId, [value]);
 
@@ -29,8 +28,7 @@ const Order = async (req, res) => {
       });
       return;
     }
-
-    const findCarId = 'SELECT * FROM cars WHERE owner = $1';
+    const findCarId = 'SELECT * FROM cars WHERE id = $1';
     const carValue = latestOrder.car_id;
     const carId = await pool.query(findCarId, [carValue]);
 
@@ -41,17 +39,14 @@ const Order = async (req, res) => {
       });
       return;
     }
-    const insertOrder = 'INSERT INTO orders(created_on, buyer, car_id,  amount, status, price) VALUES($1, $2, $3, $4) RETURNING *';
+    const insertOrder = 'INSERT INTO orders(buyer, car_id,  amount, created_on) VALUES($1, $2, $3, $4) RETURNING *';
     const results = await pool.query(insertOrder,
       [
-        latestOrder.created_on,
         latestOrder.buyer,
         latestOrder.car_id,
         latestOrder.amount,
-        carId.rows[0].status,
-        carId.rows[0].price
+        latestOrder.created_on,
       ]);
-
     res.status(201).json({
       status: 201,
       data: {

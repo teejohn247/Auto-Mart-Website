@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">97.78% </span>
+        <span class="strong">98.11% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>44/45</span>
+        <span class='fraction'>52/53</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>1/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">97.78% </span>
+        <span class="strong">98.11% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>44/45</span>
+        <span class='fraction'>52/53</span>
       </div>
     </div>
     <p class="quiet">
@@ -107,7 +107,9 @@
 <a name='L59'></a><a href='#L59'>59</a>
 <a name='L60'></a><a href='#L60'>60</a>
 <a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -125,16 +127,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -142,7 +134,16 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -161,7 +162,10 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -186,24 +190,23 @@ import PriceRange from './routes/priceRange';
 import viewAllRoute from './routes/viewAll';
 import usedUnsold from './routes/usedUnsold';
 import viewAllNew from './routes/viewAllNew';
+import markAd from './routes/markAd';
+import unsoldMake from './routes/viewUnsoldMake';
+import newUnsold from './routes/newUnsold';
+import bodyType from './routes/bodyTypes';
 import documentation from './swagger.json';
-&nbsp;
 &nbsp;
 dotenv.config();
 const debug = Debug('http');
 const app = express();
-&nbsp;
-&nbsp;
-const port = process.env.port || 5000;
+const port = process.env.PORT || 5000;
 &nbsp;
 app.use(logger('dev'));
 app.use('/automart', swaggerUi.serve, swaggerUi.setup(documentation));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/uploads', express.static('uploads'));
-&nbsp;
 app.use('*', cloudinaryConfig);
-&nbsp;
 &nbsp;
 app.get('/api/v1', <span class="fstat-no" title="function not covered" >(r</span>eq, res) =&gt; {
 <span class="cstat-no" title="statement not covered" >    res.</span>json({
@@ -211,7 +214,7 @@ app.get('/api/v1', <span class="fstat-no" title="function not covered" >(r</span
     });
   });
 &nbsp;
-app.use('/api/v1/auth', userRouter);
+app.use('/api/v1/', userRouter);
 app.use('/api/v1/car', carRoute);
 app.use('/api/v1/order', purchaseOrder);
 app.use('/api/v1/order', priceRoute);
@@ -221,8 +224,11 @@ app.use('/api/v1/cars', viewUnsold);
 app.use('/api/v1/cars', PriceRange);
 app.use('/api/v1/cars', viewAllRoute);
 app.use('/api/v1/cars', usedUnsold);
+app.use('/api/v1/cars', newUnsold);
 app.use('/api/v1/cars', viewAllNew);
-&nbsp;
+app.use('/api/v1/car', markAd);
+app.use('/api/v1/cars', bodyType);
+app.use('/api/v1/cars', unsoldMake);
 &nbsp;
 app.listen(port, () =&gt; {
     debug(`server is listening at port ${port}`);
@@ -235,7 +241,7 @@ export default app;
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Jun 07 2019 10:06:16 GMT+0100 (West Africa Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Jun 20 2019 17:03:17 GMT+0100 (West Africa Standard Time)
 </div>
 </div>
 <script src="..\prettify.js"></script>
