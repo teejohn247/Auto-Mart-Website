@@ -1,7 +1,16 @@
 import pool from '../models/database';
+import validateUnsoldCars from '../helpers/unsoldCars';
 
 const getUsedUnsoldCars = async (req, res) => {
-  try {
+   try {
+      const { error } = validateUnsoldCars.validation(req.query);
+      if (error) {
+        res.status(400).json({
+          status: 400,
+          error: error.details[0].message,
+        });
+        return;
+      }
     const findUsedUnsoldCars = 'SELECT * FROM cars WHERE status = $1 AND state = $2';
     const values = [req.query.status, req.query.state];
     const usedUnsoldCars = await pool.query(findUsedUnsoldCars, values);
@@ -9,7 +18,7 @@ const getUsedUnsoldCars = async (req, res) => {
     if (!usedUnsoldCars.rows[0]) {
       res.status(404).json({
         status: 404,
-        message: `no ${req.query.status} found`,
+        message: `no ${req.query.status} and ${req.query.state} car found`,
         data: [],
       });
       return;

@@ -5,6 +5,6 @@ import getCar from '../controllers/unsoldMake';
 const router = express.Router();
 
 
-router.get('/manufacture', auth, getCar);
+router.get('/car', auth, getCar);
 
 export default router;
