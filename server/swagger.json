@@ -39,7 +39,7 @@
       "application/json"
     ],
     "paths": {
-      "/auth/signup": {
+      "/signup": {
         "post": {
           "tags": [
             "Users"
@@ -72,7 +72,7 @@
           }
         }
       },
-      "/auth/signin": {
+      "/signin": {
         "post": {
           "tags": [
             "Users"
@@ -93,7 +93,7 @@
             "application/json"
           ],
           "responses": {
-            "201": {
+            "200": {
                 "description": "success: successfully created"
               },
               "400": {
@@ -539,21 +539,32 @@
       "car_sale_post_ad": {
         "required": [
           "owner",
-          "email",
+          "product_image",
+          "state",
+          "status",
+          "price",  
           "manufacturer",
           "model",
-          "price",
-          "state",
-          "productImage",
-          "status"
+          "body_type"
         ],
+       
         "type": "object",
         "properties": {
           "owner": {
             "type": "integer"
           },
-          "email": {
+          "product_image": {
             "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          
+          "status": {
+            "type": "string"
+          },
+          "price": {
+            "type": "integer"
           },
           "manufacturer": {
             "type": "string"
@@ -561,18 +572,11 @@
           "model": {
           "type": "string"
           },
-          "price": {
-            "type": "integer"
-          },
-          "state": {
+          "body_type": {
             "type": "string"
-          },
-          "productImage": {
-            "type": "string"
-          },
-          "status": {
-            "type": "string"
-          }
+            }
+        
+          
         }
     },
       "order": {
