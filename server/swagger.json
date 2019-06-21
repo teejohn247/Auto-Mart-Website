@@ -647,7 +647,7 @@
               
               },
               {
-                "name":"manufacturer",
+                "name":"status",
                 "in": "query",
                 "description" :"status",
                 "required":true,
@@ -655,7 +655,7 @@
               
               },
               {
-                "name":"status",
+                "name":"state",
                 "in": "query",
                 "description" :"state",
                 "required":true,
