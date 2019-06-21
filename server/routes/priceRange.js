@@ -4,6 +4,6 @@ import UnsoldCarsWithinPriceRange from '../controllers/unsoldPriceRange';
 const router = express.Router();
 
 // get cars within price range
-router.get('/available/range', UnsoldCarsWithinPriceRange);
+router.get('/', UnsoldCarsWithinPriceRange);
 
 export default router;

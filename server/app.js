@@ -40,7 +40,7 @@ app.get('/api/v1', (req, res) => {
     });
   });
 
-app.use('/api/v1/', userRouter);
+app.use('/api/v1/auth', userRouter);
 app.use('/api/v1/car', carRoute);
 app.use('/api/v1/order', purchaseOrder);
 app.use('/api/v1/order', priceRoute);
@@ -49,12 +49,12 @@ app.use('/api/v1/car', viewCar);
 app.use('/api/v1/cars', viewUnsold);
 app.use('/api/v1/cars', PriceRange);
 app.use('/api/v1/cars', viewAllRoute);
-app.use('/api/v1/cars', usedUnsold);
+app.use('/api/v1/check', usedUnsold);
 app.use('/api/v1/cars', newUnsold);
 app.use('/api/v1/cars', viewAllNew);
 app.use('/api/v1/car', markAd);
-app.use('/api/v1/cars', bodyType);
-app.use('/api/v1/cars', unsoldMake);
+app.use('/api/v1/car', bodyType);
+app.use('/api/v1/make', unsoldMake);
 
 
 app.listen(port, () => {

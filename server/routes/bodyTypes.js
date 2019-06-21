@@ -4,6 +4,6 @@ import bodyType from '../controllers/viewBodyType';
 
 const router = express.Router();
 
-router.get('/bodytype', auth, bodyType);
+router.get('/', auth, bodyType);
 
 export default router;
