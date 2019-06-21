@@ -719,19 +719,19 @@
     "definitions": {
       "signup": {
         "required": [
-            "firstName",
-            "lastName",
+            "first_name",
+            "last_name",
             "email",
             "password",
             "address",
-            "isAdmin"
+            "is_admin"
         ],
         "type": "object",
         "properties": {
-          "firstName": {
+          "first_name": {
             "type": "string"
           },
-          "lastName": {
+          "last_name": {
             "type": "string"
           },
           "email": {
@@ -743,7 +743,7 @@
           "address": {
             "type": "string"
           },
-          "isAdmin": {
+          "is_admin": {
             "type": "boolean",
             "toBe": "true or false"
           }
