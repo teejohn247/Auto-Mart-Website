@@ -51,7 +51,7 @@ const Order = async (req, res) => {
       status: 201,
       data: {
         id: results.rows[0].id,
-        created_on: results.rows[0].car_id,
+        created_on: results.rows[0].created_on,
         car_id: results.rows[0].car_id,
         status: carId.rows[0].status,
         price: carId.rows[0].price,

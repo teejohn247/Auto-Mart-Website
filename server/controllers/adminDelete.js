@@ -2,7 +2,7 @@ import pool from '../models/database';
 
 const deletePosted = async (req, res) => {
   try {
-    const findCar = 'SELECT * FROM cars WHERE owner = $1';
+    const findCar = 'SELECT * FROM cars WHERE id = $1';
     const value = parseInt(req.params.id, 10);
     const car = await pool.query(findCar, [value]);
     if (!car.rows[0]) {
@@ -11,6 +11,12 @@ const deletePosted = async (req, res) => {
         error: 'Car Ad not found',
       });
       return;
+    }
+    if (!req.user.is_admin) {
+     res.status(401).json({
+        status: 401,
+        error: 'You are not authorized to perform this action',
+      });
     }
     const deleteCar = 'DELETE FROM cars WHERE id = $1';
     await pool.query(deleteCar, [value]);

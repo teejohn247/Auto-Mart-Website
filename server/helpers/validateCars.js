@@ -12,7 +12,6 @@ const validateCars = {
       manufacturer: Joi.string().required(),
       model: Joi.string().required(),
       body_type: Joi.string()
-
     };
     return Joi.validate(newAd, newAdSchema);
   },
