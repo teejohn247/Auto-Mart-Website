@@ -1,7 +1,16 @@
 import pool from '../models/database';
+import validateBodyType from '../helpers/bodyType';
 
 const getBodyType = async (req, res) => {
-  try {
+    try {
+      const { error } = validateBodyType.validation(req.query);
+      if (error) {
+        res.status(400).json({
+          status: 400,
+          error: error.details[0].message,
+        });
+        return;
+      }
     const findBodyType = 'SELECT * FROM cars WHERE body_type = $1';
     const value = req.query.body_type;
     const bodyType = await pool.query(findBodyType, [value]);

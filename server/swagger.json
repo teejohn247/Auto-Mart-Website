@@ -39,7 +39,7 @@
       "application/json"
     ],
     "paths": {
-      "/signup": {
+      "/auth/signup": {
         "post": {
           "tags": [
             "Users"
@@ -72,7 +72,7 @@
           }
         }
       },
-      "/signin": {
+      "/auth/signin": {
         "post": {
           "tags": [
             "Users"
@@ -487,7 +487,7 @@
           }
         }
       },
-      "/cars?status=available&min_price=XXXValue​&max_price=XXXValue​": {
+      "/cars?min_price=XXXvalue&max_price=XXXvalue": {
         "get": {
           "tags": [
             "Cars"
@@ -537,12 +537,104 @@
           }
         }
       },
-      "/cars/available/used": {
+      "/car?body_type=XXXvalue": {
         "get": {
           "tags": [
             "Cars"
           ],
-          "summary": "View all used unsold cars",
+          "summary": "View all cars of a specific body type",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+                "name":"Authorization",
+                "in": "header",
+                "description" :"The user token",
+                "required":true
+              
+              },
+              {
+                "name":"body_type",
+                "in": "query",
+                "description" :"body type",
+                "required":true,
+                "type":"string"
+              
+              }
+          ],
+          "responses": {
+            "200": {
+                "description": "success: request successful"
+              },
+              "404": {
+                "description": "Error: not found"
+              },
+              "401": {
+                "description": "Error: unauthorized access"
+              },
+              "500": {
+                "description": "Server Error"
+              }
+          }
+        }
+      },
+      "/make/car?status=XXXvalues&manufacturer=XXXvalue": {
+        "get": {
+          "tags": [
+            "Cars"
+          ],
+          "summary": "View all cars with a particular maufacturer",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+                "name":"Authorization",
+                "in": "header",
+                "description" :"The user token",
+                "required":true
+              
+              },
+              {
+                "name":"status",
+                "in": "query",
+                "description" :"minimum price",
+                "required":true,
+                "type":"string"
+              
+              },
+              {
+                "name":"manufacturer",
+                "in": "query",
+                "description" :"maximum price",
+                "required":true,
+                "type":"string"
+              
+              }
+          ],
+          "responses": {
+            "200": {
+                "description": "success: successfully retrieving cars with a particular manufacturer"
+              },
+              "404": {
+                "description": "Error: no unsold cars found within such price range"
+              },
+              "401": {
+                "description": "Error: this is when someone tries to retrieve unsold cars when he is not authorized"
+              },
+              "500": {
+                "description": "Server Error"
+              }
+          }
+        }
+      },
+      "/check/car?status=sold&state=new": {
+        "get": {
+          "tags": [
+            "Cars"
+          ],
+          "summary": "View all new & unsold cars or used & available cars",
           "produces": [
             "application/json"
           ],

@@ -4,6 +4,6 @@ import getUsedUnsoldCars from '../controllers/usedUnsold';
 
 const router = express.Router();
 
-router.get('/available/used', auth, getUsedUnsoldCars);
+router.get('/car', auth, getUsedUnsoldCars);
 
 export default router;

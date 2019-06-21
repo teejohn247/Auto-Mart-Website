@@ -1,7 +1,17 @@
 import pool from '../models/database';
+import validateunsoldMake from '../helpers/unsoldMake';
 
 const getUsedManufacturer = async (req, res) => {
-  try {
+    try {
+      const { error } = validateunsoldMake.validation(req.query);
+      if (error) {
+        res.status(400).json({
+          status: 400,
+          error: error.details[0].message,
+        });
+        return;
+      }
+
     const findUsedManufacturer = 'SELECT * FROM cars WHERE status = $1 AND manufacturer = $2';
     const values = [req.query.status, req.query.manufacturer];
     const unSoldMake = await pool.query(findUsedManufacturer, values);
@@ -25,4 +35,5 @@ const getUsedManufacturer = async (req, res) => {
     });
   }
 };
+
 export default getUsedManufacturer;
