@@ -94,7 +94,7 @@
           ],
           "responses": {
             "200": {
-                "description": "success: successfully created"
+                "description": "success: successfully logged in"
               },
               "400": {
                 "description": "Error: invalid input"
@@ -281,7 +281,7 @@
           }
         }
       },
-        "/cars/posted": {
+        "/cars/allposted": {
         "get": {
           "tags": [
             "Adverts"
@@ -410,6 +410,8 @@
           }
         }
       },
+
+      
       "/cars/available": {
         "get": {
           "tags": [
@@ -444,7 +446,48 @@
           }
         }
       },
-      "/cars/available/range": {
+      "/car?status=available": {
+        "get": {
+          "tags": [
+            "Cars"
+          ],
+          "summary": "View all unsold cars",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+                "name":"Authorization",
+                "in": "header",
+                "description" :"The user token",
+                "required":true
+              
+            },
+            {
+              "name":"status",
+              "in": "query",
+              "description" :"status",
+              "required":true
+            
+            }
+          ],
+          "responses": {
+            "200": {
+                "description": "success: successfully retrieving unsold cars"
+              },
+              "404": {
+                "description": "Error: no unsold cars found"
+              },
+              "401": {
+                "description": "Error: this is when someone tries to retrieve posted cars when he is not authorized"
+              },
+              "500": {
+                "description": "Server Error"
+              }
+          }
+        }
+      },
+      "/cars?status=available&min_price=XXXValue​&max_price=XXXValue​": {
         "get": {
           "tags": [
             "Cars"
@@ -462,12 +505,21 @@
               
               },
               {
-                "name": "price range",
-                "in": "body",
-                "schema": {
-                  "$ref": "#/definitions/priceRange"
-                }
-            }
+                "name":"min_price",
+                "in": "query",
+                "description" :"minimum price",
+                "required":true,
+                "type":"integer"
+              
+              },
+              {
+                "name":"max_price",
+                "in": "query",
+                "description" :"maximum price",
+                "required":true,
+                "type":"integer"
+              
+              }
           ],
           "responses": {
             "200": {
@@ -484,10 +536,77 @@
               }
           }
         }
+      },
+      "/cars/available/used": {
+        "get": {
+          "tags": [
+            "Cars"
+          ],
+          "summary": "View all used unsold cars",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+                "name":"Authorization",
+                "in": "header",
+                "description" :"The user token",
+                "required":true
+              
+              }
+          ],
+          "responses": {
+            "200": {
+                "description": "success: successfully retrieving used unsold cars"
+              },
+              "404": {
+                "description": "Error: no used unsold cars found"
+              },
+              "401": {
+                "description": "Error: this is when someone tries to retrieve used unsold cars when he is not authorized"
+              },
+              "500": {
+                "description": "Server Error"
+              }
+          }
+        }
+      },
+      "/cars/available/new": {
+        "get": {
+          "tags": [
+            "Cars"
+          ],
+          "summary": "View all new unsold cars",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+                "name":"Authorization",
+                "in": "header",
+                "description" :"The user token",
+                "required":true
+              
+              }
+          ],
+          "responses": {
+            "200": {
+                "description": "success: successfully retrieving new unsold cars"
+              },
+              "404": {
+                "description": "Error: no new unsold cars found"
+              },
+              "401": {
+                "description": "Error: this is when someone tries to retrieve new unsold cars when he is not authorized"
+              },
+              "500": {
+                "description": "Server Error"
+              }
+          }
+        }
       }
     },
-  
-  
+
     "definitions": {
       "signup": {
         "required": [
