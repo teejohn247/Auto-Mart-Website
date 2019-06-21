@@ -645,7 +645,24 @@
                 "description" :"The user token",
                 "required":true
               
+              },
+              {
+                "name":"manufacturer",
+                "in": "query",
+                "description" :"status",
+                "required":true,
+                "type":"string"
+              
+              },
+              {
+                "name":"status",
+                "in": "query",
+                "description" :"state",
+                "required":true,
+                "type":"string"
+              
               }
+              
           ],
           "responses": {
             "200": {
