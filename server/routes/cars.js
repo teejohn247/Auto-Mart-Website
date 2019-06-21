@@ -10,7 +10,7 @@ import auth from '../middleware/auth';
 const router = express.Router();
 
 
-router.post('/', auth, upload.array('product_image', 6), imageUploader, ads);
+router.post('/', auth, upload.single('product_image'), imageUploader, ads);
 router.patch('/:id', auth, markSold);
 router.delete('/:id', deletePosted);
 

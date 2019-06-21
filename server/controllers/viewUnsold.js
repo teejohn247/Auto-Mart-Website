@@ -1,7 +1,16 @@
 import pool from '../models/database';
+import validatingStatus from '../helpers/viewAvailable';
 
 const getUnsoldCars = async (req, res) => {
-  try {
+    try {
+      const { error } = validatingStatus.validation(req.query);
+      if (error) {
+        res.status(400).json({
+          status: 400,
+          error: error.details[0].message,
+        });
+        return;
+      }
     const findUnsoldCars = 'SELECT * FROM cars WHERE status = $1';
     const value = req.query.status;
     const unsoldCars = await pool.query(findUnsoldCars, [value]);

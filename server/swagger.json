@@ -446,12 +446,12 @@
           }
         }
       },
-      "/car?status=available": {
+      "/auth/car?status=available": {
         "get": {
           "tags": [
             "Cars"
           ],
-          "summary": "View all unsold cars",
+          "summary": "View all available cars",
           "produces": [
             "application/json"
           ],
@@ -599,7 +599,7 @@
               {
                 "name":"status",
                 "in": "query",
-                "description" :"minimum price",
+                "description" :"status",
                 "required":true,
                 "type":"string"
               
@@ -607,7 +607,7 @@
               {
                 "name":"manufacturer",
                 "in": "query",
-                "description" :"maximum price",
+                "description" :"manufacturer",
                 "required":true,
                 "type":"string"
               
@@ -680,41 +680,6 @@
           }
         }
       },
-      "/cars/available/new": {
-        "get": {
-          "tags": [
-            "Cars"
-          ],
-          "summary": "View all new unsold cars",
-          "produces": [
-            "application/json"
-          ],
-          "parameters": [
-            {
-                "name":"Authorization",
-                "in": "header",
-                "description" :"The user token",
-                "required":true
-              
-              }
-          ],
-          "responses": {
-            "200": {
-                "description": "success: successfully retrieving new unsold cars"
-              },
-              "404": {
-                "description": "Error: no new unsold cars found"
-              },
-              "401": {
-                "description": "Error: this is when someone tries to retrieve new unsold cars when he is not authorized"
-              },
-              "500": {
-                "description": "Server Error"
-              }
-          }
-        }
-      }
-    },
 
     "definitions": {
       "signup": {

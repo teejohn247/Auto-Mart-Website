@@ -9,6 +9,7 @@ const allposted = async (req, res) => {
          status: 401,
          error: 'You are not authorized to perform this action',
        });
+       return;
      }
     if (!cars.rows[0]) {
       res.status(404).json({
@@ -16,6 +17,7 @@ const allposted = async (req, res) => {
         message: 'no car found',
         data: [],
       });
+      return;
     }
     res.status(200).json({
       status: 200,
