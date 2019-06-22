@@ -4,13 +4,6 @@ const allposted = async (req, res) => {
   try {
     const findCars = 'SELECT * FROM cars';
     const cars = await pool.query(findCars);
-    if (!req.user.is_admin) {
-      res.status(401).json({
-         status: 401,
-         error: 'You are not authorized to perform this action',
-       });
-       return;
-     }
     if (!cars.rows[0]) {
       res.status(404).json({
         status: 404,

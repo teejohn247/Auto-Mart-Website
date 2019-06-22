@@ -5,13 +5,6 @@ const deletePosted = async (req, res) => {
     const findCar = 'SELECT * FROM cars WHERE id = $1';
     const value = parseInt(req.params.id, 10);
     const car = await pool.query(findCar, [value]);
-    if (!req.user.is_admin) {
-      res.status(401).json({
-         status: 401,
-         error: 'You are not authorized to perform this action',
-       });
-       return;
-     }
     if (!car.rows[0]) {
       res.status(404).json({
         status: 404,

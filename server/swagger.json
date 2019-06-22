@@ -410,42 +410,6 @@
           }
         }
       },
-
-      
-      "/cars/available": {
-        "get": {
-          "tags": [
-            "Cars"
-          ],
-          "summary": "View all unsold cars",
-          "produces": [
-            "application/json"
-          ],
-          "parameters": [
-            {
-                "name":"Authorization",
-                "in": "header",
-                "description" :"The user token",
-                "required":true
-              
-              }
-          ],
-          "responses": {
-            "200": {
-                "description": "success: successfully retrieving unsold cars"
-              },
-              "404": {
-                "description": "Error: no unsold cars found"
-              },
-              "401": {
-                "description": "Error: this is when someone tries to retrieve posted cars when he is not authorized"
-              },
-              "500": {
-                "description": "Server Error"
-              }
-          }
-        }
-      },
       "/auth/car?status=available": {
         "get": {
           "tags": [
