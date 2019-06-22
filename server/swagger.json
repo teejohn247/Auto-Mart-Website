@@ -410,6 +410,8 @@
           }
         }
       },
+
+     
       "/auth/car?status=available": {
         "get": {
           "tags": [
@@ -732,8 +734,6 @@
           "body_type": {
             "type": "string"
             }
-        
-          
         }
     },
       "order": {
