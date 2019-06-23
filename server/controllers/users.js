@@ -4,12 +4,11 @@ import pool from '../models/database';
 import validateUserSignup from '../helpers/users';
 import '@babel/polyfill';
 
-
 const signup = async (req, res) => {
   try {
     const salt = await bcrypt.genSalt(10);
     const hash = await bcrypt.hash(req.body.password, salt);
-  const newUser = {
+    const newUser = {
     users_id: req.body.users_id,
     first_name: req.body.first_name.trim(),
     last_name: req.body.last_name.trim(),
@@ -40,13 +39,8 @@ const signup = async (req, res) => {
       return;
     }
 const insertUser = await pool.query('INSERT INTO users(email, first_name, last_name, password, address, is_admin) VALUES ($1, $2, $3, $4, $5, $6)  RETURNING *',
-[
-  newUser.email,
-  newUser.first_name,
-  newUser.last_name,
-  newUser.password,
-  newUser.address,
-  newUser.is_admin]);
+[newUser.email, newUser.first_name, newUser.last_name, newUser.password,
+ newUser.address, newUser.is_admin]);
 
   const payload = {
     email: insertUser.rows[0].email

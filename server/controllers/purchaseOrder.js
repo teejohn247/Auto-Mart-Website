@@ -1,7 +1,7 @@
 import pool from '../models/database';
 import validateOrder from '../helpers/purchaseOrder';
 
-const Order = async (req, res) => {
+const order = async (req, res) => {
   try {
     const { error } = validateOrder.validation(req.body);
     if (error) {
@@ -40,13 +40,9 @@ const Order = async (req, res) => {
       return;
     }
     const insertOrder = 'INSERT INTO orders(buyer, car_id,  amount, created_on) VALUES($1, $2, $3, $4) RETURNING *';
-    const results = await pool.query(insertOrder,
-      [
-        latestOrder.buyer,
-        latestOrder.car_id,
-        latestOrder.amount,
-        latestOrder.created_on,
-      ]);
+    const results = await pool.query(insertOrder, [latestOrder.buyer, latestOrder.car_id,
+       latestOrder.amount, latestOrder.created_on]);
+
     res.status(201).json({
       status: 201,
       data: {
@@ -66,5 +62,4 @@ const Order = async (req, res) => {
     });
   }
 };
-
-export default Order;
+export default order;
