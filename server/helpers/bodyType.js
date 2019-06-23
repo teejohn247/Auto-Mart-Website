@@ -10,5 +10,4 @@ const validateBodyType = {
   },
 
 };
-
 export default validateBodyType;
