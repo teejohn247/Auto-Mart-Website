@@ -5,6 +5,7 @@ const deletePosted = async (req, res) => {
     const findCar = 'SELECT * FROM cars WHERE id = $1';
     const value = parseInt(req.params.id, 10);
     const car = await pool.query(findCar, [value]);
+
     if (!car.rows[0]) {
       res.status(404).json({
         status: 404,
