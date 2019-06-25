@@ -157,6 +157,13 @@
                 "description": "price"
               },
               {
+                "name": "manufacturer",
+                "in": "formData",
+                "type": "string",
+                "required": true,
+                "description": "manufacturer"
+              },
+              {
                 "name": "model",
                 "in": "formData",
                 "type": "string",
