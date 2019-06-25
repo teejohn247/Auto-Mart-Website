@@ -43,7 +43,9 @@ const insertUser = await pool.query('INSERT INTO users(email, first_name, last_n
  newUser.address, newUser.is_admin]);
 
   const payload = {
-    email: insertUser.rows[0].email
+    id: insertUser.rows[0].id,
+    is_admin: insertUser.rows[0].is_admin,
+    email: insertUser.rows[0].email,
   };
 
   const token = jwt.sign(payload, 'SECRET_KEY', { expiresIn: '24hrs' });
@@ -53,8 +55,8 @@ const insertUser = await pool.query('INSERT INTO users(email, first_name, last_n
     data: {
       token,
       id: insertUser.rows[0].id,
-      first_name: insertUser.rows[0].first_name,
-      last_name: insertUser.rows[0].last_name,
+      firstName: insertUser.rows[0].first_name,
+      lastName: insertUser.rows[0].last_name,
       email: insertUser.rows[0].email,
     }
   });
