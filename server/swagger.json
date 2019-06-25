@@ -33,7 +33,8 @@
       "https"
     ],
     "consumes": [
-      "application/json"
+      "application/json",
+      "multipart/form-data"
     ],
     "produces": [
       "application/json"
@@ -119,6 +120,55 @@
                 "description" :"The user token",
                 "required":true
               
+              },
+              {
+                "name": "owner",
+                "in": "formData",
+                "type": "integer",
+                "required": true,
+                "description": "Owner id"
+              },
+              {
+                "name": "product_image",
+                "in": "formData",
+                "type": "file",
+                "required": true,
+                "description": "The file to upload."
+              },
+              {
+                "name": "state",
+                "in": "formData",
+                "type": "string",
+                "required": true,
+                "description": "used or new"
+              },
+              {
+                "name": "status",
+                "in": "formData",
+                "type": "string",
+                "required": true,
+                "description": "available or sold"
+              },
+              {
+                "name": "price",
+                "in": "formData",
+                "type": "integer",
+                "required": true,
+                "description": "price"
+              },
+              {
+                "name": "model",
+                "in": "formData",
+                "type": "string",
+                "required": true,
+                "description": "car model"
+              },
+              {
+                "name": "body_type",
+                "in": "formData",
+                "type": "string",
+                "required": true,
+                "description": "body type"
               },
             {
               "name": "car sale ad",
@@ -746,7 +796,7 @@
             "type": "integer"
           },
           "product_image": {
-            "type": "string"
+            "type": "file"
           },
           "state": {
             "type": "string"
