@@ -1,8 +1,11 @@
 /* eslint-disable prefer-destructuring */
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
+import dotenv from 'dotenv';
 import pool from '../models/database';
 import validateUserSignin from '../helpers/signin';
+
+dotenv.config();
 
 const signin = async (req, res) => {
   try {
@@ -36,18 +39,20 @@ if (!password) {
   return;
 }
 const payload = {
-  email: user.rows[0].email
+  id: user.rows[0].id,
+  email: user.rows[0].email,
+  is_admin: user.rows[0].is_admin,
 };
 
-  const token = jwt.sign(payload, 'SECRET_KEY', { expiresIn: '24hrs' });
+  const token = jwt.sign(payload, 'process.env.SECRET_KEY', { expiresIn: '24hrs' });
 
    res.status(200).json({
     status: 200,
     data: {
       token,
       id: user.rows[0].id,
-      first_name: user.rows[0].first_name,
-      last_name: user.rows[0].last_name,
+      firstName: user.rows[0].first_name,
+      lastName: user.rows[0].last_name,
       email: user.rows[0].email
     }
     });

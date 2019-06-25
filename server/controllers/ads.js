@@ -38,14 +38,14 @@ const postAds = async (req, res) => {
       status: 201,
       data: {
         id: insertCar.rows[0].id,
-        created_on: insertCar.rows[0].created_on,
+        createdOn: insertCar.rows[0].created_on,
         email: insertCar.rows[0].email,
         manufacturer: insertCar.rows[0].manufacturer,
         model: insertCar.rows[0].model,
         price: insertCar.rows[0].price,
         state: insertCar.rows[0].state,
         status: insertCar.rows[0].status,
-        product_image: insertCar.rows[0].product_image
+        productImage: insertCar.rows[0].product_image
       },
     });
   } catch (error) {

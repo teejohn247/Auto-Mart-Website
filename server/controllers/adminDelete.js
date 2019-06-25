@@ -2,10 +2,10 @@ import pool from '../models/database';
 
 const deletePosted = async (req, res) => {
   try {
-      if (req.user.is_admin !== 'true') {
+      if (!req.user.is_admin) {
         res.status(403).json({
           status: 403,
-          message: 'Sorry, this service is strictly ',
+          message: 'Sorry, this service is strictly for the admin',
         });
         return;
       }
