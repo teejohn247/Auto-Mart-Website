@@ -47,7 +47,7 @@ const order = async (req, res) => {
       status: 201,
       data: {
         id: results.rows[0].id,
-        buyer: buyerId.rows[0].buyer,
+        buyer: results.rows[0].buyer,
         created_on: results.rows[0].created_on,
         car_id: results.rows[0].car_id,
         status: carId.rows[0].status,
