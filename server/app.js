@@ -18,9 +18,11 @@ import usedUnsold from './routes/usedUnsold';
 import viewAllNew from './routes/viewAllNew';
 import markAd from './routes/markAd';
 import unsoldMake from './routes/viewUnsoldMake';
+import allOrders from './routes/allOrders';
 import newUnsold from './routes/newUnsold';
 import bodyType from './routes/bodyTypes';
 import documentation from './swagger.json';
+import getAds from './routes/getAds';
 
 dotenv.config();
 const debug = Debug('http');
@@ -55,7 +57,8 @@ app.use('/api/v1/cars', viewAllNew);
 app.use('/api/v1/car', markAd);
 app.use('/api/v1/car', bodyType);
 app.use('/api/v1/make', unsoldMake);
-
+app.use('/api/v1/vieworders', allOrders);
+app.use('/api/v1/viewads', getAds);
 
 app.listen(port, () => {
     debug(`server is listening at port ${port}`);

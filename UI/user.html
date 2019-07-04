@@ -1,67 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Auto Mart</title>
+	<title>Auto Mart</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="stylesheet" type="text/css" href="css/responsive.css">
-
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/responsive.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <style>
+  input, select {
+    width: 100%;
+    margin: 5px;
+
+  }
+  </style>
+
 </head>
 <body>
-  <header>
-  <div class="container">
-    <div class="row">
-      <div class="grid-md-6">
-           <ul class="list-inline">
-             <li> <i class="fa fa-envelope"> </i> support@website.com</li> 
-             <li> <i class="fa fa-clock"></i> Mon - Sat 8.00 - 18.00. Sunday CLOSED</li>
-           </ul>
-        </div>
-      <div class="grid-md-6">
-           <ul class="list-inline" style="float: right;">
-          <li><i class="fab fa-facebook-square"></i></li>
-          <li><i class="fab fa-twitter-square"></i></li>
-          <li><i class="fab fa-instagram"></i></a></li>
-        </ul>
-        </div>
-      </div>
-      </div>  
-  </header>
-    <nav class="navbar">
-
-        <span class="navbar-toggle" id="js-navbar-toggle">
-           <i class="fa fa-bars"></i>
-        </span>
-        <a href="#" class="logo">logo</a>
-        <ul class="main-nav" id="js-menu">
-            <li>
-                <a href="home.html" class="nav-links">HOME</a>
-            </li>
-            <li>
-                <a href="view.html" class="nav-links">VIEW-PAGE</a>
-            </li>
-            <li>
-                <a href="mark.html" class="nav-links">MARK AS SOLD</a>
-            </li>
-            <li>
-                <a href="user.html" class="nav-links">USER PROFILE</a>
-            </li>
-            <li>
-                <a href="Admin.html" class="nav-links">ADMIN PROFILE</a>
-            </li>
-            <li>
-                <a href="purchase-order.html" class="nav-links">ORDER</a>
-            </li>
-            
-        </ul>
-    </nav>
+      <header>
+        <div class="container">
+          <div class="row">
+            <div class="grid-md-6">
+                 <ul class="list-inline">
+                   <li> <i class="fa fa-envelope"> </i> support@website.com</li> 
+                   <li> <i class="fa fa-clock"></i> Mon - Sat 8.00 - 18.00. Sunday CLOSED</li>
+                 </ul>
+              </div>
+            <div class="grid-md-6">
+                 <ul class="list-inline">
+                <li><i class="fab fa-facebook-square"></i></li>
+                <li><i class="fab fa-twitter-square"></i></li>
+                <li><i class="fab fa-instagram"></i></a></li>
+              </ul>
+              </div>
+            </div>
+            </div>  
+        </header>
+          <nav class="navbar">
+      
+              <span class="navbar-toggle" id="js-navbar-toggle">
+                 <i class="fa fa-bars"></i>
+              </span>
+              <a href="#" class="logo">logo</a>
+              <ul class="main-nav" id="js-menu">
+                  <li>
+                      <a href="home.html" class="nav-links">HOME</a>
+                  </li>
+                  <li>
+                      <a href="view.html" class="nav-links">VIEW-PAGE</a>
+                  </li>
+                  <li>
+                      <a href="mark.html" class="nav-links">MARK AS SOLD</a>
+                  </li>
+                  <li>
+                      <a href="user.html" class="nav-links">USER PROFILE</a>
+                  </li>
+                  <li>
+                      <a href="Admin.html" class="nav-links">ADMIN PROFILE</a>
+                  </li>
+                  <li>
+                      <a href="purchase-order.html" class="nav-links">ORDER</a>
+                  </li>
+                  
+              </ul>
+          </nav>
 
 <!--Breadcrumb -->
 
     <div class="breadcrumb">
-      <p>Welcome Tolu Johnson</p>
+      <p>Welcome Admin</p>
     </div>
 
 
@@ -69,7 +76,7 @@
 
 <div class="tabs">
   <input type="radio" name="tabs" id="tabone" checked="checked" >
-  <label for="tabone">My Profile</label>
+  <label for="tabone">Profile Settings</label>
   <div class="tab">
     <div class="container">
       <div class="row">
@@ -90,258 +97,149 @@
   </div>
 
 
-  <!--My Ads Tab-->
+
+<!-- The Modal -->
+<div id="myModal0" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <form id="contact" action="" method="post">
+    <h4>Delete Ad</h4>
+    <fieldset>
+      <h5>Are you sure you want to delete this Ad</h5>
+    </fieldset>
+
+    <fieldset>
+      <button name="submit" type="submit" class ="contact-submit" data-submit="...Sending">Yes</button>
+      <button name="submit" type="submit" class ="contact-submit" data-submit="...Sending">No</button>
+    </fieldset>
+  </form>
+  </div>
+
+</div>
+
+<!--My Ads Tab-->
   
  <input type="radio" name="tabs" id="tabtwo" checked="checked" >
- <label for="tabtwo">My Ads</label>
- <div class="tab">
-   <div class="container ">
-    <div class="row">
-   <div class="grid-md-3 pics">
-     <img src="img/show.jpg" >
-   </div>
-    <div class="grid-md-3 my-text">
-     <p align="center" class="pur">Bugatti<br>X43FGV</p>
-     <a href="mark.html"><button class="mybtn">Mark as sold</button></a>
-     <a href="update.html"><button class="mybtn">Update Ad</button></a>
-
-     
-   
-
-   </div>
-   </div>
-
-
-</div>
-</div>
-
-
-
-
-  <input type="radio" name="tabs" id="tabthree">
-  <label for="tabthree">Post an Ad</label>
+  <label for="tabtwo" id="myAds">My Ads</label>
   <div class="tab">
-    <form action="#" method="get">
-            <div class="form-group">
-              <p class="control-p">Vehicles Title</p>
-              <input class="form-control" id="VehiclesTitle" type="text" >
-            </div>
-            <div class="form-group">
-              <p class="control-p">Select Make</p>
-              <div class="select">
-                <select class="form-control">
-                  <option>Select Brand</option>
-                  <option>Audi</option>
-                  <option>BMW</option>
-                  <option>Nissan</option>
-                  <option>Toyota</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group">
-              <p class="control-p">Model</p>
-              <div class="select">
-                <select class="form-control white_bg">
-                  <option>Select Model</option>
-                  <option>Model 2</option>
-                  <option>Model 3</option>
-                  <option>Model 4</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group">
-              <p class="control-p">Vehicles Version</p>
-              <div class="select">
-                <select class="form-control">
-                  <option>Version</option>
-                  <option>Version 1.1</option>
-                  <option>Version 1.2</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group">
-              <p class="control-p">Vehicle Overview  Description</p>
-              <textarea class="form-control white_bg" rows="4"></textarea>
-            </div>
-            <div class="form-group">
-              <p class="control-p">Price (N)</p>
-              <input class="form-control" id="Price" type="text">
-            </div>
-            <div class="form-group">
-              <p class="control-p">Upload Images  ( size = 900 x 560 )</p>
-              <div class="vehicle_images">
-                  <div><img src="img/show.jpg" alt="image"></div>
-                  <div><img src="img/show.jpg" alt="image"></div>
-                <div class="upload_more_img">
-                  <input name="upload" type="file">
-                </div>
-              </div>
-            </div>
-            <div class="field-title">
-              <h6>Basic Info</h6>
-            </div>
-            <div class="form-group">
-              <p class="control-p">Model Year</p>
-              <input class="form-control white_bg" id="year" type="text">
-            </div>
-            <div class="form-group">
-              <p class="control-p">No. of Owners</p>
-              <input class="form-control white_bg" id="owners" type="text">
-            </div>
-            <div class="form-group">
-              <p class="control-p">KMs Driven</p>
-              <input class="form-control white_bg" id="kws" type="text">
-            </div>
-            <div class="form-group">
-              <p class="control-p">Fuel Type</p>
-              <input class="form-control white_bg" id="fuel" type="text">
-            </div>
-            <div class="gray-bg field-title">
-              <h6>Technical Specification</h6>
-            </div>
-            <div class="form-group">
-              <p class="control-p">Engine Type</p>
-              <input class="form-control white_bg" id="engien" type="text">
-            </div>
-            <div class="form-group">
-              <p class="control-p">Engine Description</p>
-              <input class="form-control white_bg" id="engien-description" type="text">
-            </div>
-            <div class="form-group">
-              <p class="control-p">No. of Cylinders</p>
-              <input class="form-control white_bg" id="cylinders" type="text">
-            </div>
-            <div class="form-group">
-              <p class="control-p">Mileage-City</p>
-              <input class="form-control white_bg" id="mileage" type="text">
-            </div>
-            <div class="form-group">
-              <p class="control-p">Mileage-Highway</p>
-              <input class="form-control white_bg" id="mileage-h" type="text">
-            </div>
-            <div class="form-group">
-              <p class="control-p">Fuel Tank Capacity</p>
-              <input class="form-control white_bg" id="capacity" type="text">
-            </div>
-            <div class="form-group">
-              <p class="control-p">Seating Capacity</p>
-              <input class="form-control white_bg" id="s-capacity" type="text">
-            </div>
-            <div class="form-group">
-              <p class="control-p">Transmission Type</p>
-              <input class="form-control white_bg" id="Transmission" type="text">
-            </div>
-            <div class="gray-bg field-title">
-              <h6>Accessories</h6>
-            </div>
-            <div class="vehicle_accessories">
-              <div class="grid-md-6">
-              <div class="form-group checkbox col-md-6 accessories_list">
-                <input id="air_conditioner" type="checkbox"><span>Air Conditioner</span>
-              </div>
-              <div class="form-group checkbox col-md-6 accessories_list">
-                <input id="door" type="checkbox"><span>Power Door Locks</span>
-              </div>
-              <div class="form-group checkbox col-md-6 accessories_list">
-                <input id="antiLock" type="checkbox"><span>AntiLock Braking System</span>
-              </div>
-              <div class="form-group checkbox col-md-6 accessories_list">
-                <input id="brake" type="checkbox"><span>Brake Assist</span>
-              </div>
-              <div class="form-group checkbox col-md-6 accessories_list">
-                <input id="steering" type="checkbox"><span>Power Steering</span>
-              </div>
-              <div class="form-group checkbox col-md-6 accessories_list">
-                <input id="airbag" type="checkbox"><span>Driver Airbag</span>
-              </div>
-              
-            </div>
-            <div class="grid-md-6">
-              <div class="form-group checkbox col-md-6 accessories_list">
-                <input id="player" type="checkbox"><span>CD Player</span>
-              </div>
-              <div class="form-group checkbox col-md-6 accessories_list">
-                <input id="sensor" type="checkbox"><span>Crash Sensor</span>
-              </div>
-              <div class="form-group checkbox col-md-6 accessories_list">
-                <input id="seats" type="checkbox"><span>Leather Seats</span>
-              </div>
-              <div class="form-group checkbox col-md-6 accessories_list">
-                <input id="engine_warning" type="checkbox"><span>Engine Check Warning</span>
-              </div>
-              <div class="form-group checkbox col-md-6 accessories_list">
-                <input id="locking" type="checkbox"><span>Central Locking</span>
-              </div>
-              <div class="form-group checkbox col-md-6 accessories_list">
-                <input id="headlamps" type="checkbox"><span>Automatic Headlamps</span>
-              </div>
-            </div>
-          </div>
-            <div class="vehicle_type">
-              <div class="form-group grid-md-6 accessories_list">
-                <input type="checkbox" name="vehicle_type" value="radio" id="newcar"><span>New Car</span>
-              </div>
-              <div class="form-group grid-md-6 accessories_list">
-                <input type="checkbox" name="vehicle_type" value="radio" id="usedcar"><span>Used car</span>
-              </div>
-            </div>
-            <div class="form-group">
-              <button type="submit" class="btn-sub">Submit Vehicle <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></button>
-            </div>
-          </form>
-  </div>
-  
+    <div class="post container ">
+     <div class="myAd row">
+
+    </div>
+
+ 
+</div>
+</div>
+
  <input type="radio" name="tabs" id="tabfour" checked="checked" >
- <label for="tabfour">Edit Purchase Order</label>
- <div class="tab">
-   <div class="container ">
-     <div class="row">
-   <div class="grid-md-3 pics">
-     <img src="img/show.jpg" >
-   </div>
-    <div class="grid-md-3 my-text">
-     <p align="center" class="pur">Purchase Number: 123124365X</p>
-   <button align="center"id="myB" class="mybtn">Edit Order</button>
+  <label for="tabfour">Edit Purchase Order</label>
+  <div class="tab">
+    <div class="container ">
+      <div class="row">
+    <div class="grid-md-3 pics">
+      <img src="img/show.jpg" >
+    </div>
+     <div class="grid-md-3 my-text">
+      <p align="center" class="pur">Purchase Number: 123124365X</p>
+    <button align="center"id="myB" class="mybtn">Edit Order</button>  
 
-   
-   </div>
-   </div>
-
+    </div>
+    </div>
 
 <!-- Update Ad Price Modal -->
 <div id="myModal2" class="modal">
 
- <!-- Modal content -->
- <div class="modal-content">
-   <span class="close">&times;</span>
-   <form id="contact" action="" method="post">
-   <h4>Update Ad</h4>
-   <fieldset>
-     <input placeholder="First Name" type="text" tabindex="1" required autofocus>
-   </fieldset>
-   <fieldset>
-     <input placeholder="Email" type="email" tabindex="2" required>
-   </fieldset>
-   <fieldset>
-     <input placeholder="New Price" type="email" tabindex="2" required>
-   </fieldset>
-   <fieldset>
-     <input placeholder="Country" type="email" tabindex="2" required>
-   </fieldset>
-     <fieldset>
-     <input placeholder="Zip-Code" type="email" tabindex="2" required>
-   </fieldset>
-   <fieldset>
-     <button name="submit" type="submit" class ="contact-submit" data-submit="...Sending">Update Order</button>
-   </fieldset>
- </form>
- </div>
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <form id="contact" action="" method="post">
+    <h4>Update Ad</h4>
+    <fieldset>
+      <input placeholder="First Name" type="text" tabindex="1" required autofocus>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Email" type="email" tabindex="2" required>
+    </fieldset>
+    <fieldset>
+      <input placeholder="New Price" type="email" tabindex="2" required>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Country" type="email" tabindex="2" required>
+    </fieldset>
+      <fieldset>
+      <input placeholder="Zip-Code" type="email" tabindex="2" required>
+    </fieldset>
+    <fieldset>
+      <button name="submit" type="submit" class ="contact-submit" data-submit="...Sending">Update Order</button>
+    </fieldset>
+  </form>
+  </div>
 </div>
 
 </div>
-   </div>
-</div>
 
+
+    </div>
+
+<!--View Ads Tab-->
+ 
+
+
+<div id="popup1" class="overlay">
+    <div class="popup">
+        <div class="content">
+            <p>Are you sure you want to delete?</p>
+            <div class="center"><a class="del2" href="#">Yes</a>
+            <a class="del2" href="#">No</a></div>
+            
+        </div>
+    </div>
+</div>
+ 
+  <input type="radio" name="tabs" id="tabthree">
+  <label for="tabthree">Post an Ad</label>
+  <div class="tab postAd">
+      <form action="#" method="get">
+          <div class="field-title">
+                <h6>Make Your Order</h6>
+              </div>
+              <div class="login-error">Ad posted successfully</div>
+
+               <form>
+                 <input type="text" placeholder="owner" class="owner">
+                 <input type="file" placeholder="product Image" class="productImage">
+                 <div>
+                    <select class="state">
+                      <option>State</option>
+                      <option>used</option>
+                      <option>new</option>
+                    </select>
+                  </div>
+                  <div>
+                      <select class="status">
+                        <option>Status</option>
+                        <option>available</option>
+                        <option>sold</option>
+                      </select>
+                    </div>
+                 <input type="text" placeholder="price" class="price">
+                 <input type="text" placeholder="manufacturer" class="manufacturer">
+                 <input type="text" placeholder="model" class="model">
+                 <input type="text" placeholder="body type" class="bodyType">
+                 <button>Submit</button>
+
+
+
+
+
+
+
+               </form>
+              
+  </div>
+</div>
+</div>
 
 
              
@@ -352,13 +250,13 @@
     <div class="row">
       <div class="grid-md-3 grid-sm-6">
         <div class="about-content" >
-        <a href="#" class="">logo</a>
-          <p>Whether you are looking to buy a car for business or private use, Chicago Motors Group can help find what you need for your next vehicle purchase.</p>
+        <a href="#" class="logo">logo</a>
+          <p>We provide everything you need to build an amazing dealership website developed especially for car sellers dealers or auto motor retailers.</p>
         </div>
         <div class="address">
           <ul>
-            <li> <i class="fa fa-map-marker"></i><span> 220E Andela Challenge</span> </li>
-            <li> <i class="fa fa-phone"></i><span> (234) 123 456 7890</span> </li>
+            <li> <i class="fa fa-map-marker"></i><span>220E Front St. Burlington NC 27215</span> </li>
+            <li> <i class="fa fa-phone"></i><span>(007) 123 456 7890</span> </li>
             <li> <i class="fa fa-envelope-o"></i><span>support@website.com</span> </li>
           </ul>
         </div>
@@ -410,7 +308,6 @@
          <p>Keep up on our always evolving products features and technology. Enter your e-mail and subscribe to our newsletter.</p>
          </div> 
       </div>
-
     </div>
     </div>
   </footer>
@@ -425,8 +322,8 @@
      </div>
      </div>
     </div>
-  
 </body>
+<script type="text/javascript" src="js/fetchApi/postAd.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
   <script type="text/javascript" src="js/modal.js"></script>
 </html>

@@ -38,6 +38,7 @@ const postAds = async (req, res) => {
       status: 201,
       data: {
         id: insertCar.rows[0].id,
+        owner: insertCar.rows[0].owner,
         createdOn: insertCar.rows[0].created_on,
         email: insertCar.rows[0].email,
         manufacturer: insertCar.rows[0].manufacturer,

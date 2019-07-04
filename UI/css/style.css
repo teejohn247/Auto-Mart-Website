@@ -871,6 +871,18 @@ transition: 1s ease;
 border-radius: 0 3px 3px 0;
 }
 
+.login-error{
+	background: #e15960;
+	color: #fefefe;
+	font-size: 12px;
+	text-align: center;
+	width: 110%;
+	margin: 0 auto;
+	border-radius: 5px;
+	padding: 0.5em;
+	display: none;
+}
+
 /* Position the "next button" to the right */
 .next {
 right: 0;
