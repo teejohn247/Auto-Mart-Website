@@ -52,6 +52,7 @@ const order = async (req, res) => {
         status: carId.rows[0].status,
         price: carId.rows[0].price,
         price_offered: results.rows[0].amount,
+        product_image: carId.rows[0].product_image
       },
     });
     return;
