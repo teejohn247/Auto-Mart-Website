@@ -9,15 +9,15 @@ const auth = (req, res, next) => {
     const header = req.headers.authorization;
     if (!header || header === '') return res.status(401).json({ status: 401, error: 'Unauthorized' });
 
-    const token = jwt.verify(header, 'process.env.SECRET_KEY');
-    req.user = token;
-    req.user.is_admin = token.is_admin;
+    const options = { expiresIn: '1d' };
+
+    req.payload = jwt.verify(header, process.env.SECRET_KEY, options);
     next();
-  } catch (error) {
-    return res.status(401).json({ status: 401, error: 'Invalid token!' });
-  }
+      } catch (error) {
+        return res.status(401).json({ status: 401, error: 'Invalid token!' });
+      }
+
   return false;
 };
-
 
 export default auth;

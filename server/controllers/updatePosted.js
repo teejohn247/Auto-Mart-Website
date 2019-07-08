@@ -23,6 +23,13 @@ const updatePriceCar = async (req, res) => {
       });
       return;
     }
+    if (req.payload.email !== carId.rows[0].owner) {
+      res.status(401).json({
+        status: 401,
+        error: 'You are unauthorized to view this content',
+      });
+      return;
+    }
     const updateCar = 'UPDATE cars SET price = $1 WHERE id = $2';
     const values = [req.body.price, value];
     await pool.query(updateCar, values);
@@ -34,6 +41,7 @@ const updatePriceCar = async (req, res) => {
       state: carId.rows[0].state,
       status: carId.rows[0].status,
       price: req.body.price,
+      product_image: carId.rows[0].product_image,
       manufacturer: carId.rows[0].manufacturer,
       model: carId.rows[0].model,
       body_type: carId.rows[0].body_type,

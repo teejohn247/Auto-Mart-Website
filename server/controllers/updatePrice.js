@@ -23,6 +23,14 @@ const updatePrice = async (req, res) => {
       });
       return;
     }
+    if (req.payload.email !== OrderId.rows[0].buyer) {
+      res.status(401).json({
+        status: 401,
+        error: 'order: you are not authorized to view this content',
+      });
+      return;
+    }
+
 
     const newPrice = 'UPDATE orders SET amount = $1 WHERE id = $2';
     const values = [req.body.price_offered, value];
@@ -31,8 +39,7 @@ const updatePrice = async (req, res) => {
 
     const EditedOrder = {
       id: OrderId.rows[0].id,
-      card_id: OrderId.rows[0].card_id,
-      status: OrderId.rows[0].status,
+      car_id: OrderId.rows[0].car_id,
       old_price_offered: OrderId.rows[0].amount,
       new_price_offered: req.body.price_offered,
     };

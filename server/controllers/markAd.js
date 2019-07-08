@@ -22,6 +22,12 @@ const markadsold = async (req, res) => {
         error: 'car post not found',
       });
     }
+    if (req.payload.email !== car.rows[0].owner_id) {
+      res.status(401).json({
+        status: 401,
+        error: 'you are unathorized to view this content',
+      });
+    }
     if (car.rows[0].status === req.body.status) {
       res.status(400).json({
         status: 400,
