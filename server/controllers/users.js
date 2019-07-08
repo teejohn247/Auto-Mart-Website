@@ -1,8 +1,11 @@
-import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
+import dotenv from 'dotenv';
+import utils from '../config/utils';
 import pool from '../models/database';
 import validateUserSignup from '../helpers/users';
 import '@babel/polyfill';
+
+dotenv.config();
 
 const signup = async (req, res) => {
   try {
@@ -42,13 +45,8 @@ const insertUser = await pool.query('INSERT INTO users(email, first_name, last_n
 [newUser.email, newUser.first_name, newUser.last_name, newUser.password,
  newUser.address, newUser.is_admin]);
 
-  const payload = {
-    id: insertUser.rows[0].id,
-    is_admin: insertUser.rows[0].is_admin,
-    email: insertUser.rows[0].email,
-  };
+ const token = utils.encodeToken(user.rows[0].email, user.rows[0].id, user.rows[0].is_admin);
 
-  const token = jwt.sign(payload, 'SECRET_KEY', { expiresIn: '24hrs' });
 
   res.status(201).json({
     status: 201,

@@ -1,7 +1,7 @@
 /* eslint-disable prefer-destructuring */
-import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 import dotenv from 'dotenv';
+import utils from '../config/utils';
 import pool from '../models/database';
 import validateUserSignin from '../helpers/signin';
 
@@ -29,6 +29,7 @@ const signin = async (req, res) => {
    });
    return;
  }
+
 const password = await bcrypt.compare(req.body.password, user.rows[0].password);
 
 if (!password) {
@@ -38,13 +39,8 @@ if (!password) {
   });
   return;
 }
-const payload = {
-  id: user.rows[0].id,
-  email: user.rows[0].email,
-  is_admin: user.rows[0].is_admin,
-};
 
-  const token = jwt.sign(payload, 'process.env.SECRET_KEY', { expiresIn: '24hrs' });
+  const token = utils.encodeToken(user.rows[0].id, user.rows[0].email, user.rows[0].is_admin);
 
    res.status(200).json({
     status: 200,

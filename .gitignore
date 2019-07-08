@@ -4,3 +4,4 @@ coverage
 .nyc_output
 build
 report.20190616.195300.3168.001
+.vscode

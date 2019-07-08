@@ -1,22 +1,21 @@
 import pool from '../models/database';
 
-
-const allOrders = async (req, res) => {
+const userOrdersList = async (req, res) => {
   try {
-    const findOrderId = 'SELECT * FROM orders WHERE buyer = $1';
+    const userOrder = 'SELECT * FROM orders WHERE buyer = $1 ORDER BY created_on DESC';
     const value = req.payload.email;
-    const OrderId = await pool.query(findOrderId, [value]);
-    if (!OrderId.rows[0]) {
+    const userOrders = await pool.query(userOrder, [value]);
+
+    if (!userOrders.rows[0]) {
       res.status(404).json({
         status: 404,
-        error: 'order not found',
+        error: 'orders not found',
       });
       return;
     }
-
     res.status(200).json({
       status: 200,
-      data: OrderId.rows,
+      data: userOrders.rows,
     });
   } catch (error) {
     res.status(500).json({
@@ -25,5 +24,4 @@ const allOrders = async (req, res) => {
     });
   }
 };
-
-export default allOrders;
+export default userOrdersList;

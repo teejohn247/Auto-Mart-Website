@@ -10,8 +10,10 @@ const postAds = async (req, res) => {
       });
       return;
     }
+
+
     const postAd = {
-    owner: req.body.owner,
+    owner: req.payload.email,
     created_on: Date(),
     manufacturer: req.body.manufacturer,
     model: req.body.model,
