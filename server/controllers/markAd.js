@@ -70,5 +70,4 @@ const markadsold = async (req, res) => {
     });
   }
 };
-
 export default markadsold;
