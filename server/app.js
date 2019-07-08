@@ -18,13 +18,10 @@ import usedUnsold from './routes/usedUnsold';
 import viewAllNew from './routes/viewAllNew';
 import markAd from './routes/markAd';
 import unsoldMake from './routes/viewUnsoldMake';
-import allOrders from './routes/allOrders';
 import newUnsold from './routes/newUnsold';
 import bodyType from './routes/bodyTypes';
 import documentation from './swagger.json';
 import getAds from './routes/getAds';
-import marketplace from './routes/marketPlace';
-
 import userOrders from './routes/userOrderList';
 
 dotenv.config();
@@ -60,9 +57,7 @@ app.use('/api/v1/cars', viewAllNew);
 app.use('/api/v1/car', markAd);
 app.use('/api/v1/car', bodyType);
 app.use('/api/v1/make', unsoldMake);
-app.use('/api/v1/vieworders', allOrders);
 app.use('/api/v1/ads', getAds);
-app.use('/api/v1/cars', marketplace);
 app.use('/api/v1/cars', userOrders);
 
 app.listen(port, () => {
