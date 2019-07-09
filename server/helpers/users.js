@@ -11,7 +11,7 @@ const validateUserSignup = {
       last_name: Joi.string().trim().min(3).required(),
       password: Joi.string().min(6).required(),
       address: Joi.string().trim().required(),
-      is_admin: Joi.boolean(),
+      is_admin: Joi.boolean().allow('').default(false),
     };
     return Joi.validate(newUser, newUserSchema);
   },

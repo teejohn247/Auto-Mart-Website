@@ -11,8 +11,8 @@ const signup = async (req, res) => {
   try {
     const salt = await bcrypt.genSalt(10);
     const hash = await bcrypt.hash(req.body.password, salt);
+
     const newUser = {
-    users_id: req.body.users_id,
     first_name: req.body.first_name.trim(),
     last_name: req.body.last_name.trim(),
     email: req.body.email.toLowerCase().trim(),
@@ -45,7 +45,8 @@ const insertUser = await pool.query('INSERT INTO users(email, first_name, last_n
 [newUser.email, newUser.first_name, newUser.last_name, newUser.password,
  newUser.address, newUser.is_admin]);
 
- const token = utils.encodeToken(user.rows[0].email, user.rows[0].id, user.rows[0].is_admin);
+const token = utils.encodeToken(insertUser.rows[0].email, insertUser.rows[0].id,
+   insertUser.rows[0].is_admin);
 
 
   res.status(201).json({
