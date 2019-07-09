@@ -39,7 +39,6 @@ const order = async (req, res) => {
       });
       return;
     }
-
     if (buyerId.rows[0].id === carId.rows[0].owner) {
       res.status(400).json({
         status: 400,

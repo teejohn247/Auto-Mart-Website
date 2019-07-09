@@ -12,7 +12,6 @@ const updatePrice = async (req, res) => {
       });
       return;
     }
-
     const findOrderId = 'SELECT * FROM orders WHERE id = $1';
     const value = parseInt(req.params.id, 10);
     const OrderId = await pool.query(findOrderId, [value]);

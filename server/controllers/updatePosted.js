@@ -15,7 +15,6 @@ const updatePriceCar = async (req, res) => {
     const findCarId = 'SELECT * FROM cars WHERE id = $1';
     const value = parseInt(req.params.id, 10);
     const carId = await pool.query(findCarId, [value]);
-
     if (!carId.rows[0]) {
       res.status(404).json({
         status: 404,
