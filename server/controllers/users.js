@@ -57,6 +57,7 @@ const token = utils.encodeToken(insertUser.rows[0].email, insertUser.rows[0].id,
       firstName: insertUser.rows[0].first_name,
       lastName: insertUser.rows[0].last_name,
       email: insertUser.rows[0].email,
+      admin: insertUser.rows[0].is_admin,
     }
   });
 } catch (error) {
