@@ -49,7 +49,8 @@ if (!password) {
       id: user.rows[0].id,
       firstName: user.rows[0].first_name,
       lastName: user.rows[0].last_name,
-      email: user.rows[0].email
+      email: user.rows[0].email,
+      admin: user.rows[0].is_admin
     }
     });
   } catch (error) {

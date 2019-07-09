@@ -11,7 +11,6 @@ const postAds = async (req, res) => {
       return;
     }
 
-
     const postAd = {
     owner: req.payload.email,
     created_on: Date(),

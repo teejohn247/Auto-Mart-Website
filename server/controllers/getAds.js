@@ -5,7 +5,6 @@ const getAds = async (req, res) => {
     const userAds = 'SELECT * FROM cars WHERE owner = $1 ORDER BY created_on DESC';
     const value = req.payload.email;
     const userOrders = await pool.query(userAds, [value]);
-
     if (!userOrders.rows[0]) {
       res.status(404).json({
         status: 404,
