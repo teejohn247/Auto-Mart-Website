@@ -29,13 +29,13 @@ const order = async (req, res) => {
       return;
     }
     const findBuyerId = 'SELECT * FROM users WHERE id = $1';
-    const value = req.payload.email;
+    const value = req.payload.id;
     const buyerId = await pool.query(findBuyerId, [value]);
 
     if (!buyerId.rows[0]) {
       res.status(401).json({
         status: 401,
-        error: 'buyer id unathorized access',
+        error: 'buyer not found',
       });
       return;
     }

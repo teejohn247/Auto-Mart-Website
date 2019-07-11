@@ -2,8 +2,8 @@ import pool from '../models/database';
 
 const userOrdersList = async (req, res) => {
   try {
-    const userOrder = 'SELECT * FROM orders WHERE buyer = $1 ORDER BY created_on DESC';
-    const value = req.payload.email;
+    const userOrder = 'SELECT * FROM orders WHERE buyer = $1';
+    const value = req.payload.id;
     const userOrders = await pool.query(userOrder, [value]);
     if (!userOrders.rows[0]) {
       res.status(404).json({
