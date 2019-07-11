@@ -22,10 +22,10 @@ const updatePriceCar = async (req, res) => {
       });
       return;
     }
-    if (req.payload.email !== carId.rows[0].owner) {
+    if (req.payload.id !== carId.rows[0].owner) {
       res.status(401).json({
         status: 401,
-        error: 'You are unauthorized to view this content',
+        error: 'You are unauthorized to update this content',
       });
       return;
     }
