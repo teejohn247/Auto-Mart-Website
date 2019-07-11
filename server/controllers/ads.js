@@ -12,7 +12,7 @@ const postAds = async (req, res) => {
     }
 
     const postAd = {
-    owner: req.payload.email,
+    owner: req.payload.id,
     created_on: Date(),
     manufacturer: req.body.manufacturer,
     model: req.body.model,
@@ -41,7 +41,6 @@ const postAds = async (req, res) => {
         id: insertCar.rows[0].id,
         owner: insertCar.rows[0].owner,
         createdOn: insertCar.rows[0].created_on,
-        email: insertCar.rows[0].email,
         manufacturer: insertCar.rows[0].manufacturer,
         model: insertCar.rows[0].model,
         price: insertCar.rows[0].price,

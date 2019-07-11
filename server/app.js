@@ -58,7 +58,7 @@ app.use('/api/v1/car', markAd);
 app.use('/api/v1/car', bodyType);
 app.use('/api/v1/make', unsoldMake);
 app.use('/api/v1/ads', getAds);
-app.use('/api/v1/cars', userOrders);
+app.use('/api/v1/auth', userOrders);
 
 app.listen(port, () => {
     debug(`server is listening at port ${port}`);
