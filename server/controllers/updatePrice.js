@@ -22,7 +22,7 @@ const updatePrice = async (req, res) => {
       });
       return;
     }
-    if (req.payload.email !== OrderId.rows[0].buyer) {
+    if (req.payload.id !== OrderId.rows[0].buyer) {
       res.status(401).json({
         status: 401,
         error: 'order: you are not authorized to view this content',
