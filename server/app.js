@@ -35,10 +35,11 @@ app.use('/automart', swaggerUi.serve, swaggerUi.setup(documentation));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(cors());
-app.options('*', cors());
 app.use('/uploads', express.static('uploads'));
 app.use('*', cloudinaryConfig);
+
+app.use(cors());
+app.options('*', cors());
 
 app.get('/api/v1', (req, res) => {
     res.json({
