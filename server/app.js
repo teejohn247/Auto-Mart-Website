@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import swaggerUi from 'swagger-ui-express';
 import bodyParser from 'body-parser';
 import logger from 'morgan';
+import cors from 'cors';
 import { cloudinaryConfig } from './config/cloudinaryConfig';
 import userRouter from './routes/user';
 import carRoute from './routes/cars';
@@ -33,6 +34,9 @@ app.use(logger('dev'));
 app.use('/automart', swaggerUi.serve, swaggerUi.setup(documentation));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(cors());
+app.options('*', cors());
 app.use('/uploads', express.static('uploads'));
 app.use('*', cloudinaryConfig);
 

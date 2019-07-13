@@ -5,7 +5,8 @@ const allposted = async (req, res) => {
   let findCars = 'SELECT * FROM cars';
   if (req.originalUrl.includes('?'));
 
-  if (req.query.status !== undefined) {
+  const { status } = req.query;
+  if (status !== undefined) {
     findCars += ` WHERE status = '${status}'`;
   }
 
