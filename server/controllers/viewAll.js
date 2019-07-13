@@ -3,21 +3,21 @@ import pool from '../models/database';
 
 const allposted = async (req, res) => {
   let findCars = 'SELECT * FROM cars';
-  if (req.originalUrl.includes('?'));
+  if (req.originalUrl.includes('?')) findCars += ' WHERE price > 0 ';
 
   const { status } = req.query;
   if (status !== undefined) {
-    findCars += ` WHERE status = '${status}'`;
+    findCars += ` AND status = '${status}'`;
   }
 
   const { state } = req.query;
   if (state !== undefined) {
-    findCars += ` WHERE state = '${state}'`;
+    findCars += ` AND state = '${state}'`;
   }
 
   const { manufacturer } = req.query;
 if (manufacturer !== undefined) {
-findCars += ` WHERE manufacturer = '${manufacturer}'`;
+findCars += ` AND manufacturer = '${manufacturer}'`;
 }
 const { body_type } = req.query;
 if (body_type !== undefined) {
@@ -26,14 +26,14 @@ if (body_type !== undefined) {
 
 const { owner } = req.query;
 if (owner !== undefined) {
-  findCars += ` AND owner_id = '${owner}'`;
+  findCars += ` AND owner = '${owner}'`;
 }
 
   let { min_price, max_price } = req.query;
 if (min_price !== undefined || max_price !== undefined) {
 if (min_price === undefined) min_price = 1000;
 if (max_price === undefined) max_price = Number.MAX_VALUE;
-findCars += ` WHERE price >= ${min_price} AND price <= ${max_price}`;
+findCars += `  AND price BETWEEN ${parseFloat(min_price)} AND ${parseFloat(max_price)}`;
 }
 
   try {
