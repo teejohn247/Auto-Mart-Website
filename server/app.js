@@ -41,6 +41,13 @@ app.use('*', cloudinaryConfig);
 app.use(cors());
 app.options('*', cors());
 
+const allowCrossDomain = (req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', '*');
+  next();
+};
+app.use(allowCrossDomain);
+
 app.get('/api/v1', (req, res) => {
     res.json({
       message: 'Welcome to Auto-Mart API'
