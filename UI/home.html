@@ -141,55 +141,138 @@
           </div>
           <div class="sidebar_filter">
             <form action="#" method="get">
-              <div class="form-group select">
-                <select class="form-control">
-                  <option>Select Location</option>
-                  <option>Audi</option>
-                  <option>BMW</option>
-                  <option>Nissan</option>
-                  <option>Toyota</option>
-                  <option>Volvo</option>
-                  <option>Mazda</option>
-                  <option>Mercedes-Benz</option>
-                  <option>Lotus</option>
-                </select>
+              <div class="car-state-group">
+								<label>
+									<input type="radio" name="state" class="state common-seletor" checked>
+									All
+								</label><br>
+								<label>
+									<input type="radio" name="state" class="state common-seletor" value="New">
+									New
+								</label><br>
+								<label>
+									<input type="radio" name="state" class="state common-seletor" value="Used">
+									Used
+								</label><br>
+							</div>
+              <div class="form-group">			
+                	<div class="filter-attr">
+                <h3>Price Range</h3>
+                <div class="price-range">
+                  <input type="text" class="price min-price common-seletor" data-type="number" min="1000" placeholder="Min Price(&#8358)">
+                  <input type="text" class="price max-price common-seletor" data-type="number" min="1000" placeholder="Max Price(&#8358)">
+                </div>
+              </div> 
               </div>
               <div class="form-group select">
-                <select class="form-control">
-                  <option>Select Brand</option>
-                  <option>Audi</option>
-                  <option>BMW</option>
-                  <option>Nissan</option>
-                  <option>Toyota</option>
-                  <option>Volvo</option>
-                  <option>Mazda</option>
-                  <option>Mercedes-Benz</option>
-                  <option>Lotus</option>
-                </select>
+               <h5>manufacturer</h5>
+               <label>
+									<input type="radio" name="manufacturer" class="manufacturer common-seletor" checked>
+									All
+								</label><br>
+								<label>
+									<input type="radio" name="manufacturer" class="manufacturer common-seletor" value="Mercedes-Benz">
+									Mercedes-Benz
+								</label><br>
+								<label>
+									<input type="radio" name="manufacturer" class="manufacturer common-seletor" value="Porsche">
+									Porsche
+								</label><br>
+								<label>
+									<input type="radio" name="manufacturer" class="manufacturer common-seletor" value="Volkswagen">
+									Volkswagen
+								</label><br>
+								<label>
+									<input type="radio" name="manufacturer" class="manufacturer common-seletor" value="Honda">
+									Honda
+								</label><br>
+								<label>
+									<input type="radio" name="manufacturer" class="manufacturer common-seletor" value="Toyota">
+									Toyota
+								</label><br>
+								<label>
+									<input type="radio" name="manufacturer" class="manufacturer common-seletor" value="Ferrari">
+									Ferrari
+								</label><br>
+								<label>
+									<input type="radio" name="manufacturer" class="manufacturer common-seletor" value="BMW">
+									BMW
+								</label><br>
+								<label>
+									<input type="radio" name="manufacturer" class="manufacturer common-seletor" value="Chevrolet">
+									Chevrolet
+								</label><br>
+								<label>
+									<input type="radio" name="manufacturer" class="manufacturer common-seletor" value="Ford">
+									Ford
+								</label><br>
+								<label>
+									<input type="radio" name="manufacturer" class="manufacturer common-seletor" value="Cobra">
+									Cobra
+								</label><br>
+								<label>
+									<input type="radio" name="manufacturer" class="manufacturer common-seletor" value="Cadillac">
+									Cadillac
+								</label><br>
+								<label>
+									<input type="radio" name="manufacturer" class="manufacturer common-seletor" value="Jaguar">
+									Jaguar
+								</label><br>
               </div>
-              <div class="form-group select">
-                <select class="form-control">
-                  <option>Select Model</option>
-                  <option>Series 1</option>
-                  <option>Series 2</option>
-                  <option>Series 3</option>
-                  <option>Series 4</option>
-                  <option>Series 6</option>
-                </select>
-              </div>
-              <div class="form-group select">
-                <select class="form-control">
-                  <option>Year of Model </option>
-                  <option>2016</option>
-                  <option>2015</option>
-                  <option>2014</option>
-                  <option>2013</option>
-                  <option>2012</option>
-                  <option>2011</option>
-                  <option>2010</option>
-                  <option>2009</option>
-                  <option>2008</option>
-                </select>
+              <div class="form-group select"><h3>Body Type</h3>
+                <div class="body-type-group">
+                  <label>
+                    <input type="radio" name="body-type" class="body-type common-seletor" checked>
+                    All
+                  </label><br>
+                  <label>
+                    <input type="radio" name="body-type" class="body-type common-seletor" value="Micro">
+                    Micro
+                  </label><br>
+                  <label>
+                    <input type="radio" name="body-type" class="body-type common-seletor" value="Convertible">
+                    Convertible
+                  </label><br>
+                  <label>
+                    <input type="radio" name="body-type" class="body-type common-seletor" value="Large Van">
+                    Large Van
+                  </label><br>
+                  <label>
+                    <input type="radio" name="body-type" class="body-type common-seletor" value="Large SUV">
+                    Large SUV
+                  </label><br>
+                  <label>
+                    <input type="radio" name="body-type" class="body-type common-seletor" value="Small Van">
+                    Small Van
+                  </label><br>
+                  <label>
+                    <input type="radio" name="body-type" class="body-type common-seletor" value="Coupe">
+                    Coupe
+                  </label><br>
+                  <label>
+                    <input type="radio" name="body-type" class="body-type common-seletor" value="Sudan">
+                    Sudan
+                  </label><br>
+                  <label>
+                    <input type="radio" name="body-type" class="body-type common-seletor" value="Truck">
+                    Truck
+                  </label><br>
+                  <label>
+                    <input type="radio" name="body-type" class="body-type common-seletor" value="Truck Cab">
+                    Truck Cab
+                  </label><br>
+                  <label>
+                    <input type="radio" name="body-type" class="body-type common-seletor" value="MPV">
+                    MPV
+                  </label><br>
+                  <label>
+                    <input type="radio" name="body-type" class="body-type common-seletor" value="Pick Up">
+                    Pick Up
+                  </label><br>
+                  <label>
+                    <input type="radio" name="body-type" class="body-type common-seletor" value="Hatch">
+                    Hatch
+                  </label>
               </div>
               <div class="form-group">
                 <label class="form-label">Price Range (N) </label>
@@ -338,5 +421,4 @@
 <script type="text/javascript" src="js/menu.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/modal.js"></script>
-
 </html>
