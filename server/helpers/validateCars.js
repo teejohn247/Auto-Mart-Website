@@ -5,7 +5,7 @@ const validateCars = {
   validation(newAd) {
     const newAdSchema = {
       product_image: Joi.string().required(),
-      state: Joi.string().valid('new', 'used').required(),
+      state: Joi.string().valid('New', 'Used').required(),
       status: Joi.string().required(),
       price: Joi.number().required(),
       manufacturer: Joi.string().required(),
