@@ -12,11 +12,13 @@ import purchaseOrder from './routes/purchaseOrder';
 import priceRoute from './routes/updatePrice';
 import postedRoute from './routes/updatePosted';
 import viewCar from './routes/viewSpecific';
+import viewOrders from './routes/viewOrder';
 import viewAllRoute from './routes/viewAll';
 import markAd from './routes/markAd';
 import documentation from './swagger.json';
 import getAds from './routes/getAds';
 import userOrders from './routes/userOrderList';
+import userAds from './routes/viewAdsList';
 import adminAll from './routes/adminAll';
 
 
@@ -55,10 +57,12 @@ app.use('/api/v1/order', purchaseOrder);
 app.use('/api/v1/order', priceRoute);
 app.use('/api/v1/cars', postedRoute);
 app.use('/api/v1/car', viewCar);
+app.use('/api/v1/order', viewOrders);
 app.use('/api/v1/car', viewAllRoute);
 app.use('/api/v1/car', markAd);
 app.use('/api/v1/ads', getAds);
 app.use('/api/v1/auth', userOrders);
+app.use('/api/v1/auth', userAds);
 app.use('/api/v1/cars', adminAll);
 
 
