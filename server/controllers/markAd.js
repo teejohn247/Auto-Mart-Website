@@ -50,7 +50,7 @@ const markadsold = async (req, res) => {
       id: car.rows[0].id,
       email: car.rows[0].email,
       owner: car.rows[0].owner,
-      createdOn: moment().format('LL'),
+      created_on: moment().format('LL'),
       manufacturer: car.rows[0].manufacturer,
       model: car.rows[0].model,
       price: car.rows[0].price,

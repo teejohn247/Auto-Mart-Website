@@ -38,6 +38,7 @@ const updatePrice = async (req, res) => {
 
     const EditedOrder = {
       id: OrderId.rows[0].id,
+      status: OrderId.rows[0].status,
       car_id: OrderId.rows[0].car_id,
       old_price_offered: OrderId.rows[0].amount,
       new_price_offered: req.body.price_offered,

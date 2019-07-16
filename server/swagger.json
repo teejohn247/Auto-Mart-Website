@@ -338,7 +338,7 @@
           }
         }
       },
-        "/cars/allposted": {
+        "/car": {
         "get": {
           "tags": [
             "Adverts"
@@ -467,7 +467,7 @@
           }
         }
       },
-      "/auth/car?status=available": {
+      "/car?status=available": {
         "get": {
           "tags": [
             "Cars"
@@ -508,7 +508,7 @@
           }
         }
       },
-      "/cars?min_price=XXXvalue&max_price=XXXvalue": {
+      "/car?min_price=XXXvalue&max_price=XXXvalue": {
         "get": {
           "tags": [
             "Cars"
@@ -600,7 +600,7 @@
           }
         }
       },
-      "/make/car?status=XXXvalues&manufacturer=XXXvalue": {
+      "/car?status=XXXvalues&manufacturer=XXXvalue": {
         "get": {
           "tags": [
             "Cars"
@@ -650,7 +650,7 @@
           }
         }
       },
-      "/check/car?status=sold&state=new": {
+      "/car?status=sold&state=new": {
         "get": {
           "tags": [
             "Cars"
@@ -694,40 +694,6 @@
               },
               "401": {
                 "description": "Error: this is when someone tries to retrieve used unsold cars when he is not authorized"
-              },
-              "500": {
-                "description": "Server Error"
-              }
-          }
-        }
-      },
-      "/cars/available/new": {
-        "get": {
-          "tags": [
-            "Cars"
-          ],
-          "summary": "View all new unsold cars",
-          "produces": [
-            "application/json"
-          ],
-          "parameters": [
-            {
-                "name":"Authorization",
-                "in": "header",
-                "description" :"The user token",
-                "required":true
-              
-              }
-          ],
-          "responses": {
-            "200": {
-                "description": "success: successfully retrieving new unsold cars"
-              },
-              "404": {
-                "description": "Error: no new unsold cars found"
-              },
-              "401": {
-                "description": "Error: this is when someone tries to retrieve new unsold cars when he is not authorized"
               },
               "500": {
                 "description": "Server Error"

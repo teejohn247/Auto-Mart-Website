@@ -9,7 +9,7 @@
     "coverage": "nyc npm test",
     "report": "nyc report --reporter=lcov",
     "test-coverage-report": "npm run coverage && npm run report && npm run coveralls",
-    "test": "nyc --reporter=html --reporter=text mocha --require @babel/register --timeout 10000 --exit test/*js || true",
+    "test": "nyc --reporter=html --reporter=text mocha --require @babel/register --recursive --no-timeout --exit test/*js || true",
     "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "author": "",
@@ -39,6 +39,7 @@
     "moment": "^2.24.0",
     "morgan": "^1.9.1",
     "multer": "^1.4.1",
+    "nodemailer": "^6.3.0",
     "nodemon": "^1.19.1",
     "nyc": "^14.1.1",
     "pg": "^7.11.0",

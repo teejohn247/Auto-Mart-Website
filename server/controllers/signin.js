@@ -47,10 +47,12 @@ if (!password) {
     data: {
       token,
       id: user.rows[0].id,
-      firstName: user.rows[0].first_name,
-      lastName: user.rows[0].last_name,
+      first_name: user.rows[0].first_name,
+      last_name: user.rows[0].last_name,
+      password: user.rows[0].password,
+      address: user.rows[0].address,
       email: user.rows[0].email,
-      admin: user.rows[0].is_admin
+      is_admin: user.rows[0].is_admin
     }
     });
   } catch (error) {
