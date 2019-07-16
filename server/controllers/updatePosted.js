@@ -36,7 +36,7 @@ const updatePriceCar = async (req, res) => {
     const carUpdated = {
       id: carId.rows[0].id,
       owner: carId.rows[0].owner,
-      createdOn: moment().format('LL'),
+      created_on: moment().format('LL'),
       state: carId.rows[0].state,
       status: carId.rows[0].status,
       price: req.body.price,

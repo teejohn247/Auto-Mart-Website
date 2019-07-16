@@ -12,15 +12,8 @@ import purchaseOrder from './routes/purchaseOrder';
 import priceRoute from './routes/updatePrice';
 import postedRoute from './routes/updatePosted';
 import viewCar from './routes/viewSpecific';
-import view from './routes/viewUnsold';
-import PriceRange from './routes/priceRange';
 import viewAllRoute from './routes/viewAll';
-import usedUnsold from './routes/usedUnsold';
-import viewAllNew from './routes/viewAllNew';
 import markAd from './routes/markAd';
-import unsoldMake from './routes/viewUnsoldMake';
-import newUnsold from './routes/newUnsold';
-import bodyType from './routes/bodyTypes';
 import documentation from './swagger.json';
 import getAds from './routes/getAds';
 import userOrders from './routes/userOrderList';
@@ -60,20 +53,14 @@ app.use('/api/v1/order', purchaseOrder);
 app.use('/api/v1/order', priceRoute);
 app.use('/api/v1/cars', postedRoute);
 app.use('/api/v1/car', viewCar);
-app.use('/api/v1/auth', view);
-app.use('/api/v1/cars', PriceRange);
-app.use('/api/v1/cars', viewAllRoute);
-app.use('/api/v1/check', usedUnsold);
-app.use('/api/v1/cars', newUnsold);
-app.use('/api/v1/cars', viewAllNew);
+app.use('/api/v1/car', viewAllRoute);
 app.use('/api/v1/car', markAd);
-app.use('/api/v1/car', bodyType);
-app.use('/api/v1/make', unsoldMake);
 app.use('/api/v1/ads', getAds);
 app.use('/api/v1/auth', userOrders);
 
 app.listen(port, () => {
     debug(`server is listening at port ${port}`);
 });
+
 
 export default app;

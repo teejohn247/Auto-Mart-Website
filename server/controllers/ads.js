@@ -40,13 +40,13 @@ const postAds = async (req, res) => {
       data: {
         id: insertCar.rows[0].id,
         owner: insertCar.rows[0].owner,
-        createdOn: insertCar.rows[0].created_on,
+        created_on: insertCar.rows[0].created_on,
         manufacturer: insertCar.rows[0].manufacturer,
         model: insertCar.rows[0].model,
         price: insertCar.rows[0].price,
         state: insertCar.rows[0].state,
         status: insertCar.rows[0].status,
-        productImage: insertCar.rows[0].product_image
+        product_image: insertCar.rows[0].product_image
       },
     });
   } catch (error) {

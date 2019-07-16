@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">94.44% </span>
+        <span class="strong">89.47% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>17/18</span>
+        <span class='fraction'>17/19</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">90.91% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>3/3</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">94.12% </span>
+        <span class="strong">88.89% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>16/17</span>
+        <span class='fraction'>16/18</span>
       </div>
     </div>
     <p class="quiet">
@@ -107,13 +107,20 @@
 <a name='L59'></a><a href='#L59'>59</a>
 <a name='L60'></a><a href='#L60'>60</a>
 <a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">103x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">327x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -124,33 +131,34 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -169,10 +177,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* eslint-disable prefer-destructuring */
-import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
+import dotenv from 'dotenv';
+import utils from '../config/utils';
 import pool from '../models/database';
 import validateUserSignin from '../helpers/signin';
+&nbsp;
+dotenv.config();
 &nbsp;
 const signin = <span class="branch-6 cbranch-no" title="branch not covered" >async (req, res) =&gt; {</span>
   try {
@@ -196,20 +207,18 @@ const signin = <span class="branch-6 cbranch-no" title="branch not covered" >asy
    });
    return;
  }
+&nbsp;
 const password = await bcrypt.compare(req.body.password, user.rows[0].password);
 &nbsp;
 if (!password) {
-  res.status(404).json({
+<span class="cstat-no" title="statement not covered" >  res.</span>status(404).json({
     status: 404,
     error: 'Incorrect email or password',
   });
   return;
 }
-const payload = {
-  email: user.rows[0].email
-};
 &nbsp;
-  const token = jwt.sign(payload, 'SECRET_KEY', { expiresIn: '24hrs' });
+  const token = utils.encodeToken(user.rows[0].id, user.rows[0].email, user.rows[0].is_admin);
 &nbsp;
    res.status(200).json({
     status: 200,
@@ -218,7 +227,10 @@ const payload = {
       id: user.rows[0].id,
       first_name: user.rows[0].first_name,
       last_name: user.rows[0].last_name,
-      email: user.rows[0].email
+      password: user.rows[0].password,
+      address: user.rows[0].address,
+      email: user.rows[0].email,
+      is_admin: user.rows[0].is_admin
     }
     });
   } catch (error) {
@@ -235,7 +247,7 @@ export default signin;
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Jun 21 2019 05:49:09 GMT+0100 (West Africa Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Jul 16 2019 11:41:13 GMT+0100 (West Africa Standard Time)
 </div>
 </div>
 <script src="..\..\prettify.js"></script>

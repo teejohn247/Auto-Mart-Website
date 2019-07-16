@@ -7,7 +7,7 @@ import admin from '../middleware/adminAuth';
 const router = express.Router();
 
 router.get('/allposted', [auth, admin], allposted);
-router.get('/market', auth, allposted);
+router.get('/', auth, allposted);
 
 
 export default router;

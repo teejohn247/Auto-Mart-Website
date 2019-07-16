@@ -54,10 +54,11 @@ const token = utils.encodeToken(insertUser.rows[0].email, insertUser.rows[0].id,
     data: {
       token,
       id: insertUser.rows[0].id,
-      firstName: insertUser.rows[0].first_name,
-      lastName: insertUser.rows[0].last_name,
+      first_name: insertUser.rows[0].first_name,
+      last_name: insertUser.rows[0].last_name,
       email: insertUser.rows[0].email,
-      admin: insertUser.rows[0].is_admin,
+      address: insertUser.rows[0].address,
+      is_admin: insertUser.rows[0].is_admin,
     }
   });
 } catch (error) {

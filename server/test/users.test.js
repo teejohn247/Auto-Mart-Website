@@ -9,11 +9,11 @@ chai.should();
 describe('signin', () => {
   it('user should be able to signin', (done) => {
     const user = {
-      email: 'ajani2@gmail.com',
-      password: 'eeeeee',
+      email: 'adeline@gmail.com',
+      password: 'wisdom123',
     };
     chai.request(app)
-      .post('/api/v1/signin')
+      .post('/api/v1/auth/signin')
       .send(user)
       .end((err, res) => {
         res.should.have.status(200);
@@ -30,7 +30,7 @@ describe('signin', () => {
       password: 'eeeeee',
     };
     chai.request(app)
-      .post('/api/v1/signin')
+      .post('/api/v1/auth/signin')
       .send(user)
       .end((err, res) => {
         res.should.have.status(400);
@@ -47,7 +47,7 @@ describe('signin', () => {
       password: 'eeeeee',
     };
     chai.request(app)
-      .post('/api/v1/signin')
+      .post('/api/v1/auth/signin')
       .send(user)
       .end((err, res) => {
         res.should.have.status(404);
@@ -64,7 +64,7 @@ describe('signin', () => {
       password: '',
     };
     chai.request(app)
-      .post('/api/v1/signin')
+      .post('/api/v1/auth/signin')
       .send(user)
       .end((err, res) => {
         res.should.have.status(400);
@@ -80,7 +80,7 @@ describe('signin', () => {
       password: 'wisdo',
     };
     chai.request(app)
-      .post('/api/v1/signin')
+      .post('/api/v1/auth/signin')
       .send(user)
       .end((err, res) => {
         res.should.have.status(400);
@@ -98,7 +98,7 @@ describe('signin', () => {
       password: 'wisdom1',
     };
     chai.request(app)
-      .post('/api/v1/signin')
+      .post('/api/v1/auth/signin')
       .send(user)
       .end((err, res) => {
         res.should.have.status(404);
@@ -113,15 +113,15 @@ describe('signin', () => {
 describe('signup', () => {
   it('user should be able to signup', (done) => {
     const user = {
-      email: 'brendan1@gmail.com',
-      first_name: 'Brendan',
-      last_name: 'Rodgers',
+      first_name: 'tolu',
+      last_name: 'john',
+      email: 'adeline212@gmail.com',
       password: 'wisdom123',
-      address: 'Iowa',
-      is_admin: 'False',
+      address: 'lagos',
+      is_admin: 'true'
     };
     chai.request(app)
-      .post('/api/v1/signup')
+      .post('/api/v1/auth/signup')
       .send(user)
       .end((err, res) => {
         res.should.have.status(201);
@@ -132,26 +132,6 @@ describe('signup', () => {
       });
   });
 
-  it('user should not be able to signup when there is incorrect data type', (done) => {
-    const user = {
-       email: 'brendan1@gmail.com',
-      first_name: 131,
-      last_name: 'Rodgers',
-      password: 'wisdom123',
-      address: 'Iowa',
-      is_admin: 'False',
-    };
-    chai.request(app)
-      .post('/api/v1/signup')
-      .send(user)
-      .end((err, res) => {
-        res.should.have.status(400);
-        res.should.be.an('object');
-        res.body.should.have.property('status').eql(400);
-        res.body.should.have.property('error');
-        done();
-      });
-  });
 
   it('user should not be able to signup when the email is already registered', (done) => {
     const user = {
@@ -160,10 +140,10 @@ describe('signup', () => {
       last_name: 'graham',
       password: 'wisdom123',
       address: 'Washignton DC',
-      is_admin: 'False',
+      is_admin: 'false',
     };
     chai.request(app)
-      .post('/api/v1/signup')
+      .post('/api/v1/auth/signup')
       .send(user)
       .end((err, res) => {
         res.should.have.status(403);
@@ -181,10 +161,10 @@ describe('signup', () => {
       last_name: 'graham',
       password: 'wisdom123',
       address: 'Washignton DC',
-      is_admin: 'False'
+      is_admin: 'false'
     };
     chai.request(app)
-      .post('/api/v1/signup')
+      .post('/api/v1/auth/signup')
       .send(user)
       .end((err, res) => {
         res.should.have.status(400);
@@ -201,10 +181,10 @@ describe('signup', () => {
       last_name: 'graham',
       password: 'wisdom123',
       address: 'Washignton DC',
-      is_admin: 'False'
+      is_admin: 'false'
     };
     chai.request(app)
-      .post('/api/v1/signup')
+      .post('/api/v1/auth/signup')
       .send(user)
       .end((err, res) => {
         res.should.have.status(400);

@@ -1,24 +1,35 @@
 import { describe, it } from 'mocha';
 import chai from 'chai';
 import chaiHttp from 'chai-http';
-import jwt from 'jsonwebtoken';
 import app from '../app';
 
 chai.use(chaiHttp);
 chai.should();
 
+let myToken;
+
+before((done) => {
+    chai.request(app)
+        .post('/api/v1/auth/signin')
+        .send({
+            email: 'teejohn247@gmail.com',
+            password: 'wisdom123'
+        })
+        .end((err, res) => {
+            if (err) done(err);
+            myToken = res.body.data.token;
+            done();
+        });
+});
+
 describe('updating the price posted car ad', () => {
   it('should return a 200 if the price is been updated', (done) => {
-    const seller = {
-      email: 'brown@gmail.com',
-    };
-    const token = jwt.sign(seller, 'SECRET_KEY', { expiresIn: '24hrs' });
     const latestOrder = {
       price: 20000,
     };
     chai.request(app)
-      .patch('/api/v1/cars/1')
-      .set('Authorization', token)
+      .patch('/api/v1/cars/14')
+      .set('Authorization', myToken)
       .send(latestOrder)
       .end((err, res) => {
         res.should.have.status(200);
@@ -31,32 +42,11 @@ describe('updating the price posted car ad', () => {
 
   it('should return a 401 if seller is not authorized', (done) => {
     chai.request(app)
-      .patch('/api/v1/cars/1')
+      .patch('/api/v1/cars/15')
       .end((err, res) => {
         res.should.have.status(401);
         res.should.be.an('object');
         res.body.should.have.property('status').eql(401);
-        res.body.should.have.property('error');
-        done();
-      });
-  });
-
-  it('should return a 404 if car id is not found', (done) => {
-    const seller = {
-      email: 'ajani2@gmail.com',
-    };
-    const token = jwt.sign(seller, 'SECRET_KEY', { expiresIn: '24hrs' });
-    const newOrder = {
-      price: 20000,
-    };
-    chai.request(app)
-      .patch('/api/v1/cars/20')
-      .set('Authorization', token)
-      .send(newOrder)
-      .end((err, res) => {
-        res.should.have.status(404);
-        res.should.be.an('object');
-        res.body.should.have.property('status').eql(404);
         res.body.should.have.property('error');
         done();
       });

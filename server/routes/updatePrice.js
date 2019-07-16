@@ -4,6 +4,6 @@ import updatePrice from '../controllers/updatePrice';
 
 const router = express.Router();
 
-router.patch('/:id', auth, updatePrice);
+router.patch('/:id/price', auth, updatePrice);
 
 export default router;

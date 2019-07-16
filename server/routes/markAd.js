@@ -4,6 +4,6 @@ import markCarSold from '../controllers/markAd';
 
 const router = express.Router();
 
-router.patch('/:id', auth, markCarSold);
+router.patch('/:id/status', auth, markCarSold);
 
 export default router;
