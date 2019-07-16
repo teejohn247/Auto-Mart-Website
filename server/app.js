@@ -17,6 +17,8 @@ import markAd from './routes/markAd';
 import documentation from './swagger.json';
 import getAds from './routes/getAds';
 import userOrders from './routes/userOrderList';
+import adminAll from './routes/adminAll';
+
 
 dotenv.config();
 const debug = Debug('http');
@@ -57,6 +59,8 @@ app.use('/api/v1/car', viewAllRoute);
 app.use('/api/v1/car', markAd);
 app.use('/api/v1/ads', getAds);
 app.use('/api/v1/auth', userOrders);
+app.use('/api/v1/cars', adminAll);
+
 
 app.listen(port, () => {
     debug(`server is listening at port ${port}`);
