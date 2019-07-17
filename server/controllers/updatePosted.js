@@ -1,17 +1,8 @@
 import moment from 'moment';
-import validatePostedPrice from '../helpers/updatePosted';
 import pool from '../models/database';
 
 const updatePriceCar = async (req, res) => {
   try {
-    const { error } = validatePostedPrice.validation(req.body);
-    if (error) {
-      res.status(400).json({
-        status: 400,
-        error: error.details[0].message,
-      });
-      return;
-    }
     const findCarId = 'SELECT * FROM cars WHERE id = $1';
     const value = parseInt(req.params.id, 10);
     const carId = await pool.query(findCarId, [value]);

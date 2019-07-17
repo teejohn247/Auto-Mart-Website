@@ -1,17 +1,8 @@
-import validatePricePrice from '../helpers/updatePrice';
 import pool from '../models/database';
 
 
 const updatePrice = async (req, res) => {
   try {
-    const { error } = validatePricePrice.validation(req.body);
-    if (error) {
-      res.status(400).json({
-        status: 400,
-        error: error.details[0].message,
-      });
-      return;
-    }
     const findOrderId = 'SELECT * FROM orders WHERE id = $1';
     const value = parseInt(req.params.id, 10);
     const OrderId = await pool.query(findOrderId, [value]);
