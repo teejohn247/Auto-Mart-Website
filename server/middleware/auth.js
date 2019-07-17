@@ -6,12 +6,12 @@ dotenv.config();
 
 const auth = (req, res, next) => {
   try {
-    const header = req.headers.authorization;
+    const token = req.headers.authorization;
     if (!header || header === '') return res.status(401).json({ status: 401, error: 'Unauthorized' });
 
     const options = { expiresIn: '1d' };
 
-    req.payload = jwt.verify(header, process.env.SECRET_KEY, options);
+    req.payload = jwt.verify(token, process.env.SECRET_KEY, options);
     next();
       } catch (error) {
         return res.status(401).json({ status: 401, error: 'Invalid token!' });
