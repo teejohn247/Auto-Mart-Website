@@ -2,7 +2,6 @@ import bcrypt from 'bcrypt';
 import dotenv from 'dotenv';
 import utils from '../config/utils';
 import pool from '../models/database';
-import validateUserSignup from '../helpers/users';
 import '@babel/polyfill';
 
 dotenv.config();
@@ -20,15 +19,6 @@ const signup = async (req, res) => {
     address: req.body.address.trim(),
     is_admin: req.body.is_admin
   };
-
-  const { error } = validateUserSignup.validation(req.body);
-    if (error) {
-      res.status(400).json({
-        status: 400,
-        error: error.details[0].message,
-      });
-      return;
-    }
 
   const findUser = 'SELECT * FROM users WHERE email = $1';
     const values = newUser.email;
@@ -51,8 +41,8 @@ const token = utils.encodeToken(insertUser.rows[0].email, insertUser.rows[0].id,
 
   res.status(201).json({
     status: 201,
+    token,
     data: {
-      token,
       id: insertUser.rows[0].id,
       first_name: insertUser.rows[0].first_name,
       last_name: insertUser.rows[0].last_name,
