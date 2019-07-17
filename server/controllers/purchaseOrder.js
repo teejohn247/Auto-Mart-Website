@@ -1,16 +1,7 @@
 import pool from '../models/database';
-import validateOrder from '../helpers/purchaseOrder';
 
 const order = async (req, res) => {
   try {
-    const { error } = validateOrder.validation(req.body);
-    if (error) {
-      res.status(400).json({
-        status: 400,
-        error: error.details[0].message,
-      });
-      return;
-    }
     const latestOrder = {
       car_id: req.body.car_id,
       amount: req.body.amount,

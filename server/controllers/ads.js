@@ -1,16 +1,7 @@
-import validateCars from '../helpers/validateCars';
 import pool from '../models/database';
 
 const postAds = async (req, res) => {
   try {
-    const { error } = validateCars.validation(req.body);
-    if (error) {
-      res.status(400).json({
-        status: 400, error: error.details[0].message,
-      });
-      return;
-    }
-
     const postAd = {
     owner: req.payload.id,
     created_on: Date(),
