@@ -4,7 +4,7 @@ const postAds = async (req, res) => {
   try {
     
     const postAd = {
-    token: req.headers.token || req.headers['x-access-token'] || req.headers.authorization || req.body.token,
+    token: req.headers.authorization || req.headers['x-access-token'] || req.headers.token || req.body.token,
     owner: req.payload.id,
     created_on: Date(),
     manufacturer: req.body.manufacturer,
@@ -17,6 +17,7 @@ const postAds = async (req, res) => {
   };
     const insertCar = await pool.query('INSERT INTO cars(owner, created_on, product_image,state, status, price, manufacturer, model, body_type) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *',
       [
+        postAd.token,
         postAd.owner,
         postAd.created_on,
         postAd.product_image,
