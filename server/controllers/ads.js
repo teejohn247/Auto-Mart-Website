@@ -3,7 +3,7 @@ import pool from '../models/database';
 const postAds = async (req, res) => {
   try {
     const postAd = {
-    token: req.headers['x-access-token'] || req.headers.token || req.body.token,
+    token: req.headers.authorization,
     owner: req.payload.id,
     created_on: Date(),
     manufacturer: req.body.manufacturer,
