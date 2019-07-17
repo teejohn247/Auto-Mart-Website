@@ -1,11 +1,5 @@
 const is_loggedin = localStorage.getItem('is_loggedin');
-
-window.onload = () => {
-  if (!is_loggedin) {
-    window.location.href = '../UI/index.html';
-	}
 const user_id = localStorage.getItem('user_id');
-const is_loggedin = localStorage.getItem('is_loggedin');
 const token = JSON.parse(localStorage.getItem('authToken'));
 const storage = JSON.parse(localStorage.getItem('storageName'));
 
@@ -33,5 +27,4 @@ order.onclick = (e) => {
 			}
 			})
 		.catch(error => console.log(error.message));
-}
 }

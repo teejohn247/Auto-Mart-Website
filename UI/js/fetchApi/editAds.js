@@ -1,10 +1,3 @@
-const is_loggedin = localStorage.getItem('is_loggedin');
-
-window.onload = () => {
-  if (!is_loggedin) {
-    window.location.href = '../UI/index.html';
-	}
-    
 
 const update = (id) => {
   
@@ -12,7 +5,7 @@ const update = (id) => {
   
 const updatePrice = document.querySelector(".price").value;
 
-  fetch("https://cors-anywhere.herokuapp.com/" + 
+  fetch( 
    `http://automart-webapp.herokuapp.com/api/v1/order/${id}/price`, {
     method: 'PATCH',
     headers: {
@@ -97,4 +90,3 @@ event.preventDefault();
          <button type="button" class="purchase-btn" onclick = "update(${id})">Update Order Price</button>`
 };
 populate();
-}

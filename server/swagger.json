@@ -122,13 +122,6 @@
               
               },
               {
-                "name": "owner",
-                "in": "formData",
-                "type": "integer",
-                "required": true,
-                "description": "Owner id"
-              },
-              {
                 "name": "product_image",
                 "in": "formData",
                 "type": "file",
@@ -140,14 +133,14 @@
                 "in": "formData",
                 "type": "string",
                 "required": true,
-                "description": "used or new"
+                "description": "Used or New"
               },
               {
                 "name": "status",
                 "in": "formData",
                 "type": "string",
                 "required": true,
-                "description": "available or sold"
+                "description": "Available or Sold"
               },
               {
                 "name": "price",
