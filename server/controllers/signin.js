@@ -44,8 +44,8 @@ if (!password) {
 
    res.status(200).json({
     status: 200,
+    token,
     data: {
-      token,
       id: user.rows[0].id,
       first_name: user.rows[0].first_name,
       last_name: user.rows[0].last_name,

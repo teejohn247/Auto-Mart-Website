@@ -2,7 +2,7 @@ import pool from '../models/database';
 
 const userAdsList = async (req, res) => {
   try {
-    const userOrder = 'SELECT * FROM orders WHERE owner = $1';
+    const userOrder = 'SELECT * FROM cars WHERE owner = $1';
     const value = req.payload.id;
     const userOrders = await pool.query(userOrder, [value]);
     if (!userOrders.rows[0]) {
