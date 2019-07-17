@@ -2,9 +2,7 @@ import pool from '../models/database';
 
 const postAds = async (req, res) => {
   try {
-    
     const postAd = {
-    token: req.headers.authorization || req.headers['x-access-token'] || req.headers.token || req.body.token,
     owner: req.payload.id,
     created_on: Date(),
     manufacturer: req.body.manufacturer,
@@ -43,9 +41,9 @@ const postAds = async (req, res) => {
       },
     });
   } catch (error) {
-    res.status(500).json({
-      status: 500,
-      error: 'Server error',
+    res.status(400).send({
+      status: 400,
+      error: 'error occured',
     });
   }
 };
