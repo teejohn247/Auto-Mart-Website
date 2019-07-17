@@ -58,7 +58,7 @@ app.use('/api/v1/order', priceRoute);
 app.use('/api/v1/cars', postedRoute);
 app.use('/api/v1/car', viewCar);
 app.use('/api/v1/order', viewOrders);
-app.use('/api/v1/car', viewAllRoute);
+app.use('/api/v1/cars', viewAllRoute);
 app.use('/api/v1/car', markAd);
 app.use('/api/v1/ads', getAds);
 app.use('/api/v1/auth', userOrders);

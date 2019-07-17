@@ -341,6 +341,10 @@ font-size: 25px;
 color: #11074e;
 
 }
+
+.up{
+  margin-top:-20%;
+}
 .form .body .form-row input:focus{
 border-bottom: 2px solid red;
 transition: all .3s ease-in-out;

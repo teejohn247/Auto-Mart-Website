@@ -1,14 +1,10 @@
 const is_loggedin = localStorage.getItem('is_loggedin');
 
-window.onload = () => {
-  if (!is_loggedin) {
-    window.location.href = '../UI/index.html';
-	}
 const all = (url, msgIfEmpty) => {    
     const token = JSON.parse(localStorage.getItem('authToken'));
     const carList = document.querySelector('.car-list');
     carList.innerHTML = '<div id="loading"><img src="../UI/img/load.gif" /></div>';
-    fetch(url, {headers: {
+    fetch(url, { headers: {
       "Content-Type": 'application/json', 
         "Authorization": token
     }
@@ -171,8 +167,6 @@ window.onload = () => {
    "http://automart-webapp.herokuapp.com/api/v1/car?status=Available", 'No car ad found!');
 };
 
-
-
 const filterSelectors = document.querySelectorAll('.common-seletor');
 const variables = {
   min_price: null,
@@ -213,4 +207,3 @@ filterSelectors.forEach((selector) => {
   };
   return 0;
 });
-}
