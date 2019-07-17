@@ -111,7 +111,7 @@
           "tags": [
             "Adverts"
           ],
-          "summary": "Post a car sale ad",
+          "summary": "Post a car sale ad. N.B SET PARAMETER CONTENT TYPE TO MULTIPART/FORM-DATA BEFORE EXECUTING",
           "description": "User(seller) can Post a car sale advert",
           "parameters": [
             {
