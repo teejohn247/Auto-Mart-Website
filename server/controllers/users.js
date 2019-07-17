@@ -43,6 +43,7 @@ const token = utils.encodeToken(insertUser.rows[0].email, insertUser.rows[0].id,
     status: 201,
     token,
     data: {
+      token,
       id: insertUser.rows[0].id,
       first_name: insertUser.rows[0].first_name,
       last_name: insertUser.rows[0].last_name,
@@ -54,7 +55,7 @@ const token = utils.encodeToken(insertUser.rows[0].email, insertUser.rows[0].id,
 } catch (error) {
   res.status(500).json({
     status: 500,
-    message: 'Server error',
+    error: 'Server error',
   });
 }
 };
