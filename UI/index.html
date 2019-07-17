@@ -10,8 +10,6 @@
 
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-<script src="js/jwt-decode.min.js"></script>
-
 </head>
 <body>
   <div class="background">
@@ -88,19 +86,26 @@
                 </div>
                 <div class="body" id="form-body" style="text-align: center;">
                 <div class="login">
-                    <div class="login-error">please verify your username and password</div>
                     <form class="form-row">
                         <!--<i class="fas fa-envelope"></i>-->
-                        <input type="email" class="email" placeholder= "Email" name="">
-                        <input type="password" class="password" placeholder= "Password" name="">
+                        <input type="email" placeholder= "Email" name="">
+                        <input type="password" placeholder= "Password" name="">
                         <button>Login</button>
                         <div class="pass">
-                          <p>Forgot your password? <a href="signup.html">Click Here</a></p>
+                          <p>Forgot your password? <a href="#">Click Here</a></p>
                         </div>
 
                     </form>
                 </div> 
-                     
+                  <div class="signup">
+                    <form class="form-row sign">
+                        <input type="email" placeholder= "Username" name="">
+                        <input type="password" placeholder= "Password" name="">
+                        <input type="email" placeholder= "Email" name="">
+                        <input type="password" placeholder= "Confirm Password" name="">
+                        <button>Login</button>
+                    </form>
+                </div>      
             </div>                  
             </div>
             </div>
@@ -192,7 +197,4 @@
 </div>
 </body>
 <script type="text/javascript" src="js/main.js"></script>
-<script type="text/javascript" src="js/fetchApi/login.js"></script>
-
-
 </html>
