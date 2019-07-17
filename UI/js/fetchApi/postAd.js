@@ -1,16 +1,8 @@
 
-const is_loggedin = localStorage.getItem('is_loggedin');
-
-window.onload = () => {
-  if (!is_loggedin) {
-    window.location.href = '../UI/index.html';
-	}
-
-
 const specific = (id) => {
   const token = JSON.parse(localStorage.getItem('authToken'));
   fetch(
-   `http://automart-webapp.herokuapp.com/api/v1/car/${id}`, {
+   `http://automart-webapp.herokuapp.com/api/v1/cars/${id}`, {
     method: 'GET',
     headers: {
       "Content-Type": 'application/json', 
@@ -115,7 +107,6 @@ fetch(
 			})
     .catch(error => console.log(error.message));
 };
-
 
 const getAll = () => {    
     const token = JSON.parse(localStorage.getItem('authToken'));
@@ -390,4 +381,3 @@ if (res.data.length > 0) {
   event.preventDefault(); 
 };
 orderHistory();
-}

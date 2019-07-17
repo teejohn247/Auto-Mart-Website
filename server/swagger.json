@@ -338,7 +338,7 @@
           }
         }
       },
-        "/car": {
+        "/cars": {
         "get": {
           "tags": [
             "Adverts"
@@ -467,7 +467,7 @@
           }
         }
       },
-      "/car?status=available": {
+      "/cars?status=available": {
         "get": {
           "tags": [
             "Cars"
@@ -508,7 +508,7 @@
           }
         }
       },
-      "/car?min_price=XXXvalue&max_price=XXXvalue": {
+      "/cars?min_price=XXXvalue&max_price=XXXvalue": {
         "get": {
           "tags": [
             "Cars"
@@ -558,7 +558,7 @@
           }
         }
       },
-      "/car?body_type=XXXvalue": {
+      "/cars?body_type=XXXvalue": {
         "get": {
           "tags": [
             "Cars"
@@ -600,7 +600,7 @@
           }
         }
       },
-      "/car?status=XXXvalues&manufacturer=XXXvalue": {
+      "/cars?status=XXXvalues&manufacturer=XXXvalue": {
         "get": {
           "tags": [
             "Cars"
@@ -650,7 +650,7 @@
           }
         }
       },
-      "/car?status=sold&state=new": {
+      "/cars?status=sold&state=new": {
         "get": {
           "tags": [
             "Cars"

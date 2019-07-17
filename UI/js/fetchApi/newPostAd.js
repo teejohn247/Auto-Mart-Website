@@ -1,4 +1,3 @@
-
 const postAd = document.querySelector(".postAd");
 const owner = document.querySelector(".owner");
 const productImage = document.querySelector(".productImage");
