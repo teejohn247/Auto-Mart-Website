@@ -3,21 +3,11 @@ import bcrypt from 'bcrypt';
 import dotenv from 'dotenv';
 import utils from '../config/utils';
 import pool from '../models/database';
-import validateUserSignin from '../helpers/signin';
 
 dotenv.config();
 
 const signin = async (req, res) => {
   try {
-    const { error } = validateUserSignin.validation(req.body);
-    if (error) {
-      res.status(400).json({
-        status: 400,
-        error: error.details[0].message,
-      });
-      return;
-    }
-
  const findUser = 'SELECT * FROM users WHERE email = $1';
  const values = req.body.email.trim().toLowerCase();
  const user = await pool.query(findUser, [values]);
@@ -46,6 +36,7 @@ if (!password) {
     status: 200,
     token,
     data: {
+      token,
       id: user.rows[0].id,
       first_name: user.rows[0].first_name,
       last_name: user.rows[0].last_name,
