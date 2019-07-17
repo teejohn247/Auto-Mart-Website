@@ -17,7 +17,6 @@ const postAds = async (req, res) => {
   };
     const insertCar = await pool.query('INSERT INTO cars(owner, created_on, product_image,state, status, price, manufacturer, model, body_type) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *',
       [
-        postAd.token,
         postAd.owner,
         postAd.created_on,
         postAd.product_image,
@@ -32,6 +31,7 @@ const postAds = async (req, res) => {
     res.status(201).json({
       status: 201,
       data: {
+        token: req.headers.token || req.headers['x-access-token'] || req.headers.authorization || req.body.token,
         id: insertCar.rows[0].id,
         owner: insertCar.rows[0].owner,
         created_on: insertCar.rows[0].created_on,
