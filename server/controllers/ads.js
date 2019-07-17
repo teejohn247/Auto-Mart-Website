@@ -31,7 +31,6 @@ const postAds = async (req, res) => {
     res.status(201).json({
       status: 201,
       data: {
-        token: req.headers.token || req.headers['x-access-token'] || req.headers.authorization || req.body.token,
         id: insertCar.rows[0].id,
         owner: insertCar.rows[0].owner,
         created_on: insertCar.rows[0].created_on,
