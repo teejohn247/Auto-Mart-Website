@@ -6,8 +6,8 @@ dotenv.config();
 
 const auth = (req, res, next) => {
   try {
-    const token = req.headers.authorization;
-    if (!header || header === '') return res.status(401).json({ status: 401, error: 'Unauthorized' });
+    let token = req.headers.token;
+    if (!token|| token === '') return res.status(401).json({ status: 401, error: 'Unauthorized' });
 
     const options = { expiresIn: '1d' };
 
