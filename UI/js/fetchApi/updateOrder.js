@@ -1,10 +1,3 @@
- 
-const is_loggedin = localStorage.getItem('is_loggedin');
-
-window.onload = () => {
-  if (!is_loggedin) {
-    window.location.href = '../UI/index.html';
-	}
 
   const updatePrice = (id) => {
     const token = JSON.parse(localStorage.getItem('authToken'));
@@ -60,5 +53,4 @@ window.onload = () => {
   };
   populate();
 
-}
   

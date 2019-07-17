@@ -1,9 +1,5 @@
 const is_loggedin = localStorage.getItem('is_loggedin');
 
-window.onload = () => {
-  if (!is_loggedin) {
-    window.location.href = '../UI/index.html';
-	}
 const mark = (id) => {
     const token = JSON.parse(localStorage.getItem('authToken'));
     const markSold = document.querySelector(".yes").value;
@@ -64,13 +60,7 @@ const getAll = () => {
 div3.innerHTML =`<div class="mySlides2">
 <img src="${storage.data.product_image}" alt="Nature" class="responsive" width="600" height="400">
 </div>`
-div4.innerHTML =`<div class="mySlides2">
-<img src="${storage.data.product_image}" alt="Nature" class="responsive" width="600" height="400">
-</div>
-`
-div5.innerHTML =`<div class="mySlides2">
-<img src="${storage.data.product_image}" alt="Nature" class="responsive" width="600" height="400">
-</div>`
+
 a.innerHTML = `<a class="prev" onclick="plusSlides(-1, 1)" class="mark">&#10094;</a>`
 a2.innerHTML = `<a class="next" onclick="plusSlides(1, 1)" class="mark">&#10095;</a>
 </div>`
@@ -269,4 +259,4 @@ Current factory offers vary by region and expire July 1, 2019 unless otherwise n
 
 };
 getAll();
-}
+

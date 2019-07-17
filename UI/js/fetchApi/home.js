@@ -164,7 +164,7 @@ window.onload = () => {
 
   // fetch the cars from database and populate the marketplace
    all(
-   "http://automart-webapp.herokuapp.com/api/v1/car?status=Available", 'No car ad found!');
+   "http://automart-webapp.herokuapp.com/api/v1/cars?status=Available", 'No car ad found!');
 };
 
 const filterSelectors = document.querySelectorAll('.common-seletor');
@@ -178,7 +178,7 @@ const variables = {
 filterSelectors.forEach((selector) => {
   const sel = selector;
   sel.onchange = () => {
-    let url = "http://automart-webapp.herokuapp.com/api/v1/car?status=Available"
+    let url = "http://automart-webapp.herokuapp.com/api/v1/cars?status=Available"
     if (sel.classList.contains('min-price')) {
       const val = sel.value.replace(/\D/g, '');
       variables.min_price = isNaN(parseFloat(val)) ? null : parseFloat(val);
