@@ -5,9 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/responsive.css">
-
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <style>
+  input, select {
+    width: 100%;
+    margin: 5px;
+
+  }
+  </style>
+
 </head>
 <body>
       <header>
@@ -114,7 +121,7 @@
 <!--My Ads Tab-->
   
  <input type="radio" name="tabs" id="tabtwo" checked="checked" >
-  <label for="tabtwo">My Ads</label>
+  <label for="tabtwo" id="myAds">My Ads</label>
   <div class="tab">
     <div class="container ">
      <div class="row">
@@ -185,140 +192,14 @@
 
 <!--View Ads Tab-->
   <input type="radio" name="tabs" id="tabfive" checked="checked" >
-  <label for="tabfive">View All Ads</label>
+  <label for="tabfive" class="view">View All Ads</label>
   <div class="tab">
     <div class="container">
-      <div class="row">
-  <div class="grid-md-4 grid_listing">
-            <div class="product-listing-m gray-bg">
-              <div class="product-listing-img"> <a href="#"><img src="img/show.jpg" class="img-responsive" alt="image" /> </a>
-              </div>
-              <div class="product-listing-content">
-                <h5><a href="#">Mazda CX-5 SX, V6, ABS, Sunroof </a></h5>
-                <p class="list-price">N89,000</p>
-                <div class="car-location"><span><i class="fa fa-map-marker" aria-hidden="true"></i> Colorado, USA</span></div>
-                <ul class="features_list">
-                  <li><i class="fa fa-road" aria-hidden="true"></i>35,000 km</li>
-                  <li><i class="fa fa-tachometer" aria-hidden="true"></i>30.000 miles</li>
-                  <li><i class="fa fa-calendar" aria-hidden="true"></i>2005 model</li>
-                  <li><i class="fa fa-car" aria-hidden="true"></i>Diesel</li>
-                </ul>
-                <a href="#popup1"><button class="del">Delete</button></a>
-              
+      <div class="row js">
 
-
-              </div>
-            </div>
-          </div>
-
-          <div class="grid-md-4 grid_listing">
-            <div class="product-listing-m gray-bg">
-              <div class="product-listing-img"> <a href="#"><img src="img/show.jpg" class="img-responsive" alt="image" /> </a>
-              </div>
-              <div class="product-listing-content">
-                <h5><a href="#">Mazda CX-5 SX, V6, ABS, Sunroof </a></h5>
-                <p class="list-price">N89,000</p>
-                <div class="car-location"><span><i class="fa fa-map-marker" aria-hidden="true"></i> Colorado, USA</span></div>
-                <ul class="features_list">
-                  <li><i class="fa fa-road" aria-hidden="true"></i>35,000 km</li>
-                  <li><i class="fa fa-tachometer" aria-hidden="true"></i>30.000 miles</li>
-                  <li><i class="fa fa-calendar" aria-hidden="true"></i>2005 model</li>
-                  <li><i class="fa fa-car" aria-hidden="true"></i>Diesel</li>
-                </ul>
-                <a href="#popup1"><button class="del">Delete</button></a>
-             
-
-              </div>
-            </div>
-          </div>
-
-          <div class="grid-md-4 grid_listing">
-            <div class="product-listing-m gray-bg">
-              <div class="product-listing-img"> <a href="#"><img src="img/show.jpg" class="img-responsive" alt="image" /> </a>
-              </div>
-              <div class="product-listing-content">
-                <h5><a href="#">Mazda CX-5 SX, V6, ABS, Sunroof </a></h5>
-                <p class="list-price">N89,000</p>
-                <div class="car-location"><span><i class="fa fa-map-marker" aria-hidden="true"></i> Colorado, USA</span></div>
-                <ul class="features_list">
-                  <li><i class="fa fa-road" aria-hidden="true"></i>35,000 km</li>
-                  <li><i class="fa fa-tachometer" aria-hidden="true"></i>30.000 miles</li>
-                  <li><i class="fa fa-calendar" aria-hidden="true"></i>2005 model</li>
-                  <li><i class="fa fa-car" aria-hidden="true"></i>Diesel</li>
-                </ul>
-                <a href="#popup1"><button class="del">Delete</button></a>
-              
-
-
-              </div>
-            </div>
-          </div>
-
-          <div class="grid-md-4 grid_listing">
-            <div class="product-listing-m gray-bg">
-              <div class="product-listing-img"> <a href="#"><img src="img/show.jpg" class="img-responsive" alt="image" /> </a>
-              </div>
-              <div class="product-listing-content">
-                <h5><a href="#">Mazda CX-5 SX, V6, ABS, Sunroof </a></h5>
-                <p class="list-price">N89,000</p>
-                <div class="car-location"><span><i class="fa fa-map-marker" aria-hidden="true"></i> Colorado, USA</span></div>
-                <ul class="features_list">
-                  <li><i class="fa fa-road" aria-hidden="true"></i>35,000 km</li>
-                  <li><i class="fa fa-tachometer" aria-hidden="true"></i>30.000 miles</li>
-                  <li><i class="fa fa-calendar" aria-hidden="true"></i>2005 model</li>
-                  <li><i class="fa fa-car" aria-hidden="true"></i>Diesel</li>
-                </ul>
-                <a href="#popup1"><button class="del">Delete</button></a>
-              
-
-
-              </div>
-            </div>
-          </div>
-
-          <div class="grid-md-4 grid_listing">
-            <div class="product-listing-m gray-bg">
-              <div class="product-listing-img"> <a href="#"><img src="img/show.jpg" class="img-responsive" alt="image" /> </a>
-              </div>
-              <div class="product-listing-content">
-                <h5><a href="#">Mazda CX-5 SX, V6, ABS, Sunroof </a></h5>
-                <p class="list-price">N89,000</p>
-                <div class="car-location"><span><i class="fa fa-map-marker" aria-hidden="true"></i> Colorado, USA</span></div>
-                <ul class="features_list">
-                  <li><i class="fa fa-road" aria-hidden="true"></i>35,000 km</li>
-                  <li><i class="fa fa-tachometer" aria-hidden="true"></i>30.000 miles</li>
-                  <li><i class="fa fa-calendar" aria-hidden="true"></i>2005 model</li>
-                  <li><i class="fa fa-car" aria-hidden="true"></i>Diesel</li>
-                </ul>
-                <a href="#popup1"><button class="del">Delete</button></a>
-              
-
-
-              </div>
-            </div>
-          </div>
-
-          <div class="grid-md-4 grid_listing">
-            <div class="product-listing-m gray-bg">
-              <div class="product-listing-img"> <a href="#"><img src="img/show.jpg" class="img-responsive" alt="image" /> </a>
-              </div>
-              <div class="product-listing-content">
-                <h5><a href="#">Mazda CX-5 SX, V6, ABS, Sunroof </a></h5>
-                <p class="list-price">N89,000</p>
-                <div class="car-location"><span><i class="fa fa-map-marker" aria-hidden="true"></i> Colorado, USA</span></div>
-                <ul class="features_list">
-                  <li><i class="fa fa-road" aria-hidden="true"></i>35,000 km</li>
-                  <li><i class="fa fa-tachometer" aria-hidden="true"></i>30.000 miles</li>
-                  <li><i class="fa fa-calendar" aria-hidden="true"></i>2005 model</li>
-                  <li><i class="fa fa-car" aria-hidden="true"></i>Diesel</li>
-                </ul>
-                <a href="#popup1"><button class="del">Delete</button></a>
-              </div>
-            </div>
-          </div>
-    </div>
     </div>
   </div>
+</div>
 
 
 <div id="popup1" class="overlay">
@@ -332,179 +213,40 @@
     </div>
 </div>
  
-  
   <input type="radio" name="tabs" id="tabthree">
   <label for="tabthree">Post an Ad</label>
-  <div class="tab">
-    <form action="#" method="get">
-            <div class="form-group">
-              <p class="control-p">Vehicles Title</p>
-              <input class="form-control" id="VehiclesTitle" type="text" >
-            </div>
-            <div class="form-group">
-              <p class="control-p">Select Make</p>
-              <div class="select">
-                <select class="form-control">
-                  <option>Select Brand</option>
-                  <option>Audi</option>
-                  <option>BMW</option>
-                  <option>Nissan</option>
-                  <option>Toyota</option>
-                </select>
+  <div class="tab postAd">
+      <form action="#" method="get">
+          <div class="field-title">
+                <h6>Make Your Order</h6>
               </div>
-            </div>
-            <div class="form-group">
-              <p class="control-p">Model</p>
-              <div class="select">
-                <select class="form-control white_bg">
-                  <option>Select Model</option>
-                  <option>Model 2</option>
-                  <option>Model 3</option>
-                  <option>Model 4</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group">
-              <p class="control-p">Vehicles Version</p>
-              <div class="select">
-                <select class="form-control">
-                  <option>Version</option>
-                  <option>Version 1.1</option>
-                  <option>Version 1.2</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group">
-              <p class="control-p">Vehicle Overview  Description</p>
-              <textarea class="form-control white_bg" rows="4"></textarea>
-            </div>
-            <div class="form-group">
-              <p class="control-p">Price ($)</p>
-              <input class="form-control" id="Price" type="text">
-            </div>
-            <div class="form-group">
-              <p class="control-p">Upload Images  ( size = 900 x 560 )</p>
-              <div class="vehicle_images">
-                <div><img src="assets/images/featured-img-1.jpg" alt="image"></div>
-                <div><img src="assets/images/featured-img-2.jpg" alt="image"></div>
-                <div class="upload_more_img">
-                  <input name="upload" type="file">
-                </div>
-              </div>
-            </div>
-            <div class="field-title">
-              <h6>Basic Info</h6>
-            </div>
-            <div class="form-group">
-              <p class="control-p">Model Year</p>
-              <input class="form-control white_bg" id="year" type="text">
-            </div>
-            <div class="form-group">
-              <p class="control-p">No. of Owners</p>
-              <input class="form-control white_bg" id="owners" type="text">
-            </div>
-            <div class="form-group">
-              <p class="control-p">KMs Driven</p>
-              <input class="form-control white_bg" id="kws" type="text">
-            </div>
-            <div class="form-group">
-              <p class="control-p">Fuel Type</p>
-              <input class="form-control white_bg" id="fuel" type="text">
-            </div>
-            <div class="gray-bg field-title">
-              <h6>Technical Specification</h6>
-            </div>
-            <div class="form-group">
-              <p class="control-p">Engine Type</p>
-              <input class="form-control white_bg" id="engien" type="text">
-            </div>
-            <div class="form-group">
-              <p class="control-p">Engine Description</p>
-              <input class="form-control white_bg" id="engien-description" type="text">
-            </div>
-            <div class="form-group">
-              <p class="control-p">No. of Cylinders</p>
-              <input class="form-control white_bg" id="cylinders" type="text">
-            </div>
-            <div class="form-group">
-              <p class="control-p">Mileage-City</p>
-              <input class="form-control white_bg" id="mileage" type="text">
-            </div>
-            <div class="form-group">
-              <p class="control-p">Mileage-Highway</p>
-              <input class="form-control white_bg" id="mileage-h" type="text">
-            </div>
-            <div class="form-group">
-              <p class="control-p">Fuel Tank Capacity</p>
-              <input class="form-control white_bg" id="capacity" type="text">
-            </div>
-            <div class="form-group">
-              <p class="control-p">Seating Capacity</p>
-              <input class="form-control white_bg" id="s-capacity" type="text">
-            </div>
-            <div class="form-group">
-              <p class="control-p">Transmission Type</p>
-              <input class="form-control white_bg" id="Transmission" type="text">
-            </div>
-            <div class="gray-bg field-title">
-              <h6>Accessories</h6>
-            </div>
-            <div class="vehicle_accessories">
-              <div class="grid-md-6">
-              <div class="form-group checkbox col-md-6 accessories_list">
-                <input id="air_conditioner" type="checkbox"><span>Air Conditioner</span>
-              </div>
-              <div class="form-group checkbox col-md-6 accessories_list">
-                <input id="door" type="checkbox"><span>Power Door Locks</span>
-              </div>
-              <div class="form-group checkbox col-md-6 accessories_list">
-                <input id="antiLock" type="checkbox"><span>AntiLock Braking System</span>
-              </div>
-              <div class="form-group checkbox col-md-6 accessories_list">
-                <input id="brake" type="checkbox"><span>Brake Assist</span>
-              </div>
-              <div class="form-group checkbox col-md-6 accessories_list">
-                <input id="steering" type="checkbox"><span>Power Steering</span>
-              </div>
-              <div class="form-group checkbox col-md-6 accessories_list">
-                <input id="airbag" type="checkbox"><span>Driver Airbag</span>
-              </div>
+              <div class="login-error">Ad posted successfully</div>
+
+               <form>
+                 <input type="file" placeholder="product Image" class="productImage">
+                 <div>
+                    <select class="state">
+                      <option>State</option>
+                      <option>Used</option>
+                      <option>New</option>
+                    </select>
+                  </div>
+                  <div>
+                      <select class="status">
+                        <option>Status</option>
+                        <option>Available</option>
+                        <option>Sold</option>
+                      </select>
+                    </div>
+                 <input type="text" placeholder="price" class="price">
+                 <input type="text" placeholder="manufacturer" class="manufacturer">
+                 <input type="text" placeholder="model" class="model">
+                 <input type="text" placeholder="body type" class="bodyType">
+                 <button>Submit</button>
+               </form>
               
-            </div>
-            <div class="grid-md-6">
-              <div class="form-group checkbox col-md-6 accessories_list">
-                <input id="player" type="checkbox"><span>CD Player</span>
-              </div>
-              <div class="form-group checkbox col-md-6 accessories_list">
-                <input id="sensor" type="checkbox"><span>Crash Sensor</span>
-              </div>
-              <div class="form-group checkbox col-md-6 accessories_list">
-                <input id="seats" type="checkbox"><span>Leather Seats</span>
-              </div>
-              <div class="form-group checkbox col-md-6 accessories_list">
-                <input id="engine_warning" type="checkbox"><span>Engine Check Warning</span>
-              </div>
-              <div class="form-group checkbox col-md-6 accessories_list">
-                <input id="locking" type="checkbox"><span>Central Locking</span>
-              </div>
-              <div class="form-group checkbox col-md-6 accessories_list">
-                <input id="headlamps" type="checkbox"><span>Automatic Headlamps</span>
-              </div>
-            </div>
-          </div>
-            <div class="vehicle_type">
-              <div class="form-group grid-md-6 accessories_list">
-                <input type="checkbox" name="vehicle_type" value="radio" id="newcar"><span>New Car</span>
-              </div>
-              <div class="form-group grid-md-6 accessories_list">
-                <input type="checkbox" name="vehicle_type" value="radio" id="usedcar"><span>Used car</span>
-              </div>
-            </div>
-            <div class="form-group">
-              <button type="submit" class="btn-sub">Submit Vehicle <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></button>
-            </div>
-          </form>
   </div>
+</div>
 </div>
 
 
@@ -589,6 +331,10 @@
      </div>
     </div>
 </body>
+<script type="text/javascript" src="js/fetchApi/PostAd.js"></script>
+<script type="text/javascript" src="js/fetchApi/newPostAd.js"></script>
+<script type="text/javascript" src="js/fetchApi/updateAds.js"></script>
+<script type="text/javascript" src="js/fetchApi/order.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
   <script type="text/javascript" src="js/modal.js"></script>
 </html>

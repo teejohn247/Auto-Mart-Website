@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Auto Mart</title>
+  <title>Auto Mart</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/responsive.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/responsive.css">
 
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<script src="js/jwt-decode.min.js"></script>
+
 </head>
 <body>
-      <header>
+  <div class="background">
+ <header>
         <div class="container">
           <div class="row">
             <div class="grid-md-6">
@@ -58,33 +63,74 @@
               </ul>
           </nav>
 
+    <section id="boxes">
+    
+        <div class="container">
+          
+          <!-- CONTENT -->
+          <div class="grid-md-6 margin">
+            <div class="text-area">
+                <h3> We look forward to showing you a wonderful car buying experience</h3>
+                <p>Take a look at our impressive inventory and find your perfect vehicle and place your order </p>
+              </div>
+            </div>
+          
+          <!-- FORM SECTION -->
+          <div class="grid-md-6">
+            <div class="form" style="height: 500px;">
+                <div class="head" class="signup">
+                   
+                    <div  data-tab= "signup" class="signup-tab" style="margin-left: 0%;
+                margin-right: 0%;">
+                        Register
+                    </div>
+                </div>
+                <div class="body" id="form-body" style="text-align: center;">
+                <div class="login">
+                    <div class="login-error">please verify your username and password</div>
+                    <form class="form-row up">
+                        <!--<i class="fas fa-envelope"></i>-->
+                        <form class="form-row signup">
+                            <input type="text" class="fname" placeholder= "First Name" name="">
+                            <input type="text" class="lname" placeholder= "Last Name" name="">
+                            <input type="email" class="email" placeholder= "Email" name="">
+                            <input type="password" class="password" placeholder= "Password" name="">
+                            <input type="text" class ="addres" placeholder= "Address" name="">
+                            <input type="text" class="admin" placeholder="Admin" name="" >
+    
+                            <button class="sign-up">sign up</button>
+                        </form>
+                        <div class="pass">
+                          <p>Forgot your password? <a href="#">Click Here</a></p>
+                        </div>
 
-<div class="slideshow-container">
-  <div class="mySlides1">
-    </div>
-</div>
+                    </form>
+                </div> 
+                  <div class="signup">
+                      <div class="signup-error">please verify your username and password</div>
+                    
+                </div>      
+            </div>                  
+            </div>
+            </div>
+          </div>
+               
+    </section>
 
-<div class="top container">
-    <div class="view row">
-      
-</div>
-</div>
 
-
-<footer class="footer">
+<footer class="foot">
   <div class="container">
  
     <div class="row">
       <div class="grid-md-3 grid-sm-6">
         <div class="about-content" >
-        <a href="#" class="logo">logo</a>
-        
-          <p>We provide everything you need to build an amazing dealership website developed especially for car sellers dealers or auto motor retailers.</p>
+        <a href="#" class="">logo</a>
+          <p>Whether you are looking to buy a car for business or private use, Chicago Motors Group can help find what you need for your next vehicle purchase.</p>
         </div>
         <div class="address">
           <ul>
-            <li> <i class="fa fa-map-marker"></i><span>220E Front St. Burlington NC 27215</span> </li>
-            <li> <i class="fa fa-phone"></i><span>(007) 123 456 7890</span> </li>
+            <li> <i class="fa fa-map-marker"></i><span> 220E Andela Challenge</span> </li>
+            <li> <i class="fa fa-phone"></i><span> (234) 123 456 7890</span> </li>
             <li> <i class="fa fa-envelope-o"></i><span>support@website.com</span> </li>
           </ul>
         </div>
@@ -102,8 +148,8 @@
         </div> 
       </div>
       <div class="grid-md-3 grid-sm-6">
-       <div class="recent-post-block">
-        <h3 class="text-white">Recent posts</h3>
+       <div class="">
+        <h3 class="text-white">Recent posts </h3>
           <div class="recent-post">
             <div class="recent-post-image">
               <img class="img-fluid" src="images/car/01.jpg" alt=""> 
@@ -132,25 +178,30 @@
       </div>
       <div class="grid-md-3 grid-sm-6">
         <div class="news-letter">
-        <h3 class="text-white">subscribe Our Newsletter </h3>
+        <h3 class="text-white">Subscribe for Our Newsletter </h3>
          <p>Keep up on our always evolving products features and technology. Enter your e-mail and subscribe to our newsletter.</p>
          </div> 
       </div>
 
     </div>
     </div>
-     
   </footer>
-   <div class="copyright">
+    <div class="copyright" >
+      <div class="container">
      <div class="row">
       <div class="grid-md-12">
        <div>
-        <p>©Copyright 2018 Auto Mart</p>
+        <p>©Copyright 2019 Auto Mart</p>
        </div>
       </div>
      </div>
+     </div>
     </div>
-  </body>
-  <script type="text/javascript" src="js/fetchApi/view.js"></script>
-  <script type="text/javascript" src="js/index.js"></script>
+  
+</div>
+</body>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/fetchApi/signup.js"></script>
+
+
 </html>
